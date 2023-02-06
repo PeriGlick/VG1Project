@@ -154,7 +154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77499cf7244d57a4fa0d70cf1c93801a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 50
+  keyUp: 273
+  keyDown: 274
+  keyLeft: 276
+  keyRight: 275
+  moveSpeed: 10
 --- !u!50 &301675913
 Rigidbody2D:
   serializedVersion: 4
@@ -163,7 +167,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301675911}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

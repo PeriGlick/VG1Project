@@ -10,9 +10,12 @@ namespace LemonAidMan
 
 
         private Rigidbody2D _rb;
-        private SpriteRenderer sprite;
-        public float playerSpeed;
-        private Vector2 playerDirection;
+
+        public KeyCode keyUp;
+        public KeyCode keyDown;
+        public KeyCode keyLeft;
+        public KeyCode keyRight;
+        public float moveSpeed;
        
 
         // Start is called before the first frame update
@@ -20,23 +23,37 @@ namespace LemonAidMan
         {
 
             _rb = GetComponent<Rigidbody2D>();
-            sprite = GetComponent<SpriteRenderer>();   
+               
 
         }
 
         // Update is called once per frame
         void Update()
         {
-            float dirX = Input.GetAxisRaw("Horizontal"); //1 is right
-            float dirY = Input.GetAxisRaw("Vertical"); // 1 is up
-
-            playerDirection = new Vector2(dirX, dirY).normalized;
+           
         }
 
         void FixedUpdate()
         {
-            //Debug.Log(""); 
-            _rb.velocity = new Vector2(playerDirection.x * playerSpeed, playerDirection.y * playerSpeed);
+           if (Input.GetKey(keyUp))
+            {
+                _rb.AddForce(Vector2.up * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            }
+
+            if (Input.GetKey(keyDown))
+            {
+                _rb.AddForce(Vector2.down * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            }
+
+            if (Input.GetKey(keyLeft))
+            {
+                _rb.AddForce(Vector2.left * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            }
+
+            if (Input.GetKey(keyRight))
+            {
+                _rb.AddForce(Vector2.right * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            }
         }
 
     }
