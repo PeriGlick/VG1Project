@@ -16,6 +16,7 @@ namespace LemonAidMan
         public KeyCode keyLeft;
         public KeyCode keyRight;
         public float moveSpeed;
+        float health;
        
 
         // Start is called before the first frame update
@@ -27,11 +28,15 @@ namespace LemonAidMan
 
         }
 
-        // Update is called once per frame
-       // void Update()
-        //{
-           
-        //}
+        //Update is called once per frame
+       void Update()
+        {
+            health = gameObject.GetComponent<playerHealth>().currentHealth;
+            if (health <= 0)
+            {
+                moveSpeed = 0;
+            }
+        }
 
         void FixedUpdate()
         {

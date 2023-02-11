@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
 
 
-    public int maxHealth = 3;
-    public int currentHealth;
+    public float maxHealth = 3f;
+    public float currentHealth;
+    public Image imageHealthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +21,9 @@ public class playerHealth : MonoBehaviour
         currentHealth -= amount;
         if(currentHealth <= 0) 
         {
-            //We dead lol
+            Die();
         }
+        imageHealthBar.fillAmount = currentHealth / maxHealth;
     }
 
     void healUp(int amount)
@@ -31,4 +34,9 @@ public class playerHealth : MonoBehaviour
             currentHealth = maxHealth;
         }
     }
+    void Die()
+    {
+        Debug.Log("You died lol");
+    }
+
 }
