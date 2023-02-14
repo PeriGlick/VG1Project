@@ -10,7 +10,9 @@ namespace LemonAidMan
 
 
         private Rigidbody2D _rb;
-
+        public Transform aimPivot;
+        public GameObject projectilePrefab;
+        
         public KeyCode keyUp;
         public KeyCode keyDown;
         public KeyCode keyLeft;
@@ -35,6 +37,23 @@ namespace LemonAidMan
             if (health <= 0)
             {
                 moveSpeed = 0;
+            }
+            
+            // Aim Towards Mouse
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 mousePosInWorld = Camera.main.ScreenToWorldPoint(mousePos);
+            Vector3 directionFromPlayerToMouse = mousePosInWorld - transform.position;
+
+            float radiansToMouse = Mathf.Atan2(directionFromPlayerToMouse.y, directionFromPlayerToMouse.x);
+            float angleToMouse = radiansToMouse * Mathf.Rad2Deg;
+            
+            aimPivot.rotation = Quaternion.Euler(0, 0, angleToMouse);
+            
+            // Fire Projectile
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                GameObject newProjectile = Instantiate(projectilePrefab);
+                newProjectile.transform.position = transform.position;
+                newProjectile.transform.rotation = aimPivot.rotation;
             }
         }
 
