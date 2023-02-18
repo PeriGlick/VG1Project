@@ -44,14 +44,15 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
-  defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 1280
+  defaultScreenHeightWeb: 720
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 1
   m_SpriteBatchVertexThreshold: 300
   m_MTRendering: 1
   mipStripping: 0
   numberOfMipsStripped: 0
+  numberOfMipsStrippedPerMipmapLimitGroup: {}
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
@@ -572,11 +573,11 @@ PlayerSettings:
   webGLTemplate: APPLICATION:Default
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 0
+  webGLCompressionFormat: 1
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  webGLDecompressionFallback: 0
+  webGLDecompressionFallback: 1
   webGLInitialMemorySize: 32
   webGLMaximumMemorySize: 2048
   webGLMemoryGrowthMode: 2
@@ -595,7 +596,7 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
-  selectedPlatform: 0
+  selectedPlatform: 2
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1
@@ -673,6 +674,7 @@ PlayerSettings:
   hmiPlayerDataPath: 
   hmiForceSRGBBlit: 1
   embeddedLinuxEnableGamepadInput: 1
+  hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
