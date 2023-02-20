@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 1
   damage: 1
+  moveSpeed: 1
+  stand: {fileID: 8487165730310774989}
 --- !u!58 &2024616224870978151
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LemonAidMan
 {
@@ -31,13 +32,9 @@ namespace LemonAidMan
         }
 
         //Update is called once per frame
-       void Update()
+        void Update()
         {
-            health = gameObject.GetComponent<playerHealth>().currentHealth;
-            if (health <= 0)
-            {
-                moveSpeed = 0;
-            }
+            reload();
             
             // Aim Towards Mouse
             Vector3 mousePos = Input.mousePosition;
@@ -56,6 +53,17 @@ namespace LemonAidMan
                 newProjectile.transform.rotation = aimPivot.rotation;
             }
         }
+
+        // scene reloads when player dies
+        private void reload()
+        {
+            health = gameObject.GetComponent<playerHealth>().currentHealth;
+            if (health <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+
 
         void FixedUpdate()
         {
