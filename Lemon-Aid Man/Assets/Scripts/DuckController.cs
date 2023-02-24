@@ -24,7 +24,7 @@ public class DuckController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject stand = GameObject.Find("Stand");
+        GameObject stand = GameObject.Find("Lemonade Stand");
         GameObject player = GameObject.Find("Player");
         
         // attack player
