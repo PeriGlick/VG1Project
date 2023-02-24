@@ -14,6 +14,7 @@ public class DuckController : MonoBehaviour
     private bool canAttack = true;
     private Rigidbody2D _rb;
     public float moveSpeed;
+    private bool standInRange = false;
     
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,8 @@ public class DuckController : MonoBehaviour
             StartCoroutine(AttackCooldown());
         }
 
+      
+
         var step =  moveSpeed * Time.deltaTime; 
 
         // move towards stand unless near player
@@ -46,6 +49,14 @@ public class DuckController : MonoBehaviour
         else if(Vector3.Distance(transform.position, player.transform.position) > 1.2f)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+        }
+
+        //attack stand
+        if (standInRange && canAttack)
+        {
+            stand.GetComponent<StandController>().standHealth -= damage;
+            Debug.Log("Stand Attack");
+            StartCoroutine(AttackCooldown());
         }
     }
 
