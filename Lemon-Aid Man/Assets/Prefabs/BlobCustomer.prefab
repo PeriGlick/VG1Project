@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4624773050361858185}
   - component: {fileID: 4624773050361858190}
   - component: {fileID: 6196320585988536053}
-  - component: {fileID: 4624773050361858191}
+  - component: {fileID: 7459581593736388719}
   - component: {fileID: 4859320221563745683}
   m_Layer: 9
   m_Name: BlobCustomer
@@ -114,8 +114,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &4624773050361858191
-CapsuleCollider2D:
+--- !u!61 &7459581593736388719
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,9 +146,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.033085138}
-  m_Size: {x: 0.4854083, y: 0.980982}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.38605714}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.65, y: 2}
+    newSize: {x: 1.03125, y: 1.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5196252, y: 0.19016433}
+  m_EdgeRadius: 0
 --- !u!114 &4859320221563745683
 MonoBehaviour:
   m_ObjectHideFlags: 0

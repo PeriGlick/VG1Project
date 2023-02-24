@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 719744143}
   - component: {fileID: 719744142}
   - component: {fileID: 719744144}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap - Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1.8572044, y: 1.0115173, z: 0}
   m_MaxChunkCount: 16
@@ -1372,6 +1372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 918976153}
   - component: {fileID: 918976152}
+  - component: {fileID: 918976154}
   m_Layer: 0
   m_Name: Lemonade Stand
   m_TagString: Untagged
@@ -1446,6 +1447,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &918976154
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918976151}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.84476674}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.31046653}
+  m_EdgeRadius: 0
 --- !u!1001 &965458225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2106,7 +2152,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6449146}
+  m_Offset: {x: -0.008799672, y: -0.6449146}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2117,7 +2163,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.875, y: 0.15783715}
+  m_Size: {x: 0.57581186, y: 0.15783715}
   m_EdgeRadius: 0
 --- !u!114 &1328690642
 MonoBehaviour:
@@ -2752,7 +2798,7 @@ GameObject:
   - component: {fileID: 1934841009}
   - component: {fileID: 1934841011}
   - component: {fileID: 1934841010}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap - Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4715,7 +4761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1987831171}
   - component: {fileID: 1987831170}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
