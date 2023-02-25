@@ -548,8 +548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8c04987c4581408d512764baf94db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
-  spawnCounter: 5
+  spawnRate: 8
+  spawnCounter: 3
   prefab: {fileID: 8487165730310774989, guid: 9598d029ba844499eac92af7de01c84d, type: 3}
 --- !u!4 &424360350
 Transform:
@@ -763,8 +763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d8b1df33e674fd985e95dcb7ea4b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
-  spawnCounter: 10
+  spawnRate: 10
+  spawnCounter: 5
   customerPrefabsList:
   - {fileID: 4624773050361858188, guid: c04f8dbbcaabb409c851b7772b6a8a94, type: 3}
 --- !u!4 &561881281
@@ -1465,8 +1465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8c04987c4581408d512764baf94db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 4
-  spawnCounter: 5
+  spawnRate: 9
+  spawnCounter: 3
   prefab: {fileID: 8487165730310774989, guid: 9598d029ba844499eac92af7de01c84d, type: 3}
 --- !u!4 &878999122
 Transform:
@@ -2212,8 +2212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8c04987c4581408d512764baf94db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 4
-  spawnCounter: 5
+  spawnRate: 7
+  spawnCounter: 3
   prefab: {fileID: 8487165730310774989, guid: 9598d029ba844499eac92af7de01c84d, type: 3}
 --- !u!4 &1283320354
 Transform:
@@ -3466,8 +3466,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d8b1df33e674fd985e95dcb7ea4b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 4
-  spawnCounter: 12
+  spawnRate: 11
+  spawnCounter: 4
   customerPrefabsList:
   - {fileID: 4624773050361858188, guid: c04f8dbbcaabb409c851b7772b6a8a94, type: 3}
 --- !u!4 &1925849273

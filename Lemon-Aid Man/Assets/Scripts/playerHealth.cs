@@ -10,18 +10,18 @@ public class playerHealth : MonoBehaviour
     public float maxHealth = 3f;
     public float currentHealth;
     public Image imageHealthBar;
-   
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-    
+
     void takeDamage(int amount)
     {
         currentHealth -= amount;
-        if(currentHealth <= 0) 
+        if (currentHealth <= 0)
         {
             Die();
         }

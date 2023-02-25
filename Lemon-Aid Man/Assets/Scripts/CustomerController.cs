@@ -28,4 +28,9 @@ public class CustomerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void CustomerLeave()
+    {
+        Destroy(gameObject);
+    }
 }
