@@ -26,11 +26,20 @@ public class StandController : MonoBehaviour
     void Update()
     {
         slider.value = standHealth;
-        text.text = "Health : " + standHealth; //check caps 
+        text.text = "Health : " + standHealth; 
+
+
     }
-   void OnCollisionEnter2D(Collision2D obj) //check if need 2d
+   void OnCollisionEnter2D(Collision2D obj) 
     {
         if (obj.gameObject.tag == "Enemy")
             standHealth = standHealth - 10f;
+
+        if (obj.gameObject.tag == "Customer")
+        {
+            Debug.Log("customer reached stand");
+            currentBank++;
+        }
     }
+   
 }

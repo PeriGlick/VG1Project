@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Stand
+  - Customer
   layers:
   - Default
   - TransparentFX
