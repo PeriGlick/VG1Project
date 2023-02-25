@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6371646211615329137}
   - component: {fileID: 6371646211615329142}
   - component: {fileID: 6371646211615329138}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LemonGrenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}

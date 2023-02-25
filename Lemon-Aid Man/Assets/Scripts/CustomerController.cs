@@ -9,10 +9,12 @@ public class CustomerController : MonoBehaviour
     public float coolDown = 1;
     private bool canAttack = true;
     GameObject gameManager;
+    GameObject stand;
 
     // Start is called before the first frame update
     void Start()
     {
+        stand = GameObject.Find("Lemonade Stand");
         gameManager = GameObject.Find("GameManager");
     }
 
@@ -24,12 +26,22 @@ public class CustomerController : MonoBehaviour
         var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
         transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
 
+        if (Vector3.Distance(transform.position, stand.transform.position) <= 1f) 
+        {
+            standInRange = true;
+        } else
+        {
+            standInRange = false;
+        }
+
         //buy stand
         if (standInRange && canAttack)
         {
             gameManager.GetComponent<gameManager>().bank ++;
             Debug.Log("Stand buy");
+            FindObjectOfType<gameManager>().increaseBank();
             StartCoroutine(BuyCooldown());
+            CustomerLeave();
         }
     }
     
@@ -46,24 +58,25 @@ public class CustomerController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     Debug.Log(other.gameObject.tag);
 
-        if (other.gameObject.CompareTag("Stand"))
-        {
-            standInRange = true;
-            Debug.Log("cust to stand In Range");
-        }
-    }
+    //     if (other.gameObject.CompareTag("Stand"))
+    //     {
+    //         standInRange = true;
+    //         Debug.Log("cust to stand In Range");
+    //     }
+    // }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Stand"))
-        {
-            standInRange = false;
-            Debug.Log(" cust to stand not in range");
-        }
-    }
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Stand"))
+    //     {
+    //         standInRange = false;
+    //         Debug.Log(" cust to stand not in range");
+    //     }
+    // }
 
     IEnumerator BuyCooldown()
     {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8487165730310774987}
   - component: {fileID: 8487165730310774986}
   - component: {fileID: 2024616224870978151}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: DuckEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

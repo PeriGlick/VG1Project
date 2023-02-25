@@ -36,7 +36,7 @@ public class DuckController : MonoBehaviour
         if(playerInRange && canAttack)
         {
             player.GetComponent<playerHealth>().currentHealth -= damage;
-            Debug.Log("Attack");
+            // Debug.Log("Attack");
             StartCoroutine(AttackCooldown());
         }
 
@@ -59,7 +59,7 @@ public class DuckController : MonoBehaviour
         if (standInRange && canAttack)
         {
             stand.GetComponent<StandController>().standHealth -= damage;
-            Debug.Log("Stand Attack");
+            // Debug.Log("Stand Attack");
             StartCoroutine(AttackCooldown());
         }
     }
@@ -80,7 +80,7 @@ public class DuckController : MonoBehaviour
             playerInRange = true;
             // Debug.Log("In Range");
         }
-        Debug.Log(other.gameObject.tag);
+        // Debug.Log(other.gameObject.tag);
 
         if (other.gameObject.CompareTag("Stand"))
         {

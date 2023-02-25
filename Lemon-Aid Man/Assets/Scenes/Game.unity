@@ -1935,10 +1935,10 @@ GameObject:
   m_Component:
   - component: {fileID: 918976153}
   - component: {fileID: 918976152}
-  - component: {fileID: 918976154}
   - component: {fileID: 918976156}
+  - component: {fileID: 918976154}
   - component: {fileID: 918976155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lemonade Stand
   m_TagString: Stand
   m_Icon: {fileID: 0}
@@ -2044,7 +2044,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00504148, y: -0.073428154}
+  m_Offset: {x: 0.00504148, y: -0.764197}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2055,7 +2055,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0907457, y: 2.3647795}
+  m_Size: {x: 2.0907457, y: 0.49202847}
   m_EdgeRadius: 0
 --- !u!114 &918976155
 MonoBehaviour:
@@ -2171,7 +2171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973314959}
   - component: {fileID: 973314960}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2812,7 +2812,7 @@ GameObject:
   - component: {fileID: 1328690637}
   - component: {fileID: 1328690641}
   - component: {fileID: 1328690642}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3124,7 +3124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1406039626}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: AimPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

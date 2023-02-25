@@ -37,6 +37,11 @@ public class gameManager : MonoBehaviour
 
         }
 
+        if(bank >= 10) {
+            win = true;
+            Win();
+        }
+
         if (win == true && Input.GetKeyDown(KeyCode.R))
         {
 

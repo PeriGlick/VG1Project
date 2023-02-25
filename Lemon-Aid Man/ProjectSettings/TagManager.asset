@@ -14,11 +14,11 @@ TagManager:
   - Ground
   - Water
   - UI
+  - Stand
   - Player
   - PlayerProjectile
-  - Enemy
   - Customer
-  - 
+  - Enemy
   - 
   - 
   - 
