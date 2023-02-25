@@ -33,7 +33,7 @@ public class StandController : MonoBehaviour
             endGame();
         }
 
-        if(currentBank== 10)
+        if(currentBank== 20)
         {
             winGame();
         }
