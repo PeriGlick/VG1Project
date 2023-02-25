@@ -56,6 +56,7 @@ public class gameManager : MonoBehaviour
     {
         bank++;
         currentBank.text = bank.ToString();
+        Debug.Log(bank);
     }
 
     

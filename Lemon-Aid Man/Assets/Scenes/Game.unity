@@ -1936,8 +1936,8 @@ GameObject:
   - component: {fileID: 918976153}
   - component: {fileID: 918976152}
   - component: {fileID: 918976154}
-  - component: {fileID: 918976155}
   - component: {fileID: 918976156}
+  - component: {fileID: 918976155}
   m_Layer: 0
   m_Name: Lemonade Stand
   m_TagString: Stand
@@ -2082,7 +2082,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918976151}
   m_BodyType: 1
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1

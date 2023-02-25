@@ -38,19 +38,19 @@ public class StandController : MonoBehaviour
             winGame();
         }
     }
-   void OnCollisionEnter2D(Collision2D obj) //check if need 2d
-    {
-        if (obj.gameObject.tag == "Enemy")
-            standHealth = standHealth - 10f;
+//    void OnCollisionEnter2D(Collision2D obj) //check if need 2d
+//     {
+//         if (obj.gameObject.tag == "Enemy")
+//             standHealth = standHealth - 10f;
 
-        if (obj.gameObject.tag == "Customer")
-        {
-            Debug.Log("customer reached stand");
-            currentBank++;
-            FindObjectOfType<gameManager>().increaseBank();
-            FindObjectOfType<CustomerController>().CustomerLeave();
-        }
-    }
+//         if (obj.gameObject.tag == "Customer")
+//         {
+//             Debug.Log("customer reached stand");
+//             currentBank++;
+//             FindObjectOfType<gameManager>().increaseBank();
+//             FindObjectOfType<CustomerController>().CustomerLeave();
+//         }
+//     }
 
     void endGame()
     {

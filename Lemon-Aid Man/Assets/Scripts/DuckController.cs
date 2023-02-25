@@ -15,18 +15,22 @@ public class DuckController : MonoBehaviour
     private Rigidbody2D _rb;
     public float moveSpeed;
     private bool standInRange = false;
+    GameObject stand;
+    GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        stand = GameObject.Find("Lemonade Stand");
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject stand = GameObject.Find("Lemonade Stand");
-        GameObject player = GameObject.Find("Player");
+        // GameObject stand = GameObject.Find("Lemonade Stand");
+        // GameObject player = GameObject.Find("Player");
         
         // attack player
         if(playerInRange && canAttack)
@@ -74,7 +78,14 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
-            Debug.Log("In Range");
+            // Debug.Log("In Range");
+        }
+        Debug.Log(other.gameObject.tag);
+
+        if (other.gameObject.CompareTag("Stand"))
+        {
+            standInRange = true;
+            // Debug.Log("In Range");
         }
     }
 
@@ -83,7 +94,12 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = false ;
-            Debug.Log("Out of Range");
+            // Debug.Log("Out of Range");
+        }
+        if (other.gameObject.CompareTag("Stand"))
+        {
+            standInRange = false;
+            // Debug.Log("not in range");
         }
     }
 
