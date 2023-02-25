@@ -1,13 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class StandController : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public float currentBank;
-    public float standHealth = 20f;
+    //public float standHealth = 20f; commented out to try healthbar code
+    public float standHealth; 
+    public Slider slider;
+    public Text text;
+
+
+
+
     void Start()
     {
         currentBank= 0;
@@ -16,6 +25,12 @@ public class StandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        slider.value = standHealth;
+        text.text = "Health : " + standHealth; //check caps 
+    }
+   void OnCollisionEnter2D(Collision2D obj) //check if need 2d
+    {
+        if (obj.gameObject.tag == "Enemy")
+            standHealth = standHealth - 10f;
     }
 }
