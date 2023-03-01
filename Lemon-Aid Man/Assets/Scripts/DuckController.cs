@@ -59,7 +59,6 @@ public class DuckController : MonoBehaviour
         if (standInRange && canAttack)
         {
             stand.GetComponent<StandController>().standHealth -= damage;
-            // Debug.Log("Stand Attack");
             StartCoroutine(AttackCooldown());
         }
     }
@@ -67,6 +66,7 @@ public class DuckController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        // disappear if shot
         if (other.gameObject.GetComponent<LemonGrenadeController>())
         {
             Destroy(gameObject);
@@ -78,14 +78,11 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
-            // Debug.Log("In Range");
         }
-        // Debug.Log(other.gameObject.tag);
 
         if (other.gameObject.CompareTag("Stand"))
         {
             standInRange = true;
-            // Debug.Log("In Range");
         }
     }
 
@@ -94,12 +91,10 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = false ;
-            // Debug.Log("Out of Range");
         }
         if (other.gameObject.CompareTag("Stand"))
         {
             standInRange = false;
-            // Debug.Log("not in range");
         }
     }
 

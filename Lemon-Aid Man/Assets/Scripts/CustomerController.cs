@@ -7,7 +7,7 @@ public class CustomerController : MonoBehaviour
     public float moveSpeed;
     private bool standInRange = false;
     public float coolDown = 1;
-    private bool canAttack = true;
+    private bool canBuy = true;
     GameObject gameManager;
     GameObject stand;
 
@@ -26,16 +26,17 @@ public class CustomerController : MonoBehaviour
         var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
         transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
 
-        if (Vector3.Distance(transform.position, stand.transform.position) <= 1f) 
-        {
-            standInRange = true;
-        } else
-        {
-            standInRange = false;
-        }
+        // stand range based on distance rather than trigger event
+        // if (Vector3.Distance(transform.position, stand.transform.position) <= 1f) 
+        // {
+        //     standInRange = true;
+        // } else
+        // {
+        //     standInRange = false;
+        // }
 
-        //buy stand
-        if (standInRange && canAttack)
+        //buy from stand if near
+        if (standInRange && canBuy)
         {
             gameManager.GetComponent<gameManager>().bank ++;
             Debug.Log("Stand buy");
@@ -44,44 +45,41 @@ public class CustomerController : MonoBehaviour
             CustomerLeave();
         }
     }
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // If customer is hit by a player projectile (layer=7), customer disappears
-        if (other.gameObject.layer == 7) {
+        // disappear if shot
+        if (other.gameObject.GetComponent<LemonGrenadeController>())
+        {
             Destroy(gameObject);
         }
     }
 
-    public void CustomerLeave()
+    private void CustomerLeave()
     {
         Destroy(gameObject);
     }
 
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     Debug.Log(other.gameObject.tag);
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Stand"))
+        {
+            standInRange = true;
+        }
+    }
 
-    //     if (other.gameObject.CompareTag("Stand"))
-    //     {
-    //         standInRange = true;
-    //         Debug.Log("cust to stand In Range");
-    //     }
-    // }
-
-    // private void OnTriggerExit2D(Collider2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Stand"))
-    //     {
-    //         standInRange = false;
-    //         Debug.Log(" cust to stand not in range");
-    //     }
-    // }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Stand"))
+        {
+            standInRange = false;
+        }
+    }
 
     IEnumerator BuyCooldown()
     {
-        canAttack = false;
+        canBuy = false;
         yield return new WaitForSeconds(coolDown);
-        canAttack= true;
+        canBuy= true;
     }
 }
