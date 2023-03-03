@@ -6,25 +6,35 @@ public class CustomerController : MonoBehaviour
 {
     public float moveSpeed;
     private bool standInRange = false;
-    public float coolDown = 1;
+    public float coolDown;
     private bool canBuy = true;
+    private bool visitedStand = false;
+    private Rigidbody2D _rb;
     GameObject gameManager;
     GameObject stand;
+    private Vector3 finalDestRightPos;
+    private Vector3 finalDestLeftPos;
+    private int randExitDirection; 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        _rb = GetComponent<Rigidbody2D>();
         stand = GameObject.Find("Lemonade Stand");
         gameManager = GameObject.Find("GameManager");
+        finalDestRightPos = GameObject.Find("Customer Final Dest (Right)").transform.position;
+        finalDestLeftPos = GameObject.Find("Customer Final Dest (Left)").transform.position;
+        randExitDirection = Random.Range(0, 2); // Pops out either 0 or 1
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject stand = GameObject.Find("Lemonade Stand");
-        var step = moveSpeed * Time.deltaTime;
-        var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
-        transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
+        // GameObject stand = GameObject.Find("Lemonade Stand");
+        if (!visitedStand) {
+            var step = moveSpeed * Time.deltaTime;
+            var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
+            transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
+        }
 
         // stand range based on distance rather than trigger event
         // if (Vector3.Distance(transform.position, stand.transform.position) <= 1f) 
@@ -41,23 +51,32 @@ public class CustomerController : MonoBehaviour
             gameManager.GetComponent<gameManager>().bank ++;
             Debug.Log("Stand buy");
             FindObjectOfType<gameManager>().increaseBank();
+            visitedStand = true;
             StartCoroutine(BuyCooldown());
+        }
+
+        if (visitedStand) {
             CustomerLeave();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // disappear if shot
-        if (other.gameObject.GetComponent<LemonGrenadeController>())
+        // disappear if shot by lemon grenade OR hits game boundary 
+        if (other.gameObject.GetComponent<LemonGrenadeController>() || other.collider.CompareTag("Game Boundary"))
         {
             Destroy(gameObject);
         }
     }
 
-    private void CustomerLeave()
-    {
-        Destroy(gameObject);
+    private void CustomerLeave() {
+        // Randomly exits to the left or right of the screen
+        if (randExitDirection == 0) {
+            transform.position = Vector3.MoveTowards(transform.position, finalDestRightPos, moveSpeed * Time.deltaTime);
+        }
+        else {
+            transform.position = Vector3.MoveTowards(transform.position, finalDestLeftPos, moveSpeed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -80,6 +99,6 @@ public class CustomerController : MonoBehaviour
     {
         canBuy = false;
         yield return new WaitForSeconds(coolDown);
-        canBuy= true;
+        // canBuy = true;
     }
 }
