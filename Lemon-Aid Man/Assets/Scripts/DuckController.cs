@@ -18,7 +18,6 @@ public class DuckController : MonoBehaviour
     GameObject stand;
     GameObject player;
     
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -26,7 +25,6 @@ public class DuckController : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
         var step =  moveSpeed * Time.deltaTime; 
@@ -42,8 +40,6 @@ public class DuckController : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, stand.transform.position, step);
         }
-
-        
 
         //attack stand
         if (standInRange && canAttack)
@@ -70,6 +66,7 @@ public class DuckController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
@@ -84,7 +81,7 @@ public class DuckController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D other) {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerInRange = false ;
+            playerInRange = false;
         }
         if (other.gameObject.CompareTag("Stand"))
         {

@@ -12,6 +12,7 @@ public class gameManager : MonoBehaviour
     public GameObject playerObject;
     bool gameOver = false;
     public Text currentBank;
+    public float winningProfits;
     bool win = false;
     float bank;
 
@@ -44,22 +45,29 @@ public class gameManager : MonoBehaviour
     {
         bank += cost;
         currentBank.text = "Bank: $" + bank.ToString();
+        if(bank >= winningProfits) {
+            Win();
+        }
     }
 
     // when game is lost
     public void GameOver()
     {
-        GameOverScreen.SetActive(true);
-        // playerObject.SetActive(false);
-        gameOver = true;
+        // TODO: if we properly pause game upon lose, can remove this if statement
+        if(!win) {
+            GameOverScreen.SetActive(true);
+            gameOver = true;
+        }
     }
 
     // when game is won
     public void Win()
     {
-        WinScreen.SetActive(true);
-        // playerObject.SetActive(false);
-        win = true;
+        // TODO: if we properly pause game upon win, can remove this if statement
+        if(!gameOver) {
+            WinScreen.SetActive(true);
+            win = true;
+        }
     }
 
 }

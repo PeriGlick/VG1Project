@@ -33,7 +33,7 @@ public class CustomerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // GameObject stand = GameObject.Find("Lemonade Stand");
+        // move towards stand
         if (!visitedStand) {
             var step = moveSpeed * Time.deltaTime;
             var standPosition = stand.transform.position + new Vector3(0, -1f, 0);

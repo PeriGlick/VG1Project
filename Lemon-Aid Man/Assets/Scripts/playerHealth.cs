@@ -47,14 +47,4 @@ public class playerHealth : MonoBehaviour
     {
         FindObjectOfType<gameManager>().GameOver();
     }
-
-    // // scene reloads when player dies
-    // private void reload()
-    // {
-    //     health = gameObject.GetComponent<playerHealth>().currentHealth;
-    //     if (health <= 0)
-    //     {
-    //         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //     }
-    // }
 }

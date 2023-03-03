@@ -24,9 +24,7 @@ namespace LemonAidMan
         }
 
         void Update()
-        {
-            // reload();
-            
+        {            
             // Aim Towards Mouse
             Vector3 mousePos = Input.mousePosition;
             Vector3 mousePosInWorld = Camera.main.ScreenToWorldPoint(mousePos);

@@ -2673,6 +2673,7 @@ MonoBehaviour:
   WinScreen: {fileID: 1517749051}
   playerObject: {fileID: 1328690636}
   currentBank: {fileID: 649765485}
+  winningProfits: 0.05
 --- !u!4 &1598159919
 Transform:
   m_ObjectHideFlags: 0
@@ -5369,7 +5370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 67.6, y: 0}
+  m_AnchoredPosition: {x: -579.3, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2057005846
@@ -5405,7 +5406,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Health: 0'
+  m_Text: 'Stand Health: 100'
 --- !u!222 &2057005847
 CanvasRenderer:
   m_ObjectHideFlags: 0
