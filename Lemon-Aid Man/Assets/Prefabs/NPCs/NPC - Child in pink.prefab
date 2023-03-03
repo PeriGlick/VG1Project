@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4780666400875592660}
   - component: {fileID: 4780666400875592659}
   - component: {fileID: 4780666400875592661}
+  - component: {fileID: 5845893801638876492}
   m_Layer: 9
   m_Name: NPC - Child in pink
   m_TagString: Customer
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   coolDown: 1
+  lemonadePrice: 0.05
 --- !u!70 &4780666400875592661
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -163,3 +165,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.8, y: 0.8}
   m_Direction: 0
+--- !u!95 &5845893801638876492
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780666400875592656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c69528cdb69d8425b8fd4073ba57736e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

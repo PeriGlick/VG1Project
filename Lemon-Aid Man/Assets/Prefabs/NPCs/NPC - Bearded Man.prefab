@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3107748574792329645}
   - component: {fileID: 3107748574792329646}
   - component: {fileID: 3107748574792329647}
+  - component: {fileID: 1991452099208539164}
   m_Layer: 9
   m_Name: NPC - Bearded Man
   m_TagString: Customer
@@ -163,3 +164,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   coolDown: 1
+  lemonadePrice: 0.05
+--- !u!95 &1991452099208539164
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107748574792329682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d185ff83a9d248049e7af79f69c968d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

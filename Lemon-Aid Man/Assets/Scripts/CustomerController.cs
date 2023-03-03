@@ -20,6 +20,8 @@ public class CustomerController : MonoBehaviour
     private Vector3 finalDestRightPos;
     private Vector3 finalDestLeftPos;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start() {
         _rb = GetComponent<Rigidbody2D>();
@@ -28,11 +30,17 @@ public class CustomerController : MonoBehaviour
         finalDestRightPos = GameObject.Find("Customer Final Dest (Right)").transform.position;
         finalDestLeftPos = GameObject.Find("Customer Final Dest (Left)").transform.position;
         randExitDirection = Random.Range(0, 2); // Pops out either 0 or 1
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Set animator parameters
+        animator.SetBool("VisitedStand", visitedStand);
+        animator.SetBool("StandInRange", standInRange);
+        animator.SetBool("CanBuy", canBuy);
+        
         // move towards stand
         if (!visitedStand) {
             var step = moveSpeed * Time.deltaTime;
@@ -40,12 +48,11 @@ public class CustomerController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
         }
 
-        //buy from stand if near
-        if (standInRange && canBuy)
-        {
+        // buy from stand if near
+        if (standInRange && canBuy) {
             FindObjectOfType<gameManager>().increaseBank(lemonadePrice);
+            StartCoroutine(IdleWait()); // Switch animation to Idle and pause at stand for a few secs
             canBuy = false;
-            visitedStand = true;
         }
 
         if (visitedStand) {
@@ -82,5 +89,10 @@ public class CustomerController : MonoBehaviour
         {
             standInRange = false;
         }
+    }
+    
+    IEnumerator IdleWait() {
+        yield return new WaitForSeconds(3);
+        visitedStand = true;
     }
 }

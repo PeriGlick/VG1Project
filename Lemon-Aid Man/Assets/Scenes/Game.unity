@@ -635,10 +635,10 @@ MonoBehaviour:
   customerPrefabsList:
   - {fileID: 4780666400875592656, guid: 75f411627b3e94d55b4d74945cef89da, type: 3}
   - {fileID: 4075193441252527184, guid: cf9a18ccc923e46d7a4af82cfffb62f5, type: 3}
-  - {fileID: 3107748574792329682, guid: 9c27c4610e5b14448919a878e7328817, type: 3}
   - {fileID: 5526298452055209385, guid: 3151cc88b3ce541fa8eb107d89805cb9, type: 3}
   - {fileID: 3315638773270266413, guid: e94a025decd3a4a95aa330453395842d, type: 3}
   - {fileID: 3164698395422007708, guid: e8f88b423acac4851962d9c742d53e34, type: 3}
+  - {fileID: 3107748574792329682, guid: 9c27c4610e5b14448919a878e7328817, type: 3}
 --- !u!4 &561881281
 Transform:
   m_ObjectHideFlags: 0
@@ -2673,7 +2673,7 @@ MonoBehaviour:
   WinScreen: {fileID: 1517749051}
   playerObject: {fileID: 1328690636}
   currentBank: {fileID: 649765485}
-  winningProfits: 0.05
+  winningProfits: 3
 --- !u!4 &1598159919
 Transform:
   m_ObjectHideFlags: 0
@@ -3014,7 +3014,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925849271}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76d8b1df33e674fd985e95dcb7ea4b8a, type: 3}
   m_Name: 
