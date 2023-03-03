@@ -5,17 +5,20 @@ using UnityEngine;
 public class CustomerController : MonoBehaviour
 {
     public float moveSpeed;
-    private bool standInRange = false;
     public float coolDown;
     public float lemonadePrice = .05f;
+
+    private bool standInRange = false;
     private bool canBuy = true;
     private bool visitedStand = false;
+    private int randExitDirection; 
+
     private Rigidbody2D _rb;
     GameObject gameManager;
     GameObject stand;
+
     private Vector3 finalDestRightPos;
     private Vector3 finalDestLeftPos;
-    private int randExitDirection; 
 
     // Start is called before the first frame update
     void Start() {
@@ -37,15 +40,6 @@ public class CustomerController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
         }
 
-        // stand range based on distance rather than trigger event
-        // if (Vector3.Distance(transform.position, stand.transform.position) <= 1f) 
-        // {
-        //     standInRange = true;
-        // } else
-        // {
-        //     standInRange = false;
-        // }
-
         //buy from stand if near
         if (standInRange && canBuy)
         {
@@ -61,8 +55,8 @@ public class CustomerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // disappear if shot by lemon grenade OR hits game boundary 
-        if (other.gameObject.GetComponent<LemonGrenadeController>() || other.collider.CompareTag("Game Boundary"))
+        // disappear if shot by lemon grenade OR hits game boundary after buying from stand
+        if (other.gameObject.GetComponent<LemonGrenadeController>() || (other.collider.CompareTag("Game Boundary") && visitedStand))
         {
             Destroy(gameObject);
         }
@@ -71,7 +65,6 @@ public class CustomerController : MonoBehaviour
         {
             standInRange = true;
         }
-
     }
 
     private void CustomerLeave() {
@@ -89,12 +82,5 @@ public class CustomerController : MonoBehaviour
         {
             standInRange = false;
         }
-    }
-
-    IEnumerator BuyCooldown()
-    {
-        canBuy = false;
-        yield return new WaitForSeconds(coolDown);
-        // canBuy = true;
     }
 }
