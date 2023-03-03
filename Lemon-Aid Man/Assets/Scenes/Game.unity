@@ -782,7 +782,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bank
+  m_Text: 'Bank: $0'
 --- !u!1 &709177551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,10 +1363,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00504148, y: -0.764197}
+  m_Offset: {x: 0.00504148, y: 0.02375424}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1377,7 +1377,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0907457, y: 0.49202847}
+  m_Size: {x: 2.0907457, y: 2.067931}
   m_EdgeRadius: 0
 --- !u!114 &918976155
 MonoBehaviour:
@@ -1391,10 +1391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062c4f3d5851f3346881e17f215ee3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBank: 0
   standHealth: 100
   slider: {fileID: 461103805}
-  text: {fileID: 2057005846}
+  healthText: {fileID: 2057005846}
 --- !u!50 &918976156
 Rigidbody2D:
   serializedVersion: 4
@@ -2132,8 +2131,8 @@ GameObject:
   - component: {fileID: 1328690640}
   - component: {fileID: 1328690639}
   - component: {fileID: 1328690638}
-  - component: {fileID: 1328690637}
   - component: {fileID: 1328690641}
+  - component: {fileID: 1328690637}
   - component: {fileID: 1328690642}
   m_Layer: 7
   m_Name: Player
@@ -2228,7 +2227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -68312737, guid: 156b0b4ea1672a24b8c24811a5446371, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2288,7 +2287,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008799672, y: -0.6449146}
+  m_Offset: {x: -0.008799672, y: -0.0059629083}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2299,7 +2298,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.57581186, y: 0.15783715}
+  m_Size: {x: 0.57581186, y: 1.4357406}
   m_EdgeRadius: 0
 --- !u!114 &1328690642
 MonoBehaviour:
@@ -2609,10 +2608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScreen: {fileID: 1120304026}
+  WinScreen: {fileID: 1517749051}
   playerObject: {fileID: 1328690636}
   currentBank: {fileID: 649765485}
-  bank: 0
-  WinScreen: {fileID: 1517749051}
 --- !u!4 &1598159919
 Transform:
   m_ObjectHideFlags: 0
@@ -5286,7 +5284,7 @@ GameObject:
   - component: {fileID: 2057005847}
   - component: {fileID: 2057005846}
   m_Layer: 5
-  m_Name: 'Text '
+  m_Name: Stand Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5345,7 +5343,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Health: 0'
 --- !u!222 &2057005847
 CanvasRenderer:
   m_ObjectHideFlags: 0

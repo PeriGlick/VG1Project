@@ -164,3 +164,4 @@ MonoBehaviour:
   coolDown: 1
   damage: 1
   moveSpeed: 1
+  moveToPlayerDistance: 2

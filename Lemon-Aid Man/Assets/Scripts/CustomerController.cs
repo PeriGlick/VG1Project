@@ -7,6 +7,7 @@ public class CustomerController : MonoBehaviour
     public float moveSpeed;
     private bool standInRange = false;
     public float coolDown = 1;
+    public float lemonadePrice = .05f;
     private bool canBuy = true;
     GameObject gameManager;
     GameObject stand;
@@ -26,22 +27,11 @@ public class CustomerController : MonoBehaviour
         var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
         transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
 
-        // stand range based on distance rather than trigger event
-        // if (Vector3.Distance(transform.position, stand.transform.position) <= 1f) 
-        // {
-        //     standInRange = true;
-        // } else
-        // {
-        //     standInRange = false;
-        // }
-
         //buy from stand if near
         if (standInRange && canBuy)
         {
-            gameManager.GetComponent<gameManager>().bank ++;
-            Debug.Log("Stand buy");
-            FindObjectOfType<gameManager>().increaseBank();
-            StartCoroutine(BuyCooldown());
+            FindObjectOfType<gameManager>().increaseBank(lemonadePrice);
+            canBuy = false;
             CustomerLeave();
         }
     }
@@ -53,33 +43,22 @@ public class CustomerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    private void CustomerLeave()
-    {
-        Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
         if (other.gameObject.CompareTag("Stand"))
         {
             standInRange = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
+    private void OnCollisionExit2D(Collision2D other) {
         if (other.gameObject.CompareTag("Stand"))
         {
             standInRange = false;
         }
     }
 
-    IEnumerator BuyCooldown()
+    private void CustomerLeave()
     {
-        canBuy = false;
-        yield return new WaitForSeconds(coolDown);
-        canBuy= true;
+        Destroy(gameObject);
     }
 }

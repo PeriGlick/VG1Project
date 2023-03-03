@@ -5,7 +5,6 @@ using UnityEngine;
 
 
 
-
 public class DuckController : MonoBehaviour
 {
     private bool playerInRange = false;
@@ -14,6 +13,7 @@ public class DuckController : MonoBehaviour
     private bool canAttack = true;
     private Rigidbody2D _rb;
     public float moveSpeed;
+    public float moveToPlayerDistance;
     private bool standInRange = false;
     GameObject stand;
     GameObject player;
@@ -29,31 +29,21 @@ public class DuckController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // GameObject stand = GameObject.Find("Lemonade Stand");
-        // GameObject player = GameObject.Find("Player");
-        
-        // attack player
-        if(playerInRange && canAttack)
-        {
-            player.GetComponent<playerHealth>().currentHealth -= damage;
-            // Debug.Log("Attack");
-            StartCoroutine(AttackCooldown());
-        }
-
-      
-
         var step =  moveSpeed * Time.deltaTime; 
 
-        // move towards stand unless near player
-        if (Vector3.Distance(transform.position, stand.transform.position) > 1f && !playerInRange)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, stand.transform.position, step);
-        } 
         // move towards player
-        else if(Vector3.Distance(transform.position, player.transform.position) > 1.2f)
+        if(Vector3.Distance(transform.position, player.transform.position) < moveToPlayerDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
         }
+
+        // move towards stand unless near player
+        else if (Vector3.Distance(transform.position, stand.transform.position) > 1f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, stand.transform.position, step);
+        }
+
+        
 
         //attack stand
         if (standInRange && canAttack)
@@ -61,6 +51,15 @@ public class DuckController : MonoBehaviour
             stand.GetComponent<StandController>().standHealth -= damage;
             StartCoroutine(AttackCooldown());
         }
+
+        // attack player
+        if(playerInRange && canAttack)
+        {
+            player.GetComponent<playerHealth>().currentHealth -= damage;
+            Debug.Log("player attack");
+            StartCoroutine(AttackCooldown());
+        }
+
     }
 
 
@@ -71,10 +70,6 @@ public class DuckController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
@@ -86,8 +81,7 @@ public class DuckController : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
+    private void OnCollisionExit2D(Collision2D other) {
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = false ;

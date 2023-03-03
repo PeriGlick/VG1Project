@@ -8,74 +8,57 @@ using UnityEngine.UI;
 public class gameManager : MonoBehaviour
 {
     public GameObject GameOverScreen;
+    public GameObject WinScreen;
     public GameObject playerObject;
     bool gameOver = false;
     public Text currentBank;
-    public int bank;
-    public GameObject WinScreen;
     bool win = false;
-    // Start is called before the first frame update
+    float bank;
+
     void Start()
     {
-        bank = 0;
-        currentBank.text = "Bank: " + bank.ToString(); 
+        // initialize bank display
+        increaseBank(0);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //IF THE GAME IS OVER AND THE R KEY IS PRESSED THEN...
+
+        //if game has been lost, reset when r key is pressed
         if (gameOver == true && Input.GetKeyDown(KeyCode.R))
         {
-
-
-            //LOAD THE SCENE CALLED SampleScene
             SceneManager.LoadScene("Game");
-
-            //SET THE gameOver VARIABLE TO FALSE
             gameOver = false;
-
         }
 
-        if(bank >= 10) {
-            win = true;
-            Win();
-        }
-
+        //if game has been won, reset when r key is pressed
         if (win == true && Input.GetKeyDown(KeyCode.R))
         {
-
-
-            //LOAD THE SCENE CALLED SampleScene
             SceneManager.LoadScene("Game");
-
-            //SET THE gameOver VARIABLE TO FALSE
             win = false;
-
         }
-
-
     }
 
-    public void increaseBank()
+    // increase the amount in bank and update its display
+    public void increaseBank(float cost)
     {
-        bank++;
-        currentBank.text = bank.ToString();
-        Debug.Log(bank);
+        bank += cost;
+        currentBank.text = "Bank: $" + bank.ToString();
     }
 
-    
+    // when game is lost
     public void GameOver()
     {
         GameOverScreen.SetActive(true);
-        playerObject.SetActive(false);
+        // playerObject.SetActive(false);
         gameOver = true;
     }
 
+    // when game is won
     public void Win()
     {
         WinScreen.SetActive(true);
-        playerObject.SetActive(false);
+        // playerObject.SetActive(false);
         win = true;
     }
 

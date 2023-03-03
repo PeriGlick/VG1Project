@@ -7,9 +7,6 @@ namespace LemonAidMan
 {
     public class playerMovement : MonoBehaviour
     {
-
-
-
         private Rigidbody2D _rb;
         public Transform aimPivot;
         public GameObject projectilePrefab;
@@ -20,21 +17,15 @@ namespace LemonAidMan
         public KeyCode keyRight;
         public float moveSpeed;
         float health;
-       
 
-        // Start is called before the first frame update
         void Start()
         {
-
             _rb = GetComponent<Rigidbody2D>();
-               
-
         }
 
-        //Update is called once per frame
         void Update()
         {
-            reload();
+            // reload();
             
             // Aim Towards Mouse
             Vector3 mousePos = Input.mousePosition;
@@ -53,17 +44,6 @@ namespace LemonAidMan
                 newProjectile.transform.rotation = aimPivot.rotation;
             }
         }
-
-        // scene reloads when player dies
-        private void reload()
-        {
-            health = gameObject.GetComponent<playerHealth>().currentHealth;
-            if (health <= 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-        }
-
 
         void FixedUpdate()
         {
