@@ -17,12 +17,14 @@ public class DuckController : MonoBehaviour
     private bool standInRange = false;
     GameObject stand;
     GameObject player;
+    Animator animator;
     
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         stand = GameObject.Find("Lemonade Stand");
         player = GameObject.Find("Player");
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -70,6 +72,7 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
+            animator.SetBool("inRange", true);
         }
 
         if (other.gameObject.CompareTag("Stand"))
@@ -82,7 +85,9 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
+            animator.SetBool("inRange", false);
         }
+
         if (other.gameObject.CompareTag("Stand"))
         {
             standInRange = false;

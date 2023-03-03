@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8487165730310774985}
   - component: {fileID: 2024616224870978151}
   - component: {fileID: 8487165730310774986}
+  - component: {fileID: -5538720940861239621}
   m_Layer: 10
   m_Name: DuckEnemy
   m_TagString: Enemy
@@ -165,3 +166,23 @@ MonoBehaviour:
   damage: 1
   moveSpeed: 1
   moveToPlayerDistance: 2
+--- !u!95 &-5538720940861239621
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8487165730310774989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 512b13cbddc8a46c694527cb5fb955c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
