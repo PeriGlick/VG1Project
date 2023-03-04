@@ -17,30 +17,42 @@ namespace LemonAidMan
         public KeyCode keyRight;
         public float moveSpeed;
         float health;
+        public bool pause;
+      
 
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
+            pause = false;
         }
 
         void Update()
-        {            
-            // Aim Towards Mouse
-            Vector3 mousePos = Input.mousePosition;
-            Vector3 mousePosInWorld = Camera.main.ScreenToWorldPoint(mousePos);
-            Vector3 directionFromPlayerToMouse = mousePosInWorld - transform.position;
+        {
+            if (pause)
+            {
 
-            float radiansToMouse = Mathf.Atan2(directionFromPlayerToMouse.y, directionFromPlayerToMouse.x);
-            float angleToMouse = radiansToMouse * Mathf.Rad2Deg;
-            
-            aimPivot.rotation = Quaternion.Euler(0, 0, angleToMouse);
-            
-            // Fire Projectile
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                GameObject newProjectile = Instantiate(projectilePrefab);
-                newProjectile.transform.position = transform.position;
-                newProjectile.transform.rotation = aimPivot.rotation;
             }
+            if (!pause)
+            {
+                // Aim Towards Mouse
+                Vector3 mousePos = Input.mousePosition;
+                Vector3 mousePosInWorld = Camera.main.ScreenToWorldPoint(mousePos);
+                Vector3 directionFromPlayerToMouse = mousePosInWorld - transform.position;
+
+                float radiansToMouse = Mathf.Atan2(directionFromPlayerToMouse.y, directionFromPlayerToMouse.x);
+                float angleToMouse = radiansToMouse * Mathf.Rad2Deg;
+
+                aimPivot.rotation = Quaternion.Euler(0, 0, angleToMouse);
+
+                // Fire Projectile
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    GameObject newProjectile = Instantiate(projectilePrefab);
+                    newProjectile.transform.position = transform.position;
+                    newProjectile.transform.rotation = aimPivot.rotation;
+                }
+            }
+            
         }
 
         void FixedUpdate()

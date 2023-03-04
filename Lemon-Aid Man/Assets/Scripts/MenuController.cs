@@ -1,3 +1,4 @@
+using LemonAidMan;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class MenuController : MonoBehaviour
     public GameObject playerObject;
     bool InRange = false;
     SpriteRenderer sprite;
+    
     //Color highlight = Color.yellow;
     
 
@@ -24,6 +26,9 @@ public class MenuController : MonoBehaviour
         hidePaused();
         sprite = GetComponent<SpriteRenderer>();
         //sprite.color = Color.white;
+
+       
+        
         
     }
 
@@ -37,20 +42,25 @@ public class MenuController : MonoBehaviour
                 if (Time.timeScale == 1)
                 {
                     Time.timeScale = 0;
+
                     showPaused();
-                    playerObject.SetActive(false);
+                    
+                    playerObject.GetComponent<playerMovement>().enabled = false;
                 }
                 else if (Time.timeScale == 0)
                 {
                     Time.timeScale = 1;
+                    
                     hidePaused();
-                    playerObject.SetActive(true);
+
+                    playerObject.GetComponent<playerMovement>().enabled = true;
                 }
             }
+            
         }
-    }
 
     // Update is called once per frame
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
