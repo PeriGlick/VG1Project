@@ -9,6 +9,7 @@ TagManager:
   - Customer
   - Game Boundary
   - Customer Final Dest
+  - StandMenu
   layers:
   - Default
   - TransparentFX
