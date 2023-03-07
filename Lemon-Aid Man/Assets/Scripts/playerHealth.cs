@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
-
-
     public float maxHealth = 3f;
     public float currentHealth;
-    public Image imageHealthBar;
-
+    // public Image imageHealthBar;
+    public PlayerHealthbarBehavior healthBar;
+    
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth, maxHealth);
     }
 
     void Update(){

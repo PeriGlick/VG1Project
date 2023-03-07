@@ -52,9 +52,9 @@ public class DuckController : MonoBehaviour
 
         // attack player
         if(playerInRange && canAttack)
-        {
+        {   
             player.GetComponent<playerHealth>().currentHealth -= damage;
-            Debug.Log("player attack");
+            player.GetComponent<playerHealth>().healthBar.SetHealth(player.GetComponent<playerHealth>().currentHealth, player.GetComponent<playerHealth>().maxHealth);
             StartCoroutine(AttackCooldown());
         }
 
