@@ -64,7 +64,8 @@ namespace LemonAidMan
 
         void FixedUpdate()
         {
-           if (Input.GetKey(keyUp))
+            // wasd player movement
+            if (Input.GetKey(keyUp))
             {
                 _rb.AddForce(Vector2.up * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
             }

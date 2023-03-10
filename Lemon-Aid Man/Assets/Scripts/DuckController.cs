@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class DuckController : MonoBehaviour
 {
+    public Transform aimPivot;
+    public GameObject projectilePrefab;
+
     private bool playerInRange = false;
     public float coolDown = 1;
     public float damage = 1;
@@ -53,8 +56,22 @@ public class DuckController : MonoBehaviour
         // attack player
         if(playerInRange && canAttack)
         {   
+            // Aim Towards Player
+            Vector3 playerPosition = player.transform.position;
+            Vector3 directionFromDuckToPlayer = playerPosition - transform.position;
+
+            float radiansToPlayer = Mathf.Atan2(directionFromDuckToPlayer.y, directionFromDuckToPlayer.x);
+            float angleToPlayer = radiansToPlayer * Mathf.Rad2Deg;
+
+            aimPivot.rotation = Quaternion.Euler(0, 0, angleToPlayer);
+
+            GameObject newProjectile = Instantiate(projectilePrefab);
+            newProjectile.transform.position = aimPivot.transform.position;
+            newProjectile.transform.rotation = aimPivot.rotation;
+
             player.GetComponent<playerHealth>().currentHealth -= damage;
             player.GetComponent<playerHealth>().healthBar.SetHealth(player.GetComponent<playerHealth>().currentHealth, player.GetComponent<playerHealth>().maxHealth);
+            
             StartCoroutine(AttackCooldown());
         }
 
