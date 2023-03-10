@@ -18,6 +18,8 @@ namespace LemonAidMan
         public float moveSpeed;
         float health;
         public bool pause;
+        public float coolDownTime = 1f;
+        bool isCoolDown = false;
       
 
         void Start()
@@ -47,9 +49,13 @@ namespace LemonAidMan
                 // Fire Projectile
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    GameObject newProjectile = Instantiate(projectilePrefab);
-                    newProjectile.transform.position = transform.position;
-                    newProjectile.transform.rotation = aimPivot.rotation;
+                    if (!isCoolDown)
+                    {
+                        GameObject newProjectile = Instantiate(projectilePrefab);
+                        newProjectile.transform.position = transform.position;
+                        newProjectile.transform.rotation = aimPivot.rotation;
+                        StartCoroutine(CoolDown());
+                    }
                 }
             }
             
@@ -76,6 +82,13 @@ namespace LemonAidMan
             {
                 _rb.AddForce(Vector2.right * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
             }
+        }
+
+        IEnumerator CoolDown()
+        {
+            isCoolDown = true;
+            yield return new WaitForSeconds(coolDownTime);
+            isCoolDown = false;
         }
 
     }

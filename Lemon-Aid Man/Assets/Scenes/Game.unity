@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 204536126}
   - component: {fileID: 204536128}
   - component: {fileID: 204536127}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: MenuScreen
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 222665154}
   - component: {fileID: 222665153}
   - component: {fileID: 222665152}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: WeaponUpgrade2
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 348465726}
   - component: {fileID: 348465725}
   - component: {fileID: 348465724}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: StandUpgrade2
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 412831384}
   - component: {fileID: 412831386}
   - component: {fileID: 412831385}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: StandUpgrades
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 500}
+  m_SizeDelta: {x: 1600, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &414516464
 MonoBehaviour:
@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 491240652}
   - component: {fileID: 491240654}
   - component: {fileID: 491240653}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: UpgradeText (1)
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -1203,7 +1203,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -250}
-  m_SizeDelta: {x: 500, y: 300}
+  m_SizeDelta: {x: 1600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526112408
 MonoBehaviour:
@@ -1227,11 +1227,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 150
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 200
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1335,8 +1335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 500, y: 300}
+  m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: 1600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647412140
 MonoBehaviour:
@@ -1360,11 +1360,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 100
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1808,7 +1808,7 @@ GameObject:
   - component: {fileID: 836584944}
   - component: {fileID: 836584946}
   - component: {fileID: 836584945}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: UpgradeText
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -1912,8 +1912,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 30}
-  m_SizeDelta: {x: 500, y: 300}
+  m_AnchoredPosition: {x: 10, y: 150}
+  m_SizeDelta: {x: 1600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841601907
 MonoBehaviour:
@@ -1937,11 +1937,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 100
+    m_MaxSize: 200
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1969,7 +1969,7 @@ GameObject:
   - component: {fileID: 846728043}
   - component: {fileID: 846728042}
   - component: {fileID: 846728041}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: WeaponUpgrade1
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -2376,7 +2376,7 @@ GameObject:
   - component: {fileID: 923762579}
   - component: {fileID: 923762578}
   - component: {fileID: 923762577}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: StandUpgrade1
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -2496,7 +2496,7 @@ GameObject:
   - component: {fileID: 958088167}
   - component: {fileID: 958088169}
   - component: {fileID: 958088168}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: WeaponUpgrades
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -2690,7 +2690,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 450, y: 300}
+  m_SizeDelta: {x: 1600, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1150948569
 GameObject:
@@ -2727,8 +2727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -250}
-  m_SizeDelta: {x: 500, y: 300}
+  m_AnchoredPosition: {x: 10, y: -250}
+  m_SizeDelta: {x: 1600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150948571
 MonoBehaviour:
@@ -2752,11 +2752,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 150
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 200
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2781,7 +2781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1152485941}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: StandMenu
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -2851,7 +2851,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -230}
-  m_SizeDelta: {x: 500, y: 300}
+  m_SizeDelta: {x: 1600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160330659
 MonoBehaviour:
@@ -2875,7 +2875,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 150
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -2946,7 +2946,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2995,7 +2995,7 @@ RectTransform:
   - {fileID: 649765483}
   - {fileID: 1152485941}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3351,6 +3351,7 @@ MonoBehaviour:
   keyRight: 100
   moveSpeed: 200
   pause: 0
+  coolDownTime: 0.75
 --- !u!50 &1328690638
 Rigidbody2D:
   serializedVersion: 4
@@ -3445,7 +3446,7 @@ Transform:
   - {fileID: 1406039626}
   - {fileID: 2010523374}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1328690641
 BoxCollider2D:
@@ -3582,7 +3583,7 @@ GameObject:
   - component: {fileID: 1420684971}
   - component: {fileID: 1420684970}
   - component: {fileID: 1420684969}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: StandUpgrade3
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -3739,7 +3740,7 @@ GameObject:
   - component: {fileID: 1432101182}
   - component: {fileID: 1432101184}
   - component: {fileID: 1432101183}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Menubg
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -3816,7 +3817,7 @@ GameObject:
   - component: {fileID: 1441777459}
   - component: {fileID: 1441777458}
   - component: {fileID: 1441777457}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: WeaponUpgrade3
   m_TagString: StandMenu
   m_Icon: {fileID: 0}
@@ -4078,8 +4079,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -16}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564536121
 MonoBehaviour:
@@ -4203,8 +4204,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -26}
-  m_SizeDelta: {x: 500, y: 300}
+  m_AnchoredPosition: {x: 0, y: 200}
+  m_SizeDelta: {x: 1600, y: 248.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766220774
 MonoBehaviour:
@@ -4228,7 +4229,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -7083,7 +7084,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -19.236908, y: -53.82602}
-  m_SizeDelta: {x: 900, y: 500}
+  m_SizeDelta: {x: 1600, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938250950
 MonoBehaviour:
@@ -7299,7 +7300,7 @@ GameObject:
   - component: {fileID: 2029843397}
   - component: {fileID: 2029843399}
   - component: {fileID: 2029843398}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Menubg (1)
   m_TagString: StandMenu
   m_Icon: {fileID: 0}

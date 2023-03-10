@@ -57,6 +57,7 @@ public class gameManager : MonoBehaviour
         if(!win) {
             GameOverScreen.SetActive(true);
             gameOver = true;
+            
         }
     }
 
@@ -67,6 +68,7 @@ public class gameManager : MonoBehaviour
         if(!gameOver) {
             WinScreen.SetActive(true);
             win = true;
+           
         }
     }
 
