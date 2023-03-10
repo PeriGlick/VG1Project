@@ -38,15 +38,19 @@ public class CustomerController : MonoBehaviour
     void Update()
     {
         // Set animator parameters
-        // animator.SetBool("VisitedStand", visitedStand);
-        // animator.SetBool("StandInRange", standInRange);
-        // animator.SetBool("CanBuy", canBuy);
+        animator.SetBool("VisitedStand", visitedStand);
+        animator.SetBool("StandInRange", standInRange);
+        animator.SetBool("CanBuy", canBuy);
         
         // move towards stand
         if (!visitedStand) {
             var step = moveSpeed * Time.deltaTime;
             var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
             transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
+            // _rb.velocity =  Vector3.MoveTowards(transform.position, standPosition, step);
+            // _rb.velocity = (standPosition - transform.position).normalized * step;
+            // Debug.Log(step);
+            // _rb.AddForce(Vector3.Normalize(standPosition - transform.position) * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
         }
 
         // buy from stand if near
@@ -62,11 +66,13 @@ public class CustomerController : MonoBehaviour
          }
 
         // trying to change animation based on velocity
-        if(_rb.velocity.y > 0) {
-            animator.SetBool("VisitedStand", true);
-        } else {
-            animator.SetBool("VisitedStand", false);
-        }
+        // if(_rb.velocity.y > 0) {
+        //     // Debug.Log(_rb.velocity.y);
+        //     animator.SetBool("VisitedStand", true);
+        // } else {
+        //     // Debug.Log(_rb.velocity.y);
+        //     animator.SetBool("VisitedStand", false);
+        // }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
