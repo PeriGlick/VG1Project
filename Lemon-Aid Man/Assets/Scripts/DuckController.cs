@@ -32,8 +32,8 @@ public class DuckController : MonoBehaviour
 
     void Update()
     {
+        animator.SetBool("inRange", playerInRange);
         var step =  moveSpeed * Time.deltaTime; 
-
         // move towards player
         if(Vector3.Distance(transform.position, player.transform.position) < moveToPlayerDistance)
         {
@@ -89,7 +89,6 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
-            animator.SetBool("inRange", true);
         }
 
         if (other.gameObject.CompareTag("Stand"))
@@ -102,7 +101,6 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
-            animator.SetBool("inRange", false);
         }
 
         if (other.gameObject.CompareTag("Stand"))

@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,7 +30,7 @@ public class CustomerController : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
         finalDestRightPos = GameObject.Find("Customer Final Dest (Right)").transform.position;
         finalDestLeftPos = GameObject.Find("Customer Final Dest (Left)").transform.position;
-        randExitDirection = Random.Range(0, 2); // Pops out either 0 or 1
+        randExitDirection = UnityEngine.Random.Range(0, 2); // Pops out either 0 or 1
         animator = GetComponent<Animator>();
     }
 
@@ -37,9 +38,9 @@ public class CustomerController : MonoBehaviour
     void Update()
     {
         // Set animator parameters
-        animator.SetBool("VisitedStand", visitedStand);
-        animator.SetBool("StandInRange", standInRange);
-        animator.SetBool("CanBuy", canBuy);
+        // animator.SetBool("VisitedStand", visitedStand);
+        // animator.SetBool("StandInRange", standInRange);
+        // animator.SetBool("CanBuy", canBuy);
         
         // move towards stand
         if (!visitedStand) {
@@ -51,12 +52,20 @@ public class CustomerController : MonoBehaviour
         // buy from stand if near
         if (standInRange && canBuy) {
             FindObjectOfType<gameManager>().increaseBank(lemonadePrice);
-            StartCoroutine(IdleWait()); // Switch animation to Idle and pause at stand for a few secs
+            // Switch animation to Idle and pause at stand for a few secs
+            StartCoroutine(IdleWait()); 
             canBuy = false;
         }
 
         if (visitedStand) {
             CustomerLeave();
+         }
+
+        // trying to change animation based on velocity
+        if(_rb.velocity.y > 0) {
+            animator.SetBool("VisitedStand", true);
+        } else {
+            animator.SetBool("VisitedStand", false);
         }
     }
 
