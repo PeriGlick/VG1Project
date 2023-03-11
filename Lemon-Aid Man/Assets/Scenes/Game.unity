@@ -4153,7 +4153,7 @@ MonoBehaviour:
   WinScreen: {fileID: 1517749051}
   playerObject: {fileID: 1328690636}
   currentBank: {fileID: 649765485}
-  winningProfits: 3
+  winningProfits: 1
 --- !u!4 &1598159919
 Transform:
   m_ObjectHideFlags: 0
