@@ -77,9 +77,10 @@ public class CustomerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // disappear if shot by lemon grenade OR hits game boundary after buying from stand
-        if (other.gameObject.GetComponent<LemonGrenadeController>() || (other.collider.CompareTag("Game Boundary") && visitedStand))
-        {
+        var hitByLemonBeforeVisitingStand = other.gameObject.GetComponent<LemonGrenadeController>() && !visitedStand;
+        var visitedStandAndReachesBoundary = other.collider.CompareTag("Game Boundary") && visitedStand;
+        
+        if (hitByLemonBeforeVisitingStand || visitedStandAndReachesBoundary) {
             Destroy(gameObject);
         }
 
