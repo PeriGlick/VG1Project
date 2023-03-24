@@ -10,6 +10,11 @@ TagManager:
   - Game Boundary
   - Customer Final Dest
   - StandMenu
+  - SpeedUpgrade
+  - AttackUpgrade
+  - HealthUpgrade
+  - StandUpgrade
+  - MoneyUpgrade
   layers:
   - Default
   - TransparentFX

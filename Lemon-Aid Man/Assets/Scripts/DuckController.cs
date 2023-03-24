@@ -21,6 +21,8 @@ public class DuckController : MonoBehaviour
     GameObject stand;
     GameObject player;
     Animator animator;
+    public gameManager gameManager;
+    
     
     void Start()
     {
@@ -28,6 +30,7 @@ public class DuckController : MonoBehaviour
         stand = GameObject.Find("Lemonade Stand");
         player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
+       
     }
 
     void Update()
@@ -84,6 +87,7 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.GetComponent<LemonGrenadeController>())
         {
             Destroy(gameObject);
+            gameManager.duckKills++;
         }
 
         if (other.gameObject.CompareTag("Player"))

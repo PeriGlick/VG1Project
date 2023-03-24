@@ -15,11 +15,15 @@ public class gameManager : MonoBehaviour
     public float winningProfits;
     bool win = false;
     float bank;
+    public int duckKills;
+    public Text FinalKills1;
+    public Text FinalKills2;
 
     void Start()
     {
         // initialize bank display
         increaseBank(0);
+        duckKills= 0;
     }
 
     void Update()
@@ -68,7 +72,8 @@ public class gameManager : MonoBehaviour
         if(!gameOver) {
             WinScreen.SetActive(true);
             win = true;
-           
+           FinalKills1.text = "Final Kills: " + duckKills.ToString();
+           FinalKills2.text = "Final Kills: " + duckKills.ToString();
         }
     }
 
