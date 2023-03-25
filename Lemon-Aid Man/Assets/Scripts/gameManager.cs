@@ -18,16 +18,22 @@ public class gameManager : MonoBehaviour
     public int duckKills;
     public Text FinalKills1;
     public Text FinalKills2;
+    public GameObject DuckKillMonitor;
+    DuckKillScript dks;
 
     void Start()
     {
         // initialize bank display
         increaseBank(0);
-        duckKills= 0;
+        DuckKillMonitor = GameObject.Find("DuckKillMonitor");
+        dks = DuckKillMonitor.GetComponent<DuckKillScript>();
+        duckKills = 0;
+
     }
 
     void Update()
     {
+        duckKills = dks.duckKills;
 
         //if game has been lost, reset when r key is pressed
         if (gameOver == true && Input.GetKeyDown(KeyCode.R))
@@ -64,6 +70,8 @@ public class gameManager : MonoBehaviour
             
         }
     }
+
+    
 
     // when game is won
     public void Win()

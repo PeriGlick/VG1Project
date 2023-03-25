@@ -23,7 +23,7 @@ public class ButtonController : MonoBehaviour
         standUpgrades= new Button[numOfUpgrades];
         moneyUpgrades= new Button[numOfUpgrades];
 
-        for (int a = 1; a <= numOfUpgrades; a++)
+        /*for (int a = 1; a <= numOfUpgrades; a++)
         {
             Button speed = GameObject.Find("Speed" + a).GetComponent<Button>();
             Button attack = GameObject.Find("Attack" + a).GetComponent<Button>();
@@ -43,7 +43,7 @@ public class ButtonController : MonoBehaviour
                 standUpgrades[a].interactable = false;
                 moneyUpgrades[a].interactable = false;
             }
-        }
+        }*/
     }
 
     void Start()

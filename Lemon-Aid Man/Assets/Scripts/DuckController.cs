@@ -21,7 +21,10 @@ public class DuckController : MonoBehaviour
     GameObject stand;
     GameObject player;
     Animator animator;
-    public gameManager gameManager;
+    public GameObject dkm;
+    public DuckKillScript dks;
+    
+    
     
     
     void Start()
@@ -30,6 +33,10 @@ public class DuckController : MonoBehaviour
         stand = GameObject.Find("Lemonade Stand");
         player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
+        GameObject obj = GameObject.Find("DuckKillMonitor");
+        dks = obj.GetComponent<DuckKillScript>();
+        
+        
        
     }
 
@@ -87,7 +94,8 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.GetComponent<LemonGrenadeController>())
         {
             Destroy(gameObject);
-            gameManager.duckKills++;
+            dks.addKill();
+            
         }
 
         if (other.gameObject.CompareTag("Player"))
