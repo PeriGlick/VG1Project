@@ -12,7 +12,7 @@ public class DuckController : MonoBehaviour
 
     private bool playerInRange = false;
     public float coolDown = 1;
-    public float damage = 1;
+    public int damage = 1;
     private bool canAttack = true;
     private Rigidbody2D _rb;
     public float moveSpeed;

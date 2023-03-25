@@ -197,9 +197,11 @@ MonoBehaviour:
   aimPivot: {fileID: 1298187294583577609}
   projectilePrefab: {fileID: 6371646211615329143, guid: e4ee744bf0b31417b91e73222767c5dc, type: 3}
   coolDown: 1
-  damage: 1
+  damage: 5
   moveSpeed: 1
   moveToPlayerDistance: 2
+  dkm: {fileID: 0}
+  dks: {fileID: 0}
 --- !u!95 &-5538720940861239621
 Animator:
   serializedVersion: 5

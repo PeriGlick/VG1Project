@@ -10,7 +10,7 @@ public class StandController : MonoBehaviour
     // Start is called before the first frame update
 
     //public float standHealth = 20f; commented out to try healthbar code
-    public float standHealth;
+    public int standHealth;
     public Slider slider;
     public Text healthText;
 

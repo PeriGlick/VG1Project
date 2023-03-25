@@ -88,6 +88,8 @@ namespace LemonAidMan
                 _rb.AddForce(Vector2.right * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
                 sp.flipX = false;
             }
+            float angle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
+            Debug.Log(angle);
         }
 
         IEnumerator CoolDown()

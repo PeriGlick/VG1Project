@@ -17,6 +17,8 @@ public class CustomerController : MonoBehaviour
     private Rigidbody2D _rb;
     GameObject gameManager;
     GameObject stand;
+    
+    public SpriteRenderer sp;
 
     private Vector3 finalDestRightPos;
     private Vector3 finalDestLeftPos;
@@ -26,12 +28,16 @@ public class CustomerController : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         _rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        sp = GetComponent<SpriteRenderer>();
+        
         stand = GameObject.Find("Lemonade Stand");
         gameManager = GameObject.Find("GameManager");
+        
         finalDestRightPos = GameObject.Find("Customer Final Dest (Right)").transform.position;
         finalDestLeftPos = GameObject.Find("Customer Final Dest (Left)").transform.position;
         randExitDirection = UnityEngine.Random.Range(0, 2); // Pops out either 0 or 1
-        animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -41,16 +47,14 @@ public class CustomerController : MonoBehaviour
         animator.SetBool("VisitedStand", visitedStand);
         animator.SetBool("StandInRange", standInRange);
         animator.SetBool("CanBuy", canBuy);
-        
+        animator.SetInteger("Direction", 1);
+
         // move towards stand
         if (!visitedStand) {
-            var step = moveSpeed * Time.deltaTime;
-            var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
-            transform.position = Vector3.MoveTowards(transform.position, standPosition, step);
-            // _rb.velocity =  Vector3.MoveTowards(transform.position, standPosition, step);
-            // _rb.velocity = (standPosition - transform.position).normalized * step;
-            // Debug.Log(step);
-            // _rb.AddForce(Vector3.Normalize(standPosition - transform.position) * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+            var step = moveSpeed * Time.fixedDeltaTime;
+
+            Vector2 directionToTarget = stand.transform.position - transform.position;
+            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
         }
 
         // buy from stand if near
@@ -65,14 +69,27 @@ public class CustomerController : MonoBehaviour
             CustomerLeave();
          }
 
-        // trying to change animation based on velocity
-        // if(_rb.velocity.y > 0) {
-        //     // Debug.Log(_rb.velocity.y);
-        //     animator.SetBool("VisitedStand", true);
-        // } else {
-        //     // Debug.Log(_rb.velocity.y);
-        //     animator.SetBool("VisitedStand", false);
-        // }
+        // change animation based on velocity
+        float movementAngle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
+
+        if(_rb.velocity == 0) {
+            animation.SetInteger("Direction", -1);
+        }
+        // moving right
+        if(movementAngle > -45 && movementAngle <= 45) {
+            sp.flipX = false;
+            animator.SetInteger("Direction", 0);
+        // moving up 
+        } else if(movementAngle > 45 && movementAngle <= 135 ) {
+            animator.SetInteger("Direction", 1);
+        // moving left
+        } else if(movementAngle > 135 || movementAngle <= -135 ) {
+            animator.SetInteger("Direction", 0);
+            sp.flipX = true;
+        // moving down
+        } else if(movementAngle > -135 && movementAngle <= -45 ) {
+            animator.SetInteger("Direction", -1);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -93,10 +110,21 @@ public class CustomerController : MonoBehaviour
     private void CustomerLeave() {
         // Randomly exits to the left or right of the screen
         if (randExitDirection == 0) {
-            transform.position = Vector3.MoveTowards(transform.position, finalDestRightPos, moveSpeed * Time.deltaTime);
+            var step = moveSpeed * Time.fixedDeltaTime;
+            var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
+
+            Vector2 directionToTarget = finalDestRightPos - transform.position;
+            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
+
+            // transform.position = Vector3.MoveTowards(transform.position, finalDestRightPos, moveSpeed * Time.deltaTime);
         }
         else {
-            transform.position = Vector3.MoveTowards(transform.position, finalDestLeftPos, moveSpeed * Time.deltaTime);
+            var step = moveSpeed * Time.fixedDeltaTime;
+            var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
+
+            Vector2 directionToTarget = finalDestLeftPos - transform.position;
+            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
+            // transform.position = Vector3.MoveTowards(transform.position, finalDestLeftPos, moveSpeed * Time.deltaTime);
         }
     }
 

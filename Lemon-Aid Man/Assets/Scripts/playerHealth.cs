@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
-    public float maxHealth = 3f;
-    public float currentHealth;
+    public int maxHealth;
+    public int currentHealth;
     // public Image imageHealthBar;
     public PlayerHealthbarBehavior healthBar;
     
@@ -17,6 +17,7 @@ public class playerHealth : MonoBehaviour
     }
 
     void Update(){
+        healthBar.SetHealth(currentHealth, maxHealth);
         if (currentHealth <= 0)
         {
             Die();
