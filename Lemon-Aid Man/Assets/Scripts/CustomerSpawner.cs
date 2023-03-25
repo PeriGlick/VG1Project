@@ -17,7 +17,6 @@ public class CustomerSpawner : MonoBehaviour
     void Update() {
         if (spawnCounter <= 0) {
             int randomIndex = Random.Range(0, customerPrefabsList.Length);
-            randomIndex = 5;
             // GameObject Customer = Instantiate(customerPrefabsList[randomIndex], transform.position, Quaternion.identity);
             GameObject clone = Instantiate(customerPrefabsList[randomIndex], transform.position, Quaternion.identity);
             spawnCounter = spawnRate;

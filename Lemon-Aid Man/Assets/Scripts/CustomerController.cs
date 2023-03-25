@@ -43,15 +43,10 @@ public class CustomerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Set animator parameters
-        animator.SetBool("VisitedStand", visitedStand);
-        animator.SetBool("StandInRange", standInRange);
-        animator.SetBool("CanBuy", canBuy);
-        animator.SetInteger("Direction", 1);
+        var step = moveSpeed * Time.fixedDeltaTime;
 
         // move towards stand
         if (!visitedStand) {
-            var step = moveSpeed * Time.fixedDeltaTime;
 
             Vector2 directionToTarget = stand.transform.position - transform.position;
             _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
@@ -72,9 +67,13 @@ public class CustomerController : MonoBehaviour
         // change animation based on velocity
         float movementAngle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
 
-        if(_rb.velocity == 0) {
-            animation.SetInteger("Direction", -1);
+        if(_rb.velocity.magnitude < .1) {
+            animator.SetBool("Idle", true);
+        } else {
+            Debug.Log(_rb.velocity.magnitude);
+            animator.SetBool("Idle", false);
         }
+
         // moving right
         if(movementAngle > -45 && movementAngle <= 45) {
             sp.flipX = false;
@@ -108,23 +107,17 @@ public class CustomerController : MonoBehaviour
     }
 
     private void CustomerLeave() {
+        var step = moveSpeed * Time.fixedDeltaTime;
         // Randomly exits to the left or right of the screen
         if (randExitDirection == 0) {
-            var step = moveSpeed * Time.fixedDeltaTime;
             var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
-
             Vector2 directionToTarget = finalDestRightPos - transform.position;
             _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
-
-            // transform.position = Vector3.MoveTowards(transform.position, finalDestRightPos, moveSpeed * Time.deltaTime);
         }
         else {
-            var step = moveSpeed * Time.fixedDeltaTime;
             var standPosition = stand.transform.position + new Vector3(0, -1f, 0);
-
             Vector2 directionToTarget = finalDestLeftPos - transform.position;
             _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
-            // transform.position = Vector3.MoveTowards(transform.position, finalDestLeftPos, moveSpeed * Time.deltaTime);
         }
     }
 

@@ -130,6 +130,7 @@ MonoBehaviour:
   moveSpeed: 1
   coolDown: 1
   lemonadePrice: 0.05
+  sp: {fileID: 0}
 --- !u!70 &3315638773270266410
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ Animator:
   m_GameObject: {fileID: 3315638773270266413}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a71906a0f0a94e8988aa7c17bca81a7, type: 2}
+  m_Controller: {fileID: 9100000, guid: eab8ff069d76f49f58820120f3e4180e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3107748574792329682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1529648, y: -1.2318975, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -165,6 +165,7 @@ MonoBehaviour:
   moveSpeed: 1
   coolDown: 1
   lemonadePrice: 0.05
+  sp: {fileID: 0}
 --- !u!95 &1991452099208539164
 Animator:
   serializedVersion: 5

@@ -29,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4075193441252527184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.13, y: -2.74, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4075193441252527151
 SpriteRenderer:
@@ -130,6 +130,7 @@ MonoBehaviour:
   moveSpeed: 1
   coolDown: 1
   lemonadePrice: 0.05
+  sp: {fileID: 0}
 --- !u!70 &4075193441252527148
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ Animator:
   m_GameObject: {fileID: 4075193441252527184}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bfe52ca7e66d64695a43034c32a7f132, type: 2}
+  m_Controller: {fileID: 9100000, guid: 30ed67ef7089f4d72a8c8cb6ada9cbc6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

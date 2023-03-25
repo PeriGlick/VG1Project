@@ -89,7 +89,6 @@ namespace LemonAidMan
                 sp.flipX = false;
             }
             float angle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
-            Debug.Log(angle);
         }
 
         IEnumerator CoolDown()
