@@ -21,12 +21,14 @@ namespace LemonAidMan
         public bool pause;
         public float coolDownTime = 1f;
         bool isCoolDown = false;
+        public SpriteRenderer sp;
       
 
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             pause = false;
+            sp = GetComponent<SpriteRenderer>();
         }
 
         void Update()
@@ -78,11 +80,13 @@ namespace LemonAidMan
             if (Input.GetKey(keyLeft))
             {
                 _rb.AddForce(Vector2.left * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+                sp.flipX = true;
             }
 
             if (Input.GetKey(keyRight))
             {
                 _rb.AddForce(Vector2.right * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+                sp.flipX = false;
             }
         }
 

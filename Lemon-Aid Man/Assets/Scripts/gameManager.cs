@@ -1,3 +1,4 @@
+using LemonAidMan;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +19,10 @@ public class gameManager : MonoBehaviour
     public int duckKills;
     public Text FinalKills1;
     public Text FinalKills2;
+    public Text FinalKillsGO;
     public GameObject DuckKillMonitor;
     DuckKillScript dks;
+    public GameObject player;
 
     void Start()
     {
@@ -28,7 +31,7 @@ public class gameManager : MonoBehaviour
         DuckKillMonitor = GameObject.Find("DuckKillMonitor");
         dks = DuckKillMonitor.GetComponent<DuckKillScript>();
         duckKills = 0;
-
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -67,7 +70,10 @@ public class gameManager : MonoBehaviour
         if(!win) {
             GameOverScreen.SetActive(true);
             gameOver = true;
-            
+            FinalKillsGO.text = "Final Kills: " + duckKills.ToString();
+            Time.timeScale = 0;
+            playerObject.GetComponent<playerMovement>().enabled = false;
+
         }
     }
 
@@ -82,6 +88,8 @@ public class gameManager : MonoBehaviour
             win = true;
            FinalKills1.text = "Final Kills: " + duckKills.ToString();
            FinalKills2.text = "Final Kills: " + duckKills.ToString();
+            Time.timeScale = 0;
+            playerObject.GetComponent<playerMovement>().enabled = false;
         }
     }
 
