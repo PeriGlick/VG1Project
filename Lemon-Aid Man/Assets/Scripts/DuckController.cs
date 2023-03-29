@@ -23,6 +23,7 @@ public class DuckController : MonoBehaviour
     Animator animator;
     public GameObject dkm;
     public DuckKillScript dks;
+    public int duckHealth = 10;
     
     
     
@@ -96,6 +97,16 @@ public class DuckController : MonoBehaviour
             Destroy(gameObject);
             dks.addKill();
             
+        }
+
+        if (other.gameObject.GetComponent<seedSpitter>())
+        {
+            duckHealth = duckHealth - 2;
+            if (duckHealth <= 0)
+            {
+                Destroy(gameObject);
+                dks.addKill();
+            }
         }
 
         if (other.gameObject.CompareTag("Player"))

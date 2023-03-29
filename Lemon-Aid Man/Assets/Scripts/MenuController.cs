@@ -45,7 +45,7 @@ public class MenuController : MonoBehaviour
 
                     showPaused();
                     
-                    playerObject.GetComponent<playerMovement>().enabled = false;
+                        playerObject.GetComponent<playerMovement>().enabled = false;
                 }
                 else if (Time.timeScale == 0)
                 {

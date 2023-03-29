@@ -19,16 +19,17 @@ namespace LemonAidMan
         public float moveSpeed;
         float health;
         public bool pause;
-        public float coolDownTime = 1f;
+        public float coolDownTime;
         bool isCoolDown = false;
         public SpriteRenderer sp;
-      
+       
 
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             pause = false;
             sp = GetComponent<SpriteRenderer>();
+
         }
 
         void Update()
@@ -57,6 +58,14 @@ namespace LemonAidMan
                         GameObject newProjectile = Instantiate(projectilePrefab);
                         newProjectile.transform.position = transform.position;
                         newProjectile.transform.rotation = aimPivot.rotation;
+                        if (projectilePrefab.GetComponent<LemonGrenadeController>())
+                        {
+                            coolDownTime = projectilePrefab.GetComponent<LemonGrenadeController>().weaponCoolDown;
+                        }
+                        if (projectilePrefab.GetComponent<seedSpitter>())
+                        {
+                            coolDownTime = projectilePrefab.GetComponent<seedSpitter>().weaponCoolDown;
+                        }
                         StartCoroutine(CoolDown());
                     }
                 }
@@ -93,6 +102,7 @@ namespace LemonAidMan
 
         IEnumerator CoolDown()
         {
+           
             isCoolDown = true;
             yield return new WaitForSeconds(coolDownTime);
             isCoolDown = false;

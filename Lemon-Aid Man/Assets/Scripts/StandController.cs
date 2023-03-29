@@ -13,9 +13,12 @@ public class StandController : MonoBehaviour
     public int standHealth;
     public Slider slider;
     public Text healthText;
+    public int maxStandHealth;
 
     void Start()
     {
+        maxStandHealth = 100;
+        standHealth = maxStandHealth;
     }
 
     // Update is called once per frame

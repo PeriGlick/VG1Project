@@ -1,6 +1,7 @@
 using LemonAidMan;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ public class gameManager : MonoBehaviour
     public Text currentBank;
     public float winningProfits;
     bool win = false;
-    float bank;
+    public float bank;
     public int duckKills;
     public Text FinalKills1;
     public Text FinalKills2;
@@ -23,9 +24,19 @@ public class gameManager : MonoBehaviour
     public GameObject DuckKillMonitor;
     DuckKillScript dks;
     public GameObject player;
+    public static gameManager instance;
+    public float lemonadeCost;
+    public float customerMoveSpeed;
 
+
+    public void Awake()
+    {
+        instance = this; 
+    }
     void Start()
     {
+        lemonadeCost = 0.05f;
+        customerMoveSpeed = 1f;
         // initialize bank display
         increaseBank(0);
         DuckKillMonitor = GameObject.Find("DuckKillMonitor");

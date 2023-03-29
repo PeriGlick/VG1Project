@@ -7,7 +7,7 @@ public class CustomerController : MonoBehaviour
 {
     public float moveSpeed;
     public float coolDown;
-    public float lemonadePrice = .05f;
+    public float lemonadePrice;
 
     private bool standInRange = false;
     private bool canBuy = true;
@@ -15,7 +15,7 @@ public class CustomerController : MonoBehaviour
     private int randExitDirection; 
 
     private Rigidbody2D _rb;
-    GameObject gameManager;
+    GameObject gM;
     GameObject stand;
     
     public SpriteRenderer sp;
@@ -24,6 +24,7 @@ public class CustomerController : MonoBehaviour
     private Vector3 finalDestLeftPos;
 
     private Animator animator;
+    
 
     // Start is called before the first frame update
     void Start() {
@@ -32,17 +33,21 @@ public class CustomerController : MonoBehaviour
         sp = GetComponent<SpriteRenderer>();
         
         stand = GameObject.Find("Lemonade Stand");
-        gameManager = GameObject.Find("GameManager");
+        gM = GameObject.Find("GameManager");
         
         finalDestRightPos = GameObject.Find("Customer Final Dest (Right)").transform.position;
         finalDestLeftPos = GameObject.Find("Customer Final Dest (Left)").transform.position;
         randExitDirection = UnityEngine.Random.Range(0, 2); // Pops out either 0 or 1
-        
+        lemonadePrice = gameManager.instance.lemonadeCost;
+        moveSpeed = gameManager.instance.customerMoveSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        lemonadePrice = gameManager.instance.lemonadeCost;
+        moveSpeed = gameManager.instance.customerMoveSpeed;
+
         var step = moveSpeed * Time.fixedDeltaTime;
 
         // move towards stand
@@ -94,9 +99,10 @@ public class CustomerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         var hitByLemonBeforeVisitingStand = other.gameObject.GetComponent<LemonGrenadeController>() && !visitedStand;
+        var hitBySeedBeforeVisitingStand = other.gameObject.GetComponent<seedSpitter>() && !visitedStand;
         var visitedStandAndReachesBoundary = other.collider.CompareTag("Game Boundary") && visitedStand;
         
-        if (hitByLemonBeforeVisitingStand || visitedStandAndReachesBoundary) {
+        if (hitByLemonBeforeVisitingStand || visitedStandAndReachesBoundary || hitBySeedBeforeVisitingStand) {
             Destroy(gameObject);
         }
 

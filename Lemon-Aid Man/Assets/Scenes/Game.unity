@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49121925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -45.000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -547,7 +547,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 184893315}
   m_OnClick:
     m_PersistentCalls:
@@ -690,7 +690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212133628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -45.000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -858,7 +858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239711699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -967,10 +967,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedOne: {fileID: 990370855}
-  attackOne: {fileID: 1950425839}
+  customerMoveOne: {fileID: 0}
   healthOne: {fileID: 1673322369}
   standOne: {fileID: 509826101}
   moneyOne: {fileID: 1654949469}
+  speedTwo: {fileID: 954514666}
+  customerMoveTwo: {fileID: 0}
+  healthTwo: {fileID: 1287800036}
+  standTwo: {fileID: 912564189}
+  moneyTwo: {fileID: 184893314}
+  ones: []
+  twos: []
+  x: 0000000000000000000000000000000000000000
+  player: {fileID: 1328690636}
+  stand: {fileID: 918976151}
+  dks: {fileID: 0}
+  kuu: 0
+  isInteractable: 0
 --- !u!1 &333854085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,10 +1107,10 @@ RectTransform:
   m_Father: {fileID: 1120304027}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1600, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &414516464
 MonoBehaviour:
@@ -1375,7 +1388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473477734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -45.000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2162,7 +2175,7 @@ GameObject:
   - component: {fileID: 686914540}
   - component: {fileID: 686914539}
   m_Layer: 5
-  m_Name: Attack 2
+  m_Name: CustomerMove 2
   m_TagString: AttackUpgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2228,7 +2241,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 686914540}
   m_OnClick:
     m_PersistentCalls:
@@ -2359,7 +2372,7 @@ GameObject:
   - component: {fileID: 719744143}
   - component: {fileID: 719744142}
   - component: {fileID: 719744144}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap - Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2666,7 +2679,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Customer Speed 1 - $0.5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2693,8 +2706,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2753,7 +2766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 781849995}
   m_Layer: 0
-  m_Name: Attack Upgrades
+  m_Name: CustomerMove Upgrades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2767,7 +2780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781849994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -45.000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3062,7 +3075,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 912564190}
   m_OnClick:
     m_PersistentCalls:
@@ -3260,6 +3273,7 @@ MonoBehaviour:
   standHealth: 100
   slider: {fileID: 461103805}
   healthText: {fileID: 2057005846}
+  maxStandHealth: 0
 --- !u!50 &918976156
 Rigidbody2D:
   serializedVersion: 4
@@ -3423,7 +3437,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 954514667}
   m_OnClick:
     m_PersistentCalls:
@@ -4243,7 +4257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Speed 1 - $0.50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4270,8 +4284,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4378,7 +4392,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Health 1 - $1
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4688,7 +4704,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1287800037}
   m_OnClick:
     m_PersistentCalls:
@@ -5143,8 +5159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a02f4aa9adef84a892ea7b8b002ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  currentHealth: 50
+  maxHealth: 100
+  currentHealth: 100
   healthBar: {fileID: 2010523378}
 --- !u!60 &1328690643
 PolygonCollider2D:
@@ -5568,7 +5584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Money 1 - $1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5755,12 +5771,15 @@ MonoBehaviour:
   playerObject: {fileID: 1328690636}
   currentBank: {fileID: 649765485}
   winningProfits: 1
+  bank: 0
   duckKills: 0
   FinalKills1: {fileID: 163359601}
   FinalKills2: {fileID: 154804009}
   FinalKillsGO: {fileID: 1657218389}
   DuckKillMonitor: {fileID: 1812888677}
   player: {fileID: 1328690636}
+  lemonadeCost: 0
+  customerMoveSpeed: 0
 --- !u!4 &1598159919
 Transform:
   m_ObjectHideFlags: 0
@@ -6324,6 +6343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duckKills: 0
+  upgradeCount: 0
+  upgradesAvailable: 0
 --- !u!4 &1812888679
 Transform:
   m_ObjectHideFlags: 0
@@ -6465,7 +6486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Stand 1 - $1.50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6492,8 +6513,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6575,11 +6596,11 @@ MonoBehaviour:
   spawnCounter: 4
   customerPrefabsList:
   - {fileID: 4780666400875592656, guid: 75f411627b3e94d55b4d74945cef89da, type: 3}
+  - {fileID: 3107748574792329682, guid: 9c27c4610e5b14448919a878e7328817, type: 3}
   - {fileID: 4075193441252527184, guid: cf9a18ccc923e46d7a4af82cfffb62f5, type: 3}
   - {fileID: 5526298452055209385, guid: 3151cc88b3ce541fa8eb107d89805cb9, type: 3}
   - {fileID: 3315638773270266413, guid: e94a025decd3a4a95aa330453395842d, type: 3}
   - {fileID: 3164698395422007708, guid: e8f88b423acac4851962d9c742d53e34, type: 3}
-  - {fileID: 3107748574792329682, guid: 9c27c4610e5b14448919a878e7328817, type: 3}
 --- !u!4 &1925849273
 Transform:
   m_ObjectHideFlags: 0
@@ -6648,7 +6669,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7d723b1e43aa9f4e9873135f8714b1b, type: 2}
+  - {fileID: 2100000, guid: aae24c8ebb1713741a2523bd34d70440, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9192,10 +9213,10 @@ RectTransform:
   m_Father: {fileID: 1517749052}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 800}
+  m_SizeDelta: {x: 1600, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938250950
 MonoBehaviour:
@@ -9248,7 +9269,7 @@ GameObject:
   - component: {fileID: 1950425840}
   - component: {fileID: 1950425839}
   m_Layer: 5
-  m_Name: Attack 1
+  m_Name: CustomerMove 1
   m_TagString: AttackUpgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
