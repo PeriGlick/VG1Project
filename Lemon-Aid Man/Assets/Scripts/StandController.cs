@@ -25,9 +25,8 @@ public class StandController : MonoBehaviour
     void Update()
     {
         slider.value = standHealth;
-        healthText.text = "Stand Health: " + standHealth; //check caps 
-        if (standHealth <= 0f)
-        {
+        healthText.text = standHealth.ToString(); //check caps 
+        if (standHealth <= 0f) {
             endGame();
         }
     }

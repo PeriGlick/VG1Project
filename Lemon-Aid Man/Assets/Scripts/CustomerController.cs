@@ -75,7 +75,6 @@ public class CustomerController : MonoBehaviour
         if(_rb.velocity.magnitude < .1) {
             animator.SetBool("Idle", true);
         } else {
-            Debug.Log(_rb.velocity.magnitude);
             animator.SetBool("Idle", false);
         }
 
