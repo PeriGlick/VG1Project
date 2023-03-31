@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DuckKillScript : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DuckKillScript : MonoBehaviour
    // public Boolean upgradeReady;
     public int upgradeCount;
     public int upgradesAvailable;
+    public Text duckKillsDisplay;
     void Start()
     {
         duckKills = 0;
@@ -32,5 +34,6 @@ public class DuckKillScript : MonoBehaviour
     public void addKill()
     {
         duckKills++;
+        duckKillsDisplay.text = duckKills.ToString();
     }
 }
