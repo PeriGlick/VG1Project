@@ -43,6 +43,7 @@ public class gameManager : MonoBehaviour
         dks = DuckKillMonitor.GetComponent<DuckKillScript>();
         duckKills = 0;
         Time.timeScale = 1;
+        TimerController.instance.BeginTimer();
     }
 
     void Update()
