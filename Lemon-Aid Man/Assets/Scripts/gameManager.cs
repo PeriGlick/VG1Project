@@ -68,7 +68,7 @@ public class gameManager : MonoBehaviour
     public void increaseBank(float cost)
     {
         bank += cost;
-        currentBank.text = "Bank: $" + bank.ToString();
+        currentBank.text = "$" + bank.ToString();
         if(bank >= winningProfits) {
             Win();
         }
