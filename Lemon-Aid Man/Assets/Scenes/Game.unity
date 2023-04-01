@@ -250,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &101282285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1426,6 +1426,9 @@ MonoBehaviour:
   seedSpitterButton: {fileID: 101282286}
   player: {fileID: 1328690636}
   seedSpitterPrefab: {fileID: 6345295109140557326, guid: b549c52cb7a44ef428683dc8496b61e9, type: 3}
+  dks: {fileID: 0}
+  DuckKillMonitor: {fileID: 0}
+  firstUnlock: 0
 --- !u!1 &333854085
 GameObject:
   m_ObjectHideFlags: 0
