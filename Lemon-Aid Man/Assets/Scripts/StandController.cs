@@ -14,6 +14,7 @@ public class StandController : MonoBehaviour
     public Slider slider;
     public Text healthText;
     public int maxStandHealth;
+    public Image lemonSliceHealth;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class StandController : MonoBehaviour
     void Update()
     {
         slider.value = standHealth;
+        //lemonSliceHealth.fillAmount = standHealth / maxStandHealth;
         healthText.text = standHealth.ToString(); //check caps 
         if (standHealth <= 0f) {
             endGame();
@@ -34,5 +36,18 @@ public class StandController : MonoBehaviour
     void endGame()
     {
         FindObjectOfType<gameManager>().GameOver();
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        standHealth -= damageAmount;
+        float sh = standHealth;
+        float msh = maxStandHealth;
+        lemonSliceHealth.fillAmount = sh / msh;
+        if (standHealth < 0f)
+        {
+            endGame();
+        }
+
     }
 }

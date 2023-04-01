@@ -60,7 +60,8 @@ public class DuckController : MonoBehaviour
         //attack stand
         if (standInRange && canAttack)
         {
-            stand.GetComponent<StandController>().standHealth -= damage;
+            // stand.GetComponent<StandController>().standHealth -= damage;
+            stand.GetComponent<StandController>().TakeDamage(damage);
             StartCoroutine(AttackCooldown());
         }
 
