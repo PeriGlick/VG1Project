@@ -10,23 +10,26 @@ public class SoundManager : MonoBehaviour
     public Sprite bgmOffSprite;
     public Button bgmButton;
     private bool bgmIsOn = true;
-
     private AudioSource bgmAudioSrc;
 
     void Start() {
         bgmOnSprite = bgmButton.image.sprite;
-        bgmAudioSrc = FindObjectOfType<BGM>().GetComponent<AudioSource>();
+        if (FindObjectOfType<BGM>()) {
+            bgmAudioSrc = FindObjectOfType<BGM>().GetComponent<AudioSource>();
+        }
     }
 
     public void OnBgmButtonClick() {
-        if (bgmIsOn) {
-            bgmButton.image.sprite = bgmOffSprite;
-            bgmIsOn = false;
-            bgmAudioSrc.mute = true;
-        } else {
-            bgmButton.image.sprite = bgmOnSprite;
-            bgmIsOn = true;
-            bgmAudioSrc.mute = false;
+        if (bgmAudioSrc) {
+            if (bgmIsOn) {
+                bgmButton.image.sprite = bgmOffSprite;
+                bgmIsOn = false;
+                bgmAudioSrc.mute = true;
+            } else {
+                bgmButton.image.sprite = bgmOnSprite;
+                bgmIsOn = true;
+                bgmAudioSrc.mute = false;
+            }
         }
     }
 }
