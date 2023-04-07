@@ -20,7 +20,8 @@ public class gameManager : MonoBehaviour
     public int duckKills;
     public Text FinalKills1;
     public Text FinalKills2;
-    public Text FinalKillsGO;
+    public Text FinalKillsGO1;
+    public Text FinalKillsGO2;
     public GameObject DuckKillMonitor;
     DuckKillScript dks;
     public GameObject player;
@@ -69,7 +70,7 @@ public class gameManager : MonoBehaviour
     public void increaseBank(float cost)
     {
         bank += cost;
-        currentBank.text = "$" + bank.ToString();
+        currentBank.text = "$" + bank.ToString("F2");
         if(bank >= winningProfits) {
             Win();
         }
@@ -82,14 +83,12 @@ public class gameManager : MonoBehaviour
         if(!win) {
             GameOverScreen.SetActive(true);
             gameOver = true;
-            FinalKillsGO.text = "Final Kills: " + duckKills.ToString();
+            FinalKillsGO1.text = "Final Kills: " + duckKills.ToString();
+            FinalKillsGO2.text = "Final Kills: " + duckKills.ToString();
             Time.timeScale = 0;
             playerObject.GetComponent<playerMovement>().enabled = false;
-
         }
     }
-
-    
 
     // when game is won
     public void Win()

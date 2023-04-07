@@ -11,7 +11,7 @@ public class StandController : MonoBehaviour
 
     //public float standHealth = 20f; commented out to try healthbar code
     public int standHealth;
-    public Slider slider;
+    // public Slider slider;
     public Text healthText;
     public int maxStandHealth;
     public Image lemonSliceHealth;
@@ -25,7 +25,7 @@ public class StandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = standHealth;
+        // slider.value = standHealth;
         //lemonSliceHealth.fillAmount = standHealth / maxStandHealth;
         healthText.text = standHealth.ToString(); //check caps 
         if (standHealth <= 0f) {
