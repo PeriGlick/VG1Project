@@ -52,7 +52,7 @@ public class Upgrades : MonoBehaviour
     //ideally I'd like to make all of these usable for all levels of upgrades, but I have to figure out how to organize these guys into an array
     public void speedOneUpgrade()
     {
-        float upgradeCost = 0.5f;
+        float upgradeCost = 0.25f;
         if(gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -66,7 +66,7 @@ public class Upgrades : MonoBehaviour
 
     public void moneyOneUpgrade()
     {
-        float upgradeCost = 1f;
+        float upgradeCost = 0.50f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -78,7 +78,7 @@ public class Upgrades : MonoBehaviour
 
     public void healthOneUpgrade()
     {
-        float upgradeCost = 1f;
+        float upgradeCost = 0.50f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -91,7 +91,7 @@ public class Upgrades : MonoBehaviour
 
     public void standOneUpgrade()
     {
-        float upgradeCost = 1.5f;
+        float upgradeCost = 1.00f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -104,7 +104,7 @@ public class Upgrades : MonoBehaviour
 
     public void customerMoveOneUpgrade()
     {
-        float upgradeCost = 0.5f;
+        float upgradeCost = 0.25f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;

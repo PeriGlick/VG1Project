@@ -34,8 +34,7 @@ public class LemonadeHeal : MonoBehaviour
         if (gameManager.instance.bank >= cost)
         {
             gameManager.instance.bank -= cost;
-            player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().currentHealth + (player.GetComponent<playerHealth>().maxHealth/5);
-
+            player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().currentHealth + (player.GetComponent<playerHealth>().maxHealth/10);
         }
 
     }

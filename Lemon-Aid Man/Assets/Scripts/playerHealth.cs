@@ -24,6 +24,10 @@ public class playerHealth : MonoBehaviour
         {
             Die();
         }
+        if (currentHealth > maxHealth)
+        {
+            currentHealth= maxHealth;
+        }
        
     }
 

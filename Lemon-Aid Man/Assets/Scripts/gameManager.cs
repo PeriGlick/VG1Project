@@ -50,8 +50,7 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         duckKills = dks.duckKills;
-        currentBank.text = "$" + bank.ToString();
-
+        currentBank.text = "$" + bank.ToString("F2");
         //if game has been lost, reset when r key is pressed
         if (gameOver == true && Input.GetKeyDown(KeyCode.R))
         {
