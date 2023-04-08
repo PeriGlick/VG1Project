@@ -7183,7 +7183,7 @@ MonoBehaviour:
   WinScreen: {fileID: 1517749051}
   playerObject: {fileID: 1328690636}
   currentBank: {fileID: 649765485}
-  winningProfits: 10
+  winningProfits: 3
   bank: 0
   duckKills: 0
   FinalKills1: {fileID: 163359601}

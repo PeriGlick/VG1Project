@@ -2526,27 +2526,27 @@ MonoBehaviour:
     Don''t hit customers before they get to the stand!
 
     You can
-    buy power upgrades at the stand after earning enough money and killing enough
-    ducks.
+    buy power upgrades and healing items at the stand, for a price of course
 
 
-    You win if you collect $1 from the lemonade stand.
+    You
+    win if you collect $3 from the lemonade stand.
 
-    You lose
-    if you die or if the lemonade stand is destroyed.
+    You lose if you die or if
+    the lemonade stand is destroyed.
 
 
     Controls:
 
-    - WASD
-    to move
+    - WASD to move
 
-    - Trackpad/Mouse to aim
+    - Trackpad/Mouse
+    to aim
 
     - Space to shoot
 
-    - Press E when
-    stand is highlighted to open the Stand Menu'
+    - Press E when stand is highlighted to open
+    the Stand Menu'
 --- !u!222 &1091371246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2662,7 +2662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1244817053
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3530,7 +3530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1911754251
 RectTransform:
   m_ObjectHideFlags: 0
