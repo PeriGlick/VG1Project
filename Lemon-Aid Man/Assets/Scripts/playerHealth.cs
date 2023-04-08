@@ -24,6 +24,7 @@ public class playerHealth : MonoBehaviour
         {
             Die();
         }
+       
     }
 
 

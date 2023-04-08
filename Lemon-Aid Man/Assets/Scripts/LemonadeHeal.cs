@@ -10,7 +10,9 @@ public class LemonadeHeal : MonoBehaviour
 
     public Button glass;
     public Button pitcher;
-    playerHealth ph;
+    public GameObject player;
+    public Text glassCost;
+    public Text pitcherCost;
     void Start()
     {
 
@@ -22,15 +24,17 @@ public class LemonadeHeal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        glassCost.text = "$"+gameManager.instance.lemonadeCost.ToString();
+        pitcherCost.text = "$"+(gameManager.instance.lemonadeCost*5).ToString();
     }
 
     public void glassHeal()
     {
-        float cost = 0.05f;
+        float cost = gameManager.instance.lemonadeCost;
         if (gameManager.instance.bank >= cost)
         {
             gameManager.instance.bank -= cost;
+            player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().currentHealth + (player.GetComponent<playerHealth>().maxHealth/5);
 
         }
 
@@ -38,6 +42,12 @@ public class LemonadeHeal : MonoBehaviour
 
     public void pitcherHeal()
     {
+        float cost = (gameManager.instance.lemonadeCost * 5);
+        if (gameManager.instance.bank >= cost)
+        {
+            gameManager.instance.bank -= cost;
+            player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
 
+        }
     }
 }
