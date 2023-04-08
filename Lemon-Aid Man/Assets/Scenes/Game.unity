@@ -4938,7 +4938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1152485941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6544,7 +6544,7 @@ MonoBehaviour:
   WinScreen: {fileID: 1517749051}
   playerObject: {fileID: 1328690636}
   currentBank: {fileID: 649765485}
-  winningProfits: 1
+  winningProfits: 10
   bank: 0
   duckKills: 0
   FinalKills1: {fileID: 163359601}
