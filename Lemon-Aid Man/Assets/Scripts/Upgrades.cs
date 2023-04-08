@@ -13,14 +13,14 @@ public class Upgrades : MonoBehaviour
 
     public Button speedOne, customerMoveOne, healthOne, standOne, moneyOne;
     public Button speedTwo, customerMoveTwo, healthTwo, standTwo, moneyTwo;
-    public Button[] ones;
-    public Button[] twos;
-    public int[] x = new int[5];
+    Button[] ones;
+    Button[] twos;
+    //public int[] x = new int[5];
     public GameObject player;
     public GameObject stand;
-    public DuckKillScript dks;
-    public int kuu;
-    public Boolean isInteractable = false;
+    DuckKillScript dks;
+    int kuu;
+    
     
 
     void Start()
@@ -50,7 +50,7 @@ public class Upgrades : MonoBehaviour
     //In here I'd also like to add a general healing feature with cost based on how low your health is - something the player can use at any time with any cost.
 
     //ideally I'd like to make all of these usable for all levels of upgrades, but I have to figure out how to organize these guys into an array
-    void speedOneUpgrade()
+    public void speedOneUpgrade()
     {
         float upgradeCost = 0.5f;
         if(gameManager.instance.bank >= upgradeCost)
@@ -59,11 +59,12 @@ public class Upgrades : MonoBehaviour
             player.GetComponent<playerMovement>().moveSpeed = player.GetComponent<playerMovement>().moveSpeed * 1.5f;
             speedOne.interactable = false;
             speedTwo.interactable = true;
+            Debug.Log("Speed Upgrade Working");
         }
         
     }
 
-    void moneyOneUpgrade()
+    public void moneyOneUpgrade()
     {
         float upgradeCost = 1f;
         if (gameManager.instance.bank >= upgradeCost)
@@ -75,7 +76,7 @@ public class Upgrades : MonoBehaviour
         }
     }
 
-    void healthOneUpgrade()
+    public void healthOneUpgrade()
     {
         float upgradeCost = 1f;
         if (gameManager.instance.bank >= upgradeCost)
@@ -88,7 +89,7 @@ public class Upgrades : MonoBehaviour
         }
     }
 
-    void standOneUpgrade()
+    public void standOneUpgrade()
     {
         float upgradeCost = 1.5f;
         if (gameManager.instance.bank >= upgradeCost)
@@ -101,7 +102,7 @@ public class Upgrades : MonoBehaviour
         }
     }
 
-    void customerMoveOneUpgrade()
+    public void customerMoveOneUpgrade()
     {
         float upgradeCost = 0.5f;
         if (gameManager.instance.bank >= upgradeCost)
@@ -115,8 +116,8 @@ public class Upgrades : MonoBehaviour
 
     //another upgrade Idea
 
-    void advertisementUpgrade()
+    /*void advertisementUpgrade()
     {
 
-    }
+    }*/
 }

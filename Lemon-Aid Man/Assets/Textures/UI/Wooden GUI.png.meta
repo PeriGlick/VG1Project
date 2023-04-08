@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1810,7 +1810,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Wooden GUI_29: 147663514
-      Wooden GUI_66: 5790709
+      Wooden GUI_18: 300689058
       Wooden GUI_16: 931522113
       Wooden GUI_24: 1717141372
       Wooden GUI_32: -264428328
@@ -1885,7 +1885,7 @@ TextureImporter:
       Wooden GUI_75: 546074611
       Wooden GUI_52: 1244815217
       Wooden GUI_46: 1613034250
-      Wooden GUI_18: 300689058
+      Wooden GUI_66: 5790709
       Wooden GUI_17: -235706789
       Wooden GUI_21: -159816901
       Wooden GUI_51: 2135417962

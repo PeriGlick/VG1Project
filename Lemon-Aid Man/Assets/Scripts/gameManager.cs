@@ -50,6 +50,7 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         duckKills = dks.duckKills;
+        currentBank.text = "$" + bank.ToString();
 
         //if game has been lost, reset when r key is pressed
         if (gameOver == true && Input.GetKeyDown(KeyCode.R))
@@ -70,8 +71,8 @@ public class gameManager : MonoBehaviour
     public void increaseBank(float cost)
     {
         bank += cost;
-        currentBank.text = "$" + bank.ToString("F2");
-        if(bank >= winningProfits) {
+        currentBank.text = "$" + bank.ToString();  //took out F2 in quotes there
+        if(bank >= winningProfits) {  //Need to take this out to switch to timer format
             Win();
         }
     }
