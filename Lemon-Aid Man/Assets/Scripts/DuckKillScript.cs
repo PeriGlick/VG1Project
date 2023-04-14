@@ -10,25 +10,25 @@ public class DuckKillScript : MonoBehaviour
 
     public int duckKills;
    // public Boolean upgradeReady;
-    public int upgradeCount;
-    public int upgradesAvailable;
+    //public int upgradeCount;
+    //public int upgradesAvailable;
     public Text duckKillsDisplay;
     void Start()
     {
         duckKills = 0;
-        upgradeCount = 5;
-        upgradesAvailable = 0;
+        //upgradeCount = 5;
+        //upgradesAvailable = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-      if (duckKills == upgradeCount) 
+      /*if (duckKills == upgradeCount) 
         {
             //upgradeReady = true;
             upgradesAvailable++;
             upgradeCount = Mathf.RoundToInt(upgradeCount*1.5f);
-        }
+        }*/
     }
 
     public void addKill()

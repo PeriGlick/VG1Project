@@ -27,7 +27,7 @@ public class DuckController : MonoBehaviour
     Animator animator;
     public GameObject dkm;
     public DuckKillScript dks;
-    public int duckHealth = 10;
+    public int duckHealth = 12;
     public SpriteRenderer sp;
     // public CircleCollider2D _c;
 
@@ -181,20 +181,30 @@ public class DuckController : MonoBehaviour
         // disappear if shot with grenade
         if (other.gameObject.GetComponent<LemonGrenadeController>())
         {
-            Destroy(gameObject);
-            dks.addKill();
-            
-        }
-
-        // lose health if shot with seed spitter
-        if (other.gameObject.GetComponent<seedSpitter>())
-        {
-            duckHealth = duckHealth - 2;
+            duckHealth = duckHealth - 6;
             if (duckHealth <= 0)
             {
                 Destroy(gameObject);
                 dks.addKill();
             }
+
+        }
+
+        // lose health if shot with seed spitter
+        if (other.gameObject.GetComponent<seedSpitter>())
+        {
+            duckHealth = duckHealth - 4;
+            if (duckHealth <= 0)
+            {
+                Destroy(gameObject);
+                dks.addKill();
+            }
+        }
+
+        if (other.gameObject.GetComponent<LemonadeSplash>())
+        {
+            Destroy(gameObject);
+            dks.addKill();
         }
 
         if (other.gameObject.CompareTag("Player"))

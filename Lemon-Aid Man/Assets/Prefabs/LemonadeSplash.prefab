@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2103532035222245326}
   - component: {fileID: 1521918020272526355}
   - component: {fileID: 3116504179263445843}
-  - component: {fileID: 6988450292502645251}
-  - component: {fileID: 1446536973885632100}
+  - component: {fileID: 190405159267644872}
+  - component: {fileID: 8819397354082277718}
   m_Layer: 8
-  m_Name: seedSpitterBullet
+  m_Name: LemonadeSplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6345295109140557326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.574857, y: 3.11028, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a67c6685e4105fc4ea73dfc462618302, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00a1fd5ec5079a74c81cdd9694877e8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,8 +114,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &6988450292502645251
-CapsuleCollider2D:
+--- !u!114 &190405159267644872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345295109140557326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9a7b798bf930c4594656223e4f333c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  liveTime: 0.75
+  weaponCoolDown: 1.5
+--- !u!60 &8819397354082277718
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,21 +161,30 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00110811, y: 0.00063434266}
-  m_Size: {x: 0.26552156, y: 0.19709876}
-  m_Direction: 1
---- !u!114 &1446536973885632100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6345295109140557326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cedf1db36e53bc648a8d9d051170dd3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 12
-  liveTime: 0.5
-  weaponCoolDown: 0.2
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.25, y: 0.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.3312564, y: 0.44667572}
+      - {x: 0.2584747, y: 0.5034272}
+      - {x: 0.15573741, y: 0.5037601}
+      - {x: -0.028928779, y: 0.38347474}
+      - {x: -0.20765822, y: 0.33770573}
+      - {x: -0.4862911, y: 0.052623454}
+      - {x: -0.4965728, y: -0.05907278}
+      - {x: -0.17349534, y: -0.35513765}
+      - {x: -0.028758049, y: -0.39444593}
+      - {x: 0.1618892, y: -0.49314556}
+      - {x: 0.28850955, y: -0.49314559}
+      - {x: 0.36320734, y: -0.3944573}
+      - {x: 0.4965728, y: -0.18831016}
+      - {x: 0.49314559, y: 0.17762347}
+  m_UseDelaunayMesh: 0
