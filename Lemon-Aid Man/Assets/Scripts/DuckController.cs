@@ -29,14 +29,15 @@ public class DuckController : MonoBehaviour
     public DuckKillScript dks;
     public int duckHealth = 10;
     public SpriteRenderer sp;
-    public CircleCollider2D _c;
+    // public CircleCollider2D _c;
 
-
+    AnimatorClipInfo[] animatorinfo;
+    string current_animation;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _c = GetComponent<CircleCollider2D>();
+        // _c = GetComponent<CircleCollider2D>();
         // LemonadeGrenade = GameObject.Find("LemonadeGrenade");
         stand = GameObject.Find("Lemonade Stand");
         player = GameObject.Find("Player");
@@ -48,60 +49,74 @@ public class DuckController : MonoBehaviour
 
     void Update()
     {
-        // animator.SetBool("inRange", playerInRange);
-        var step =  moveSpeed * Time.deltaTime; 
-        
-        // move towards player
-        if(Vector3.Distance(transform.position, player.transform.position) < moveToPlayerDistance)
+        float movementSpeed = _rb.velocity.sqrMagnitude;
+        animator.SetFloat("speed", movementSpeed);
+        if(movementSpeed > .1f) {
+            animator.SetFloat("movementX", _rb.velocity.x);
+            animator.SetFloat("movementY", _rb.velocity.y);                
+        }
+
+        int w = this.animator.GetCurrentAnimatorClipInfo(0).Length;
+        string[] clipName = new string[w];
+        for (int i = 0; i < w; i += 1)
         {
-            Vector2 directionToTarget = player.transform.position - transform.position;
-            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
-
-            // transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+            clipName[i] = animator.GetCurrentAnimatorClipInfo(0)[i].clip.name;
+            if(clipName[i] == "LeftShoot") {            
+                aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
+            } else if(clipName[i] == "RightShoot") {            
+                aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
+            } else if(clipName[i] == "DownShoot") {            
+                aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
+            } else if(clipName[i] == "IdleUp") {            
+                aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
+            }
         }
 
-        // move towards stand unless near player
-        else if (Vector3.Distance(transform.position, stand.transform.position) > 1f)
-        {
-            Vector2 directionToTarget = stand.transform.position - transform.position;
-            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
+        // // change animation based on velocity
+        // float movementAngle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
 
-            // transform.position = Vector3.MoveTowards(transform.position, stand.transform.position, step);
-        }
+        // animatorinfo = animator.GetCurrentAnimatorClipInfo(0);
+        // current_animation = animatorinfo[0].clip.name;
+        // Debug.Log(current_animation);
 
-        // change animation based on velocity
-        float movementAngle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
+        // if(current_animation == "DownShoot") {
+        //     aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
+        // } else if(current_animation == "RightShoot") {
+        //     aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
+        // } else if(current_animation == "LeftShoot") {
+        //     aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
+        // } else if(current_animation == "IdleUp") {
+        //     aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
+        // }
 
-        if(_rb.velocity.magnitude < .1) {
-            animator.SetBool("Idle", true);
-        } else {
-            animator.SetBool("Idle", false);
-        }
-
-        // moving right
-        if(movementAngle > -45 && movementAngle <= 45) {
-            sp.flipX = false;
-            animator.SetInteger("Direction", 0);
-            aimPivot.transform.position = transform.position + new Vector3(.6f,0,0);
-        // moving up 
-        } else if(movementAngle > 45 && movementAngle <= 135) {
-            animator.SetInteger("Direction", 1);
-            aimPivot.transform.position = transform.position;
-        // moving left
-        } else if(movementAngle > 135 || movementAngle <= -135) {
-            animator.SetInteger("Direction", 0);
-            sp.flipX = true;
-            aimPivot.transform.position = transform.position + new Vector3(-.6f,0,0);
-        // moving down
-        } else if(movementAngle > -135 && movementAngle <= -45) {
-            animator.SetInteger("Direction", -1);
-            aimPivot.transform.position = transform.position;
-        }
+        // // moving right
+        // if(movementAngle > -45 && movementAngle <= 45) {
+        //     if(!animator.GetBool("gunning")) {
+        //         sp.flipX = false;
+        //     }
+        //     // animator.SetInteger("Direction", 0);
+        //     aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
+        // // moving left
+        // } else if(movementAngle > 135 || movementAngle <= -135) {
+        //     // animator.SetInteger("Direction", 0);
+        //     if(!animator.GetBool("gunning")) {
+        //         sp.flipX = true;
+        //     }
+        //     aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
+        // // moving up 
+        // } else if(movementAngle > 45 && movementAngle <= 135) {
+        //     // animator.SetInteger("Direction", 1);
+        //     aimPivot.transform.position = transform.position + new Vector3(0.042f,0.007f,0);
+        // // moving down
+        // } else if(movementAngle > -135 && movementAngle <= -45) {
+        //     // animator.SetInteger("Direction", -1);
+        //     aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
+        // }
 
         // attack player
         if(playerInRange && canAttack)
         {   
-            animator.SetBool("Idle", false);
+            // animator.SetTrigger("attack");
             // Aim Towards Player
             Vector3 playerPosition = player.transform.position;
             Vector3 directionFromDuckToPlayer = playerPosition - transform.position;
@@ -111,19 +126,19 @@ public class DuckController : MonoBehaviour
 
             aimPivot.rotation = Quaternion.Euler(0, 0, angleToPlayer);
 
+            // shoot a grape
             GameObject newProjectile = Instantiate(projectilePrefab);
             newProjectile.transform.position = aimPivot.transform.position;
             newProjectile.transform.rotation = aimPivot.rotation;
 
             player.GetComponent<playerHealth>().currentHealth -= damage;
-            // player.GetComponent<playerHealth>().healthBar.SetHealth(player.GetComponent<playerHealth>().currentHealth, player.GetComponent<playerHealth>().maxHealth);
             
             StartCoroutine(AttackCooldown());
         }
         //attack stand
         else if (standInRange && canAttack)
         {
-            animator.SetBool("Idle", false);
+            // animator.SetTrigger("attack");
             // Aim Towards Stand
             Vector3 standPosition = stand.transform.position;
             Vector3 directionFromDuckToStand = standPosition - transform.position;
@@ -133,25 +148,37 @@ public class DuckController : MonoBehaviour
 
             aimPivot.rotation = Quaternion.Euler(0, 0, angleToPlayer);
 
+            // shoot a grape
             GameObject newProjectile = Instantiate(projectilePrefab);
             newProjectile.transform.position = aimPivot.transform.position;
             newProjectile.transform.rotation = aimPivot.rotation;
 
-            // stand.GetComponent<StandController>().standHealth -= damage;
             stand.GetComponent<StandController>().TakeDamage(damage);
             StartCoroutine(AttackCooldown());
         }
-
-        // IsTouching(_c, LemonadeGrenade.GetComponent<CircleCollider2D>());
     }
 
-    // public static bool IsTouching(Collider2D collider1, Collider2D collider2) {
-    //     return true;
-    // }
+    void FixedUpdate() {
+        var step =  moveSpeed * Time.deltaTime; 
+        
+        // move towards player
+        if(Vector3.Distance(transform.position, player.transform.position) < moveToPlayerDistance)
+        {
+            Vector2 directionToTarget = player.transform.position - transform.position;
+            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
+        }
 
-    private void OnCollisionEnter2D(Collision2D other)
+        // move towards stand unless near player
+        else if (Vector3.Distance(transform.position, stand.transform.position) > 1f)
+        {
+            Vector2 directionToTarget = stand.transform.position - transform.position;
+            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
     {
-        // disappear if shot
+        // disappear if shot with grenade
         if (other.gameObject.GetComponent<LemonGrenadeController>())
         {
             Destroy(gameObject);
@@ -159,6 +186,7 @@ public class DuckController : MonoBehaviour
             
         }
 
+        // lose health if shot with seed spitter
         if (other.gameObject.GetComponent<seedSpitter>())
         {
             duckHealth = duckHealth - 2;
@@ -172,11 +200,13 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
+            animator.SetBool("gunning", true);
         }
 
         if (other.gameObject.CompareTag("Stand"))
         {
             standInRange = true;
+            animator.SetBool("gunning", true);
         }
     }
 
@@ -184,11 +214,13 @@ public class DuckController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
+            animator.SetBool("gunning", false);
         }
 
         if (other.gameObject.CompareTag("Stand"))
         {
             standInRange = false;
+            animator.SetBool("gunning", false);
         }
     }
 

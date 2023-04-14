@@ -954,7 +954,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Defend the local lemonade stand from evil ducks and keep its customers!
+  m_Text: Defend the local lemonade stand and its customers from evil ducks!
 --- !u!222 &418228803
 CanvasRenderer:
   m_ObjectHideFlags: 0

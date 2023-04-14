@@ -46,15 +46,6 @@ public class CustomerController : MonoBehaviour
     void Update()
     {
         lemonadePrice = gameManager.instance.lemonadeCost;
-        moveSpeed = gameManager.instance.customerMoveSpeed;
-
-        var step = moveSpeed * Time.fixedDeltaTime;
-
-        // move towards stand
-        if (!visitedStand) {
-            Vector2 directionToTarget = stand.transform.position - transform.position;
-            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
-        }
 
         // buy from stand if near
         if (standInRange && canBuy) {
@@ -91,6 +82,18 @@ public class CustomerController : MonoBehaviour
         // moving down
         } else if(movementAngle > -135 && movementAngle <= -45 ) {
             animator.SetInteger("Direction", -1);
+        }
+    }
+
+    void FixedUpdate() {
+        moveSpeed = gameManager.instance.customerMoveSpeed;
+
+        var step = moveSpeed * Time.fixedDeltaTime;
+
+        // move towards stand
+        if (!visitedStand) {
+            Vector2 directionToTarget = stand.transform.position - transform.position;
+            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
         }
     }
 
