@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows.Speech;
+//using UnityEngine.Windows.Speech;
 
 public class Upgrades : MonoBehaviour
 {
@@ -33,8 +33,13 @@ public class Upgrades : MonoBehaviour
         healthOne.onClick.AddListener(healthOneUpgrade);
         standOne.onClick.AddListener(standOneUpgrade);
         customerMoveOne.onClick.AddListener(customerMoveOneUpgrade);
-        
-        
+        speedTwo.onClick.AddListener(speedTwoUpgrade);
+        moneyTwo.onClick.AddListener(moneyTwoUpgrade);
+        healthTwo.onClick.AddListener(healthTwoUpgrade);
+        standTwo.onClick.AddListener(standTwoUpgrade);
+        customerMoveTwo.onClick.AddListener(customerMoveTwoUpgrade);
+
+
     }
 
     // Update is called once per frame
@@ -56,7 +61,7 @@ public class Upgrades : MonoBehaviour
         if(gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerMovement>().moveSpeed = player.GetComponent<playerMovement>().moveSpeed * 1.5f;
+            player.GetComponent<playerMovement>().moveSpeed = player.GetComponent<playerMovement>().moveSpeed * 1.2f;
             speedOne.interactable = false;
             speedTwo.interactable = true;
             Debug.Log("Speed Upgrade Working");
@@ -108,16 +113,75 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.5f;
+            gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.25f;
             customerMoveOne.interactable = false;
             customerMoveTwo.interactable = true;
         }
     }
 
-    //another upgrade Idea
-
-    /*void advertisementUpgrade()
+    public void speedTwoUpgrade()
     {
+        float upgradeCost = 2.5f;
+        if (gameManager.instance.bank >= upgradeCost)
+        {
+            gameManager.instance.bank -= upgradeCost;
+            player.GetComponent<playerMovement>().moveSpeed = player.GetComponent<playerMovement>().moveSpeed * 1.2f;
+            speedOne.interactable = false;
+            speedTwo.interactable = true;
+            Debug.Log("Speed Upgrade Working");
+        }
 
-    }*/
+    }
+
+    public void moneyTwoUpgrade()
+    {
+        float upgradeCost = 5f;
+        if (gameManager.instance.bank >= upgradeCost)
+        {
+            gameManager.instance.bank -= upgradeCost;
+            gameManager.instance.lemonadeCost = gameManager.instance.lemonadeCost * 2;
+            moneyOne.interactable = false;
+            moneyTwo.interactable = true;
+        }
+    }
+
+    public void healthTwoUpgrade()
+    {
+        float upgradeCost = 5f;
+        if (gameManager.instance.bank >= upgradeCost)
+        {
+            gameManager.instance.bank -= upgradeCost;
+            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth * 2;
+            player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
+            healthOne.interactable = false;
+            healthTwo.interactable = true;
+        }
+    }
+
+    public void standTwoUpgrade()
+    {
+        float upgradeCost = 10f;
+        if (gameManager.instance.bank >= upgradeCost)
+        {
+            gameManager.instance.bank -= upgradeCost;
+            stand.GetComponent<StandController>().maxStandHealth = stand.GetComponent<StandController>().maxStandHealth * 2;
+            stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
+            standOne.interactable = false;
+            standTwo.interactable = true;
+        }
+    }
+
+    public void customerMoveTwoUpgrade()
+    {
+        float upgradeCost = 2.5f;
+        if (gameManager.instance.bank >= upgradeCost)
+        {
+            gameManager.instance.bank -= upgradeCost;
+            gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.25f;
+            customerMoveOne.interactable = false;
+            customerMoveTwo.interactable = true;
+        }
+    }
+
+
 }

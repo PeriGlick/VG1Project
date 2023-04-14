@@ -29,6 +29,7 @@ public class DuckController : MonoBehaviour
     public DuckKillScript dks;
     public int duckHealth = 10;
     public SpriteRenderer sp;
+    public CircleCollider2D _c;
 
 
 
@@ -47,7 +48,7 @@ public class DuckController : MonoBehaviour
 
     void Update()
     {
-        animator.SetBool("inRange", playerInRange);
+        // animator.SetBool("inRange", playerInRange);
         var step =  moveSpeed * Time.deltaTime; 
         
         // move towards player
@@ -115,7 +116,7 @@ public class DuckController : MonoBehaviour
             newProjectile.transform.rotation = aimPivot.rotation;
 
             player.GetComponent<playerHealth>().currentHealth -= damage;
-            player.GetComponent<playerHealth>().healthBar.SetHealth(player.GetComponent<playerHealth>().currentHealth, player.GetComponent<playerHealth>().maxHealth);
+            // player.GetComponent<playerHealth>().healthBar.SetHealth(player.GetComponent<playerHealth>().currentHealth, player.GetComponent<playerHealth>().maxHealth);
             
             StartCoroutine(AttackCooldown());
         }
