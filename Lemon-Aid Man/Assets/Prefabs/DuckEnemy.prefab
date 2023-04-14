@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -94225432, guid: c3f89a7c66926491bb6a254af2df3174, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35489f7c40db7164288877af72e00342, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -198,12 +198,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6371646211615329143, guid: e4ee744bf0b31417b91e73222767c5dc, type: 3}
   coolDown: 1
   damage: 5
-  moveSpeed: 3
+  moveSpeed: 1
   moveToPlayerDistance: 2
   dkm: {fileID: 0}
   dks: {fileID: 0}
   duckHealth: 10
-  sp: {fileID: 8487165730310774990}
 --- !u!95 &-5538720940861239621
 Animator:
   serializedVersion: 5
@@ -214,7 +213,7 @@ Animator:
   m_GameObject: {fileID: 8487165730310774989}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 926e81c32c2df44b288682674bc5a076, type: 2}
+  m_Controller: {fileID: 9100000, guid: 512b13cbddc8a46c694527cb5fb955c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

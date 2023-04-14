@@ -14,93 +14,60 @@ public class DuckController : MonoBehaviour
     public float coolDown = 1;
     public int damage = 1;
     private bool canAttack = true;
-
     private Rigidbody2D _rb;
-    // private CircleCollider2D _c;
-    
     public float moveSpeed;
     public float moveToPlayerDistance;
     private bool standInRange = false;
     GameObject stand;
     GameObject player;
-    // GameObject LemonadeGrenade;
     Animator animator;
     public GameObject dkm;
     public DuckKillScript dks;
     public int duckHealth = 10;
-    public SpriteRenderer sp;
-
-
-
+    
+    
+    
+    
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _c = GetComponent<CircleCollider2D>();
-        // LemonadeGrenade = GameObject.Find("LemonadeGrenade");
         stand = GameObject.Find("Lemonade Stand");
         player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
         GameObject obj = GameObject.Find("DuckKillMonitor");
         dks = obj.GetComponent<DuckKillScript>();
-        sp = GetComponent<SpriteRenderer>();
+        
+        
+       
     }
 
     void Update()
     {
         animator.SetBool("inRange", playerInRange);
         var step =  moveSpeed * Time.deltaTime; 
-        
         // move towards player
         if(Vector3.Distance(transform.position, player.transform.position) < moveToPlayerDistance)
         {
-            Vector2 directionToTarget = player.transform.position - transform.position;
-            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
-
-            // transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
         }
 
         // move towards stand unless near player
         else if (Vector3.Distance(transform.position, stand.transform.position) > 1f)
         {
-            Vector2 directionToTarget = stand.transform.position - transform.position;
-            _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
-
-            // transform.position = Vector3.MoveTowards(transform.position, stand.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, stand.transform.position, step);
         }
 
-        // change animation based on velocity
-        float movementAngle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
-
-        if(_rb.velocity.magnitude < .1) {
-            animator.SetBool("Idle", true);
-        } else {
-            animator.SetBool("Idle", false);
-        }
-
-        // moving right
-        if(movementAngle > -45 && movementAngle <= 45) {
-            sp.flipX = false;
-            animator.SetInteger("Direction", 0);
-            aimPivot.transform.position = transform.position + new Vector3(.6f,0,0);
-        // moving up 
-        } else if(movementAngle > 45 && movementAngle <= 135) {
-            animator.SetInteger("Direction", 1);
-            aimPivot.transform.position = transform.position;
-        // moving left
-        } else if(movementAngle > 135 || movementAngle <= -135) {
-            animator.SetInteger("Direction", 0);
-            sp.flipX = true;
-            aimPivot.transform.position = transform.position + new Vector3(-.6f,0,0);
-        // moving down
-        } else if(movementAngle > -135 && movementAngle <= -45) {
-            animator.SetInteger("Direction", -1);
-            aimPivot.transform.position = transform.position;
+        //attack stand
+        if (standInRange && canAttack)
+        {
+            // stand.GetComponent<StandController>().standHealth -= damage;
+            stand.GetComponent<StandController>().TakeDamage(damage);
+            StartCoroutine(AttackCooldown());
         }
 
         // attack player
         if(playerInRange && canAttack)
         {   
-            animator.SetBool("Idle", false);
             // Aim Towards Player
             Vector3 playerPosition = player.transform.position;
             Vector3 directionFromDuckToPlayer = playerPosition - transform.position;
@@ -119,34 +86,9 @@ public class DuckController : MonoBehaviour
             
             StartCoroutine(AttackCooldown());
         }
-        //attack stand
-        else if (standInRange && canAttack)
-        {
-            animator.SetBool("Idle", false);
-            // Aim Towards Stand
-            Vector3 standPosition = stand.transform.position;
-            Vector3 directionFromDuckToStand = standPosition - transform.position;
 
-            float radiansToPlayer = Mathf.Atan2(directionFromDuckToStand.y, directionFromDuckToStand.x);
-            float angleToPlayer = radiansToPlayer * Mathf.Rad2Deg;
-
-            aimPivot.rotation = Quaternion.Euler(0, 0, angleToPlayer);
-
-            GameObject newProjectile = Instantiate(projectilePrefab);
-            newProjectile.transform.position = aimPivot.transform.position;
-            newProjectile.transform.rotation = aimPivot.rotation;
-
-            // stand.GetComponent<StandController>().standHealth -= damage;
-            stand.GetComponent<StandController>().TakeDamage(damage);
-            StartCoroutine(AttackCooldown());
-        }
-
-        // IsTouching(_c, LemonadeGrenade.GetComponent<CircleCollider2D>());
     }
 
-    // public static bool IsTouching(Collider2D collider1, Collider2D collider2) {
-    //     return true;
-    // }
 
     private void OnCollisionEnter2D(Collision2D other)
     {

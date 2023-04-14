@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6371646211615329138}
   m_Layer: 8
   m_Name: LemonGrenade
-  m_TagString: LemonadeGrenade
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,5 +162,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  liveTime: 0.5
-  weaponCoolDown: 1
