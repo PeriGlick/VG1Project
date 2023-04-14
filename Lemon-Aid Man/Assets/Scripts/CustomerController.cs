@@ -98,9 +98,10 @@ public class CustomerController : MonoBehaviour
     {
         var hitByLemonBeforeVisitingStand = other.gameObject.GetComponent<LemonGrenadeController>() && !visitedStand;
         var hitBySeedBeforeVisitingStand = other.gameObject.GetComponent<seedSpitter>() && !visitedStand;
+        var hitBySplashBeforeVisitingStand = other.gameObject.GetComponent<LemonadeSplash>() && !visitedStand;
         var visitedStandAndReachesBoundary = other.collider.CompareTag("Game Boundary") && visitedStand;
         
-        if (hitByLemonBeforeVisitingStand || visitedStandAndReachesBoundary || hitBySeedBeforeVisitingStand) {
+        if (hitByLemonBeforeVisitingStand || visitedStandAndReachesBoundary || hitBySeedBeforeVisitingStand || hitBySplashBeforeVisitingStand) {
             Destroy(gameObject);
         }
 

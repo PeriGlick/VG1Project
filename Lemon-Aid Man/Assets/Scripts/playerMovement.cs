@@ -21,7 +21,7 @@ namespace LemonAidMan
         public bool pause;
         public float coolDownTime;
         bool isCoolDown = false;
-        public SpriteRenderer sp;
+        SpriteRenderer sp;
        
 
         void Start()
