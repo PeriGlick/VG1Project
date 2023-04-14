@@ -15,6 +15,7 @@ TagManager:
   - HealthUpgrade
   - StandUpgrade
   - MoneyUpgrade
+  - AimPivot
   layers:
   - Default
   - TransparentFX
