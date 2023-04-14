@@ -199,7 +199,8 @@ MonoBehaviour:
   coolDown: 1
   damage: 5
   moveSpeed: 3
-  moveToPlayerDistance: 2
+  moveToPlayerDistance: 4
+  shootRange: 3
   dkm: {fileID: 0}
   dks: {fileID: 0}
   duckHealth: 10
