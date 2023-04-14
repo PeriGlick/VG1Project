@@ -29,6 +29,7 @@ public class DuckController : MonoBehaviour
     public DuckKillScript dks;
     public int duckHealth = 10;
     public SpriteRenderer sp;
+    public CircleCollider2D _c;
 
 
 
