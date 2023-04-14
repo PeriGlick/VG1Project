@@ -5,21 +5,25 @@ using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
-    public int maxHealth;
-    public int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
     // public Image imageHealthBar;
-    public PlayerHealthbarBehavior healthBar;
+    // public PlayerHealthbarBehavior healthBar;
+    public Image lemonSliceHealth;
+    public Text playerHealthText;
     
     void Start()
     {
         maxHealth = 100;
         currentHealth = maxHealth;
-        healthBar.SetHealth(currentHealth, maxHealth);
-
+        lemonSliceHealth.fillAmount = 1;
+        // healthBar.SetHealth(currentHealth, maxHealth);
     }
 
     void Update(){
-        healthBar.SetHealth(currentHealth, maxHealth);
+        // healthBar.SetHealth(currentHealth, maxHealth);
+        playerHealthText.text = currentHealth.ToString();
+        lemonSliceHealth.fillAmount = currentHealth / maxHealth;
         if (currentHealth <= 0)
         {
             Die();
