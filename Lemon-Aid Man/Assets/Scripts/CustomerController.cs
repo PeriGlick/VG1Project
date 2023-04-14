@@ -52,7 +52,6 @@ public class CustomerController : MonoBehaviour
 
         // move towards stand
         if (!visitedStand) {
-
             Vector2 directionToTarget = stand.transform.position - transform.position;
             _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
         }
