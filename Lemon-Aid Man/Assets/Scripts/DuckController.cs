@@ -27,7 +27,7 @@ public class DuckController : MonoBehaviour
     // GameObject LemonadeGrenade;
     Animator animator;
     public GameObject dkm;
-    public DuckKillScript dks;
+    DuckKillScript dks;
     public int duckHealth = 12;
     public SpriteRenderer sp;
     // public CircleCollider2D _c;

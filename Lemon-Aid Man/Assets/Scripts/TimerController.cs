@@ -8,9 +8,11 @@ public class TimerController : MonoBehaviour
 {
     public static TimerController instance;
     public Text timeCounter;
-    private TimeSpan timePlaying;
-    private bool timerGoing;
-    private float elapsedTime;
+    public TimeSpan timePlaying; //was private, made public for testing
+    public bool timerGoing; // same as above
+    public float elapsedTime; //also same as above
+    public float endTime = 300.00f;
+    
 
     private void Awake() {
         instance = this;
@@ -20,6 +22,7 @@ public class TimerController : MonoBehaviour
     void Start() {
         timeCounter.text = "00:00";
         timerGoing = false;
+        
     }
 
     public void BeginTimer() {
@@ -38,6 +41,11 @@ public class TimerController : MonoBehaviour
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = timePlaying.ToString("mm':'ss");
             timeCounter.text = timePlayingStr;
+            if (elapsedTime >= endTime)
+            {
+                gameManager.instance.timeUp = true;
+
+            } 
             yield return null;
         }
     }

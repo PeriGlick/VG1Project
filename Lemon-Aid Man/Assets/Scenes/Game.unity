@@ -2313,7 +2313,7 @@ GameObject:
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &424360349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4271,7 +4271,7 @@ GameObject:
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &878999121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4310,9 +4310,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8487165730310774986, guid: 9598d029ba844499eac92af7de01c84d, type: 3}
+      propertyPath: dkm
+      value: 
+      objectReference: {fileID: 1812888677}
     - target: {fileID: 8487165730310774989, guid: 9598d029ba844499eac92af7de01c84d, type: 3}
       propertyPath: m_Name
       value: DuckEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487165730310774989, guid: 9598d029ba844499eac92af7de01c84d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8487165730310774991, guid: 9598d029ba844499eac92af7de01c84d, type: 3}
       propertyPath: m_RootOrder
@@ -6199,7 +6207,7 @@ GameObject:
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1283320353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8024,6 +8032,7 @@ MonoBehaviour:
   player: {fileID: 1328690636}
   lemonadeCost: 0
   customerMoveSpeed: 0
+  timeUp: 0
 --- !u!4 &1598159919
 Transform:
   m_ObjectHideFlags: 0
@@ -12670,6 +12679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeCounter: {fileID: 1116794923}
+  endTime: 05:00
 --- !u!4 &2068046098
 Transform:
   m_ObjectHideFlags: 0
