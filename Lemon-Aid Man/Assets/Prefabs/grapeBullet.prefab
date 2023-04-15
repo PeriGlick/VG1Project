@@ -161,6 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca7d7e5ad2224c8ca1a934ae12f1476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.45
+  speed: 4
   liveTime: 0.5
   weaponCoolDown: 1

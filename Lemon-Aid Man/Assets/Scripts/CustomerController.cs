@@ -39,7 +39,6 @@ public class CustomerController : MonoBehaviour
         finalDestLeftPos = GameObject.Find("Customer Final Dest (Left)").transform.position;
         randExitDirection = UnityEngine.Random.Range(0, 2); // Pops out either 0 or 1
         lemonadePrice = gameManager.instance.lemonadeCost;
-        moveSpeed = gameManager.instance.customerMoveSpeed;
     }
 
     // Update is called once per frame
@@ -54,10 +53,6 @@ public class CustomerController : MonoBehaviour
             StartCoroutine(IdleWait()); 
             canBuy = false;
         }
-
-        if (visitedStand) {
-            CustomerLeave();
-         }
 
         // change animation based on velocity
         float movementAngle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
@@ -86,12 +81,13 @@ public class CustomerController : MonoBehaviour
     }
 
     void FixedUpdate() {
-        moveSpeed = gameManager.instance.customerMoveSpeed;
-
-        var step = moveSpeed * Time.fixedDeltaTime;
-
+        var step =  moveSpeed * Time.deltaTime; 
+        
+        // leave game
+        if (visitedStand) {
+            CustomerLeave();
         // move towards stand
-        if (!visitedStand) {
+        } else {
             Vector2 directionToTarget = stand.transform.position - transform.position;
             _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
         }

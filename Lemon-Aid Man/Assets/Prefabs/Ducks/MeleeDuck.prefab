@@ -43,10 +43,10 @@ GameObject:
   - component: {fileID: 8487165730310774990}
   - component: {fileID: 8487165730310774985}
   - component: {fileID: 2024616224870978151}
-  - component: {fileID: 8487165730310774986}
   - component: {fileID: -5538720940861239621}
+  - component: {fileID: -2416020412299973428}
   m_Layer: 10
-  m_Name: DuckEnemy
+  m_Name: MeleeDuck
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -94225432, guid: c3f89a7c66926491bb6a254af2df3174, type: 3}
+  m_Sprite: {fileID: 404184725, guid: c3f89a7c66926491bb6a254af2df3174, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -182,29 +182,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5047754
---- !u!114 &8487165730310774986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8487165730310774989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd366fcad0f7f4bbab7c27764a4c3c7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimPivot: {fileID: 1298187294583577609}
-  projectilePrefab: {fileID: 6371646211615329143, guid: e4ee744bf0b31417b91e73222767c5dc, type: 3}
-  coolDown: 1
-  damage: 5
-  moveSpeed: 3
-  moveToPlayerDistance: 3
-  shootRange: 2
-  dkm: {fileID: 0}
-  dks: {fileID: 0}
-  duckHealth: 10
-  sp: {fileID: 8487165730310774990}
 --- !u!95 &-5538720940861239621
 Animator:
   serializedVersion: 5
@@ -215,7 +192,7 @@ Animator:
   m_GameObject: {fileID: 8487165730310774989}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8fbf47353430c4e3cac795e7590fd17c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 22c08bdf5dade4f368191aeab67564ee, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -225,3 +202,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-2416020412299973428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8487165730310774989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96bbe3023004457aa1eaae67b84a2e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimPivot: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  coolDown: 2
+  damage: 10
+  moveSpeed: 3
+  moveToPlayerDistance: 2.5
+  shootRange: 1.5
+  dkm: {fileID: 0}
+  dks: {fileID: 0}
+  duckHealth: 10
+  sp: {fileID: 8487165730310774990}

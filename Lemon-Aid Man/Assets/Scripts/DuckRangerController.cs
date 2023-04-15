@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public class DuckController : MonoBehaviour
+public class DuckRangerController : MonoBehaviour
 {
     public Transform aimPivot;
     public GameObject projectilePrefab;
@@ -18,7 +18,6 @@ public class DuckController : MonoBehaviour
     private Vector3 vectorBtwPlayerOrStand;
 
     private Rigidbody2D _rb;
-    // private CircleCollider2D _c;
     
     public float moveSpeed;
     public float moveToPlayerDistance;
@@ -26,22 +25,15 @@ public class DuckController : MonoBehaviour
     private bool standInRange = false;
     GameObject stand;
     GameObject player;
-    // GameObject LemonadeGrenade;
     Animator animator;
     public GameObject dkm;
     public DuckKillScript dks;
     public int duckHealth = 12;
     public SpriteRenderer sp;
-    // public CircleCollider2D _c;
-
-    AnimatorClipInfo[] animatorinfo;
-    string current_animation;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        // _c = GetComponent<CircleCollider2D>();
-        // LemonadeGrenade = GameObject.Find("LemonadeGrenade");
         stand = GameObject.Find("Lemonade Stand");
         player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
