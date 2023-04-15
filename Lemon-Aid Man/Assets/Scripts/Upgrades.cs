@@ -52,9 +52,7 @@ public class Upgrades : MonoBehaviour
         }*/
 
     }
-    //In here I'd also like to add a general healing feature with cost based on how low your health is - something the player can use at any time with any cost.
-
-    //ideally I'd like to make all of these usable for all levels of upgrades, but I have to figure out how to organize these guys into an array
+    
     public void speedOneUpgrade()
     {
         float upgradeCost = 0.25f;
@@ -121,7 +119,7 @@ public class Upgrades : MonoBehaviour
 
     public void speedTwoUpgrade()
     {
-        float upgradeCost = 2.5f;
+        float upgradeCost = 1.25f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -135,7 +133,7 @@ public class Upgrades : MonoBehaviour
 
     public void moneyTwoUpgrade()
     {
-        float upgradeCost = 5f;
+        float upgradeCost = 2.50f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -147,7 +145,7 @@ public class Upgrades : MonoBehaviour
 
     public void healthTwoUpgrade()
     {
-        float upgradeCost = 5f;
+        float upgradeCost = 2.50f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -160,7 +158,7 @@ public class Upgrades : MonoBehaviour
 
     public void standTwoUpgrade()
     {
-        float upgradeCost = 10f;
+        float upgradeCost = 5f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -173,7 +171,7 @@ public class Upgrades : MonoBehaviour
 
     public void customerMoveTwoUpgrade()
     {
-        float upgradeCost = 2.5f;
+        float upgradeCost = 1.25f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
