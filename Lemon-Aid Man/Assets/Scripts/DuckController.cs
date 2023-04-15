@@ -15,6 +15,8 @@ public class DuckController : MonoBehaviour
     public int damage = 1;
     private bool canAttack = true;
 
+    private Vector3 vectorBtwPlayerOrStand;
+
     private Rigidbody2D _rb;
     // private CircleCollider2D _c;
     
@@ -55,27 +57,30 @@ public class DuckController : MonoBehaviour
         if(movementSpeed > .1f) {
             animator.SetFloat("movementX", _rb.velocity.x);
             animator.SetFloat("movementY", _rb.velocity.y);                
-        }
+        }            
 
+        // this is literally all just to move the bullet to come out of the gun
+        // and it doesn't even workkkk
         string spriteName = sp.sprite.name;
-
-        // shoot right
+        float movementAngle = Mathf.Atan2(vectorBtwPlayerOrStand.x, vectorBtwPlayerOrStand.y) * Mathf.Rad2Deg;
         if(spriteName == "duck_sprite_sheet_24") {
             aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
-            sp.flipX = false;
         // shoot left
-        } else if(spriteName == "duck_sprite_sheet_23") {
+        } else if(spriteName == "flipped_duck_sprite_sheet_26") {
             aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
-            sp.flipX = true;
         } else {
-            aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
-            if(_rb.velocity.x < 0) {
-                sp.flipX = true;
+            // moving right
+            if(movementAngle > -50 && movementAngle <= -130) {
+                aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
+            // moving left
+            } else if(movementAngle > 50 && movementAngle <= 130) {
+                aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
+            // moving up 
             } else {
-                sp.flipX = false;
+                aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
             }
         }
-
+        
         // attack player
         if(playerInRange && canAttack)
         {   
@@ -124,12 +129,21 @@ public class DuckController : MonoBehaviour
         var distBtwPlayerAndDuck = Vector3.Distance(transform.position, player.transform.position);
         var distBtwStandAndDuck = Vector3.Distance(transform.position, stand.transform.position);
 
+        // check if player is within range to attack stand or player
         if(distBtwPlayerAndDuck < shootRange) {
+            vectorBtwPlayerOrStand = player.transform.position - transform.position;
             playerInRange = true;
+            standInRange = false;
             animator.SetBool("gunning", true);
+            animator.SetFloat("ShootDirectionX", vectorBtwPlayerOrStand.x);
+            animator.SetFloat("ShootDirectionY", vectorBtwPlayerOrStand.y);  
         } else if(distBtwStandAndDuck < shootRange) {
+            vectorBtwPlayerOrStand = stand.transform.position - transform.position;
+            playerInRange = false;
             standInRange = true;
             animator.SetBool("gunning", true);
+            animator.SetFloat("ShootDirectionX", vectorBtwPlayerOrStand.x);
+            animator.SetFloat("ShootDirectionY", vectorBtwPlayerOrStand.y);  
         } else {
             playerInRange = false;
             standInRange = false;
@@ -152,7 +166,7 @@ public class DuckController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // disappear if shot with grenade
+        // lose 6 health if shot with grenade
         if (other.gameObject.GetComponent<LemonGrenadeController>())
         {
             duckHealth = duckHealth - 6;
@@ -161,7 +175,6 @@ public class DuckController : MonoBehaviour
                 Destroy(gameObject);
                 dks.addKill();
             }
-
         }
 
         // lose health if shot with seed spitter

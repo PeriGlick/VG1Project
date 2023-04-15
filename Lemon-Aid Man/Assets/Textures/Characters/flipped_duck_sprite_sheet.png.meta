@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3f89a7c66926491bb6a254af2df3174
+guid: b32bbbd2f4285462084916de30dc926f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,131 +103,14 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: duck_sprite_sheet_0
+      name: flipped_duck_sprite_sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 266
-        width: 32
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ab77bfcd4dde4c8da6839999fe28417
-      internalID: 220722856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_1
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 266
-        width: 38
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee7a48d1ee9954611a4261e79331bcb7
-      internalID: -1634780580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_2
-      rect:
-        serializedVersion: 2
-        x: 92
-        y: 266
-        width: 38
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bfc0e196b18c4da9b08932d0c2f16e5
-      internalID: -267194895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_3
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 266
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a504bab6b47b4b04905eeca90455564
-      internalID: -2082660833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_4
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 266
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6a9634bbd09b4c6c9ff47567f91692b
-      internalID: 1560394569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_5
-      rect:
-        serializedVersion: 2
-        x: 221
         y: 266
         width: 29
         height: 31
@@ -238,17 +121,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cf89d9885d1c4b31be750b0cd1929d1
-      internalID: 401136582
+      spriteID: 7b5864a2d17b1400bb87d45ed7680134
+      internalID: 732033244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_6
+      name: flipped_duck_sprite_sheet_1
       rect:
         serializedVersion: 2
-        x: 261
+        x: 40
         y: 266
         width: 29
         height: 31
@@ -259,18 +142,102 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da6fd2cfabb764b3d8c68a9886a27c91
-      internalID: -1132348678
+      spriteID: e5a72c2ea4c7046c7ae249705480a6a0
+      internalID: -2040540230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_7
+      name: flipped_duck_sprite_sheet_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 228
+        x: 81
+        y: 266
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a10d964fe524a64bfcccfe713870fd
+      internalID: -2090883470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 266
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d43f1ab0ba434596b22c26e68ab3007
+      internalID: 1352048911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 266
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82759db2bc3e400492b6b6d2760d90f
+      internalID: 834694098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 266
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f58c64e2a5e491281cc777f8882ed6
+      internalID: -1448525150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 266
         width: 32
         height: 31
       alignment: 0
@@ -280,17 +247,101 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0afe5e471b9eb4325bc335d481eda661
-      internalID: -1807818416
+      spriteID: e8c0b595d5549454d84028d8fd0b12fc
+      internalID: 577190181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_8
+      name: flipped_duck_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49712cf9f02b44e2ac42c4db9b00db0
+      internalID: 822442449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_8
       rect:
         serializedVersion: 2
         x: 40
+        y: 228
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448cbeace5e0a43cd9cef0f3a8f0ae75
+      internalID: 790368185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 228
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0355340a993245f19be2fb7f43d1de0
+      internalID: -1406935989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 228
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df39b5fd40ba14fccb0cfc14b895328f
+      internalID: -1912337462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 150
         y: 228
         width: 46
         height: 31
@@ -301,17 +352,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1afc3d5727f2143d78074294eb0a2bb6
-      internalID: 1952596730
+      spriteID: bb66176fc0d7446438dd2a4594c96bdd
+      internalID: 428722445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_9
+      name: flipped_duck_sprite_sheet_12
       rect:
         serializedVersion: 2
-        x: 94
+        x: 204
         y: 228
         width: 46
         height: 31
@@ -322,19 +373,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c3a4a1f68c91430db264121243faba9
-      internalID: -231366113
+      spriteID: 85ab211e1224b44f68a8557d44b4f957
+      internalID: 1632262243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_10
+      name: flipped_duck_sprite_sheet_13
       rect:
         serializedVersion: 2
-        x: 148
+        x: 258
         y: 228
-        width: 26
+        width: 32
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -343,80 +394,143 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4202ecdacf5bd464db586e0300a4ddab
-      internalID: -1429242959
+      spriteID: f4bd10b950c414a2ebc6da3e16047861
+      internalID: 1974815185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 228
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 648e0c8adaf2e4484a1c951f55e1b490
-      internalID: 865876562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_12
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 228
-        width: 35
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e559f14ba9354a34bfd631455e6129c
-      internalID: 1719103808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_13
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 228
-        width: 35
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 913e61c41a298400eab1ceef45e9f85a
-      internalID: -800919770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_14
+      name: flipped_duck_sprite_sheet_14
       rect:
         serializedVersion: 2
         x: 0
+        y: 190
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433a734ad1a4d42bda95be0467de4175
+      internalID: 1240451294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 190
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d41237fcf334ab7a4fbd4c2d0a65db
+      internalID: -2068115792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 190
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5cc364b0e6543a9b1aecf04cca2e7e
+      internalID: -1095573460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 190
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bdd524a5c9d46529b14837ae2578b1
+      internalID: -2067703118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 190
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394c02c6c8d3b4308ab590cda4b5efc6
+      internalID: -1324205599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 190
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1f9214f7fc244dc93a94f57736ff0b
+      internalID: 973486585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 258
         y: 190
         width: 32
         height: 31
@@ -427,143 +541,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eda28dc9cd7924dda9d4e374997afe54
-      internalID: 897041969
+      spriteID: aa6b29d8164f44cf0ae260c304d37da1
+      internalID: -466990885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_15
+      name: flipped_duck_sprite_sheet_21
       rect:
         serializedVersion: 2
-        x: 40
-        y: 190
-        width: 45
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 989f91c3d85984f19bf426447b8ca2eb
-      internalID: -778042726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_16
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 190
-        width: 45
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfa13921e89fa42f4baff032fc0bcc23
-      internalID: -725944615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_17
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 190
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46a73dfc0571b4e91a775ef23fb048e4
-      internalID: 544730530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_18
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 190
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be26f93aa86b44d9bac071e58e1dbaf7
-      internalID: -1043097366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_19
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 190
-        width: 35
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5559bb0b2348141a286b817d9f7a14f2
-      internalID: 1387805624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_20
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 190
-        width: 35
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 673c25605fe1745c19656aa43bafa2a0
-      internalID: -628821579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_21
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 258
         y: 152
         width: 32
         height: 31
@@ -574,40 +562,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37b0fe1b53ae74b9497a1a7f309cb4dd
-      internalID: 404184725
+      spriteID: 3b3fd593720634aa797e0b988dd6cc2b
+      internalID: -562429085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_22
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 114
-        width: 32
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0453bc5633e984616b7743e54b2d39f1
-      internalID: -1458204327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_23
+      name: flipped_duck_sprite_sheet_22
       rect:
         serializedVersion: 2
         x: 40
         y: 114
-        width: 32
+        width: 26
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -616,17 +583,59 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93ca5cfa7db1043bf92303e891bd8ab4
-      internalID: -172403960
+      spriteID: 034a1d630bad14fb087523ad24e4ab83
+      internalID: 286649090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_24
+      name: flipped_duck_sprite_sheet_23
       rect:
         serializedVersion: 2
-        x: 94
+        x: 81
+        y: 114
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f8bf59febc8436993ae6078c5510f4
+      internalID: -1052682374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 114
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c356da739567d4283905b72ec2b02eeb
+      internalID: -350622090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 164
         y: 114
         width: 32
         height: 31
@@ -637,81 +646,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da44508d65f9e4a59bcbeb852e009183
-      internalID: -1816757696
+      spriteID: f88a90e120e034b899273f6056d82d9f
+      internalID: -1874387551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_25
+      name: flipped_duck_sprite_sheet_26
       rect:
         serializedVersion: 2
-        x: 146
+        x: 218
         y: 114
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99e7384e18c2a4dbd9ed6d1fada792ca
-      internalID: -297724913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_26
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 114
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44450c34bfb7a4c18b8517bb6f4f296a
-      internalID: 2104701257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_27
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 114
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00d41e16cf78a466faf9015c9c4a5948
-      internalID: 526967886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_28
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 76
         width: 32
         height: 31
       alignment: 0
@@ -721,19 +667,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f895967bf55d740c0abefba145f63fea
-      internalID: -1799778424
+      spriteID: b97191584214f4e95a87ae5330796c60
+      internalID: 719333201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_29
+      name: flipped_duck_sprite_sheet_27
       rect:
         serializedVersion: 2
-        x: 146
-        y: 76
-        width: 26
+        x: 258
+        y: 114
+        width: 32
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -742,17 +688,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fe5851a9f9fc478a84cadc046fe65ec
-      internalID: -242410281
+      spriteID: 39a30fb6b81154457af60370a88e626f
+      internalID: -237313051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_30
+      name: flipped_duck_sprite_sheet_28
       rect:
         serializedVersion: 2
-        x: 183
+        x: 81
         y: 76
         width: 26
         height: 31
@@ -763,17 +709,101 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44c8cb5a884e4433b9827c2b38bce3c2
-      internalID: -1060770200
+      spriteID: 0e176c524ad284e1c955949665f91c45
+      internalID: -90256098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_31
+      name: flipped_duck_sprite_sheet_29
       rect:
         serializedVersion: 2
-        x: 0
+        x: 118
+        y: 76
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35dac9b7df48842c5a719baa3ff53287
+      internalID: 1268884552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 76
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0cd4a2d194a474bb990db72ac61724
+      internalID: 1115243888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 38
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc811d45d5c8540968a5564e61c6e1ca
+      internalID: -760465578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 38
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9257e280f203043fcb115e6e58d4f1aa
+      internalID: 1106637299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flipped_duck_sprite_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 258
         y: 38
         width: 32
         height: 31
@@ -784,59 +814,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87a1078bd701d49b0b2349854df8fe9e
-      internalID: 616661897
+      spriteID: 22cce6039e31f4ce3b61f7bbf4308ab0
+      internalID: -616988549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: duck_sprite_sheet_32
+      name: flipped_duck_sprite_sheet_34
       rect:
         serializedVersion: 2
-        x: 146
-        y: 38
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5dd98dcb00434f048b547cc887a8ae9
-      internalID: 621028104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_33
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 38
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2641cff6975541d5b70d5e8e8805e79
-      internalID: 1886236197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: duck_sprite_sheet_34
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 258
         y: 0
         width: 32
         height: 31
@@ -847,8 +835,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9346b065d9b94d2486e1881a6603bcc
-      internalID: -94225432
+      spriteID: 420c172b18d8c436c88cd7f4c64a5c0b
+      internalID: -1069953707
       vertices: []
       indices: 
       edges: []
@@ -864,41 +852,41 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      duck_sprite_sheet_24: -1816757696
-      duck_sprite_sheet_31: 616661897
-      duck_sprite_sheet_9: -231366113
-      duck_sprite_sheet_0: 220722856
-      duck_sprite_sheet_4: 1560394569
-      duck_sprite_sheet_12: 1719103808
-      duck_sprite_sheet_34: -94225432
-      duck_sprite_sheet_16: -725944615
-      duck_sprite_sheet_28: -1799778424
-      duck_sprite_sheet_29: -242410281
-      duck_sprite_sheet_30: -1060770200
-      duck_sprite_sheet_17: 544730530
-      duck_sprite_sheet_3: -2082660833
-      duck_sprite_sheet_1: -1634780580
-      duck_sprite_sheet_2: -267194895
-      duck_sprite_sheet_18: -1043097366
-      duck_sprite_sheet_19: 1387805624
-      duck_sprite_sheet_20: -628821579
-      duck_sprite_sheet_14: 897041969
-      duck_sprite_sheet_23: -172403960
-      duck_sprite_sheet_6: -1132348678
-      duck_sprite_sheet_8: 1952596730
-      duck_sprite_sheet_22: -1458204327
-      duck_sprite_sheet_25: -297724913
-      duck_sprite_sheet_10: -1429242959
-      duck_sprite_sheet_26: 2104701257
-      duck_sprite_sheet_7: -1807818416
-      duck_sprite_sheet_5: 401136582
-      duck_sprite_sheet_27: 526967886
-      duck_sprite_sheet_15: -778042726
-      duck_sprite_sheet_21: 404184725
-      duck_sprite_sheet_33: 1886236197
-      duck_sprite_sheet_13: -800919770
-      duck_sprite_sheet_32: 621028104
-      duck_sprite_sheet_11: 865876562
+      flipped_duck_sprite_sheet_15: -2068115792
+      flipped_duck_sprite_sheet_16: -1095573460
+      flipped_duck_sprite_sheet_17: -2067703118
+      flipped_duck_sprite_sheet_31: -760465578
+      flipped_duck_sprite_sheet_25: -1874387551
+      flipped_duck_sprite_sheet_9: -1406935989
+      flipped_duck_sprite_sheet_26: 719333201
+      flipped_duck_sprite_sheet_0: 732033244
+      flipped_duck_sprite_sheet_28: -90256098
+      flipped_duck_sprite_sheet_34: -1069953707
+      flipped_duck_sprite_sheet_13: 1974815185
+      flipped_duck_sprite_sheet_6: 577190181
+      flipped_duck_sprite_sheet_3: 1352048911
+      flipped_duck_sprite_sheet_22: 286649090
+      flipped_duck_sprite_sheet_14: 1240451294
+      flipped_duck_sprite_sheet_32: 1106637299
+      flipped_duck_sprite_sheet_24: -350622090
+      flipped_duck_sprite_sheet_1: -2040540230
+      flipped_duck_sprite_sheet_19: 973486585
+      flipped_duck_sprite_sheet_10: -1912337462
+      flipped_duck_sprite_sheet_29: 1268884552
+      flipped_duck_sprite_sheet_11: 428722445
+      flipped_duck_sprite_sheet_8: 790368185
+      flipped_duck_sprite_sheet_18: -1324205599
+      flipped_duck_sprite_sheet_4: 834694098
+      flipped_duck_sprite_sheet_21: -562429085
+      flipped_duck_sprite_sheet_27: -237313051
+      flipped_duck_sprite_sheet_7: 822442449
+      flipped_duck_sprite_sheet_5: -1448525150
+      flipped_duck_sprite_sheet_33: -616988549
+      flipped_duck_sprite_sheet_30: 1115243888
+      flipped_duck_sprite_sheet_23: -1052682374
+      flipped_duck_sprite_sheet_20: -466990885
+      flipped_duck_sprite_sheet_2: -2090883470
+      flipped_duck_sprite_sheet_12: 1632262243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
