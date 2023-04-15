@@ -91,6 +91,7 @@ public class DuckRangerController : MonoBehaviour
             newProjectile.transform.rotation = aimPivot.rotation;
 
             player.GetComponent<playerHealth>().currentHealth -= damage;
+            SoundFxManager.instance.PlayLAMOuch();
             
             StartCoroutine(AttackCooldown());
         }

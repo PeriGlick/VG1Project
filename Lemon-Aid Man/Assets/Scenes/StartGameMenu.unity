@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardPress: {fileID: 8300000, guid: 98e5cfadfe71344ce9d36c29be6bcfaf, type: 3}
+  powerupSound: {fileID: 0}
 --- !u!1 &350132853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1386,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 06a4bfed1ccb84c249b3493b173f8b0f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

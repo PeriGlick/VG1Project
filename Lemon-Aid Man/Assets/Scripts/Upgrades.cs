@@ -9,8 +9,6 @@ using UnityEngine.UI;
 
 public class Upgrades : MonoBehaviour
 {
-    // Start is called before the first frame
-
     public Button speedOne, customerMoveOne, healthOne, standOne, moneyOne;
     public Button speedTwo, customerMoveTwo, healthTwo, standTwo, moneyTwo;
     Button[] ones;
@@ -20,8 +18,6 @@ public class Upgrades : MonoBehaviour
     public GameObject stand;
     DuckKillScript dks;
     int kuu;
-    
-    
 
     void Start()
     {
@@ -38,8 +34,6 @@ public class Upgrades : MonoBehaviour
         healthTwo.onClick.AddListener(healthTwoUpgrade);
         standTwo.onClick.AddListener(standTwoUpgrade);
         customerMoveTwo.onClick.AddListener(customerMoveTwoUpgrade);
-
-
     }
 
     // Update is called once per frame
@@ -50,7 +44,6 @@ public class Upgrades : MonoBehaviour
         {
 
         }*/
-
     }
     
     public void speedOneUpgrade()
@@ -62,9 +55,9 @@ public class Upgrades : MonoBehaviour
             player.GetComponent<playerMovement>().moveSpeed = player.GetComponent<playerMovement>().moveSpeed * 1.2f;
             speedOne.interactable = false;
             speedTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
             Debug.Log("Speed Upgrade Working");
         }
-        
     }
 
     public void moneyOneUpgrade()
@@ -76,6 +69,7 @@ public class Upgrades : MonoBehaviour
             gameManager.instance.lemonadeCost = gameManager.instance.lemonadeCost * 2;
             moneyOne.interactable = false;
             moneyTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
         }
     }
 
@@ -89,6 +83,7 @@ public class Upgrades : MonoBehaviour
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
         }
     }
 
@@ -102,6 +97,7 @@ public class Upgrades : MonoBehaviour
             stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
             standOne.interactable = false;
             standTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
         }
     }
 
@@ -114,6 +110,7 @@ public class Upgrades : MonoBehaviour
             gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.25f;
             customerMoveOne.interactable = false;
             customerMoveTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
         }
     }
 
@@ -126,6 +123,7 @@ public class Upgrades : MonoBehaviour
             player.GetComponent<playerMovement>().moveSpeed = player.GetComponent<playerMovement>().moveSpeed * 1.2f;
             speedOne.interactable = false;
             speedTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
             Debug.Log("Speed Upgrade Working");
         }
 
@@ -140,6 +138,7 @@ public class Upgrades : MonoBehaviour
             gameManager.instance.lemonadeCost = gameManager.instance.lemonadeCost * 2;
             moneyOne.interactable = false;
             moneyTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
         }
     }
 
@@ -153,6 +152,7 @@ public class Upgrades : MonoBehaviour
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
         }
     }
 
@@ -166,6 +166,7 @@ public class Upgrades : MonoBehaviour
             stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
             standOne.interactable = false;
             standTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
         }
     }
 
@@ -178,6 +179,7 @@ public class Upgrades : MonoBehaviour
             gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.25f;
             customerMoveOne.interactable = false;
             customerMoveTwo.interactable = true;
+            SoundFxManager.instance.PlayPowerupSound();
         }
     }
 

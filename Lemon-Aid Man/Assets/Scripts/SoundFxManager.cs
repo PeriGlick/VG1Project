@@ -10,26 +10,39 @@ public class SoundFxManager : MonoBehaviour
     // Outlets
     private AudioSource _audioSource;
     public AudioClip keyboardPress;
-    // public AudioClip duckQuack;
+    public AudioClip powerupSound;
+    public AudioClip healSound;
+    public AudioClip LAMOuchSound;
 
     void Awake() {
         instance = this;
-        // if (instance == null) {
-        //     instance = this;
-        //     DontDestroyOnLoad(instance);
-        // } else {
-        //     Destroy(gameObject);
-        // }
     }
 
-    // Start is called before the first frame update
     void Start() {
         _audioSource = GetComponent<AudioSource>();
     }
 
     public void PlayKeyboardPress() {
         if (_audioSource) {
-            _audioSource.PlayOneShot(keyboardPress);
+            _audioSource.PlayOneShot(keyboardPress, 0.6f);
+        }
+    }
+    
+    public void PlayPowerupSound() {
+        if (_audioSource) {
+            _audioSource.PlayOneShot(powerupSound, 0.3f);
+        }
+    }
+    
+    public void PlayHealSound() {
+        if (_audioSource) {
+            _audioSource.PlayOneShot(healSound, 0.3f);
+        }
+    }
+    
+    public void PlayLAMOuch() {
+        if (_audioSource) {
+            _audioSource.PlayOneShot(LAMOuchSound, 0.3f);
         }
     }
 }

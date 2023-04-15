@@ -3522,6 +3522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardPress: {fileID: 8300000, guid: 98e5cfadfe71344ce9d36c29be6bcfaf, type: 3}
+  powerupSound: {fileID: 8300000, guid: f8137834b295c4687baf102080bcdf47, type: 3}
+  healSound: {fileID: 8300000, guid: 664f2a311d1d84409bf56963d55e2d87, type: 3}
+  LAMOuchSound: {fileID: 8300000, guid: 996ab74b5d27445e4839996bd511b0f7, type: 3}
 --- !u!4 &613473323
 Transform:
   m_ObjectHideFlags: 0
@@ -3549,7 +3552,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
