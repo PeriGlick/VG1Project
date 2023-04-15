@@ -27,7 +27,7 @@ public class DuckRangerController : MonoBehaviour
     GameObject player;
     Animator animator;
     public GameObject dkm;
-    public DuckKillScript dks;
+    DuckKillScript dks;
     public int duckHealth = 12;
     public SpriteRenderer sp;
 

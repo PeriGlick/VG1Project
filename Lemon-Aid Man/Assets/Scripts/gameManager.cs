@@ -28,6 +28,7 @@ public class gameManager : MonoBehaviour
     public static gameManager instance;
     public float lemonadeCost;
     public float customerMoveSpeed;
+    public bool timeUp;
 
 
     public void Awake()
@@ -45,6 +46,7 @@ public class gameManager : MonoBehaviour
         duckKills = 0;
         Time.timeScale = 1;
         TimerController.instance.BeginTimer();
+        timeUp = false;
     }
 
     void Update()
@@ -64,6 +66,12 @@ public class gameManager : MonoBehaviour
             SceneManager.LoadScene("Game");
             win = false;
         }
+        if (timeUp == true) 
+        {
+            TimerController.instance.EndTimer();
+            Win();
+        
+        }
     }
 
     // increase the amount in bank and update its display
@@ -71,9 +79,7 @@ public class gameManager : MonoBehaviour
     {
         bank += cost;
         currentBank.text = "$" + bank.ToString();  //took out F2 in quotes there
-        if(bank >= winningProfits) {  //Need to take this out to switch to timer format
-            Win();
-        }
+        
     }
 
     // when game is lost
