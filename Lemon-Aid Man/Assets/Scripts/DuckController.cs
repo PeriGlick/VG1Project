@@ -57,53 +57,28 @@ public class DuckController : MonoBehaviour
             animator.SetFloat("movementY", _rb.velocity.y);                
         }
 
-        Debug.Log( sp.sprite.name);
+        string spriteName = sp.sprite.name;
 
-        // // change animation based on velocity
-        // float movementAngle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
-
-        // animatorinfo = animator.GetCurrentAnimatorClipInfo(0);
-        // current_animation = animatorinfo[0].clip.name;
-        // Debug.Log(current_animation);
-
-        // if(current_animation == "DownShoot") {
-        //     aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
-        // } else if(current_animation == "RightShoot") {
-        //     aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
-        // } else if(current_animation == "LeftShoot") {
-        //     aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
-        // } else if(current_animation == "IdleUp") {
-        //     aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
-        // }
-
-        // // moving right
-        // if(movementAngle > -45 && movementAngle <= 45) {
-        //     if(!animator.GetBool("gunning")) {
-        //         sp.flipX = false;
-        //     }
-        //     // animator.SetInteger("Direction", 0);
-        //     aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
-        // // moving left
-        // } else if(movementAngle > 135 || movementAngle <= -135) {
-        //     // animator.SetInteger("Direction", 0);
-        //     if(!animator.GetBool("gunning")) {
-        //         sp.flipX = true;
-        //     }
-        //     aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
-        // // moving up 
-        // } else if(movementAngle > 45 && movementAngle <= 135) {
-        //     // animator.SetInteger("Direction", 1);
-        //     aimPivot.transform.position = transform.position + new Vector3(0.042f,0.007f,0);
-        // // moving down
-        // } else if(movementAngle > -135 && movementAngle <= -45) {
-        //     // animator.SetInteger("Direction", -1);
-        //     aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
-        // }
+        // shoot right
+        if(spriteName == "duck_sprite_sheet_24") {
+            aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
+            sp.flipX = false;
+        // shoot left
+        } else if(spriteName == "duck_sprite_sheet_23") {
+            aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
+            sp.flipX = true;
+        } else {
+            aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
+            if(_rb.velocity.x < 0) {
+                sp.flipX = true;
+            } else {
+                sp.flipX = false;
+            }
+        }
 
         // attack player
         if(playerInRange && canAttack)
         {   
-            animator.SetTrigger("gunning");
             // Aim Towards Player
             Vector3 playerPosition = player.transform.position;
             Vector3 directionFromDuckToPlayer = playerPosition - transform.position;
@@ -125,7 +100,6 @@ public class DuckController : MonoBehaviour
         //attack stand
         else if (standInRange && canAttack)
         {
-            animator.SetTrigger("gunning");
             // Aim Towards Stand
             Vector3 standPosition = stand.transform.position;
             Vector3 directionFromDuckToStand = standPosition - transform.position;
@@ -143,68 +117,33 @@ public class DuckController : MonoBehaviour
             stand.GetComponent<StandController>().TakeDamage(damage);
             StartCoroutine(AttackCooldown());
         }
-
-        // var rootStateMachine = animator.layers[0].stateMachine;
-        // var stateWithBlendTree = rootStateMachine.states[0].state;
-        // var blendTree = (BlendTree)stateWithBlendTree.motion;
-
-
-        // int w = this.animator.GetCurrentAnimatorClipInfo(0).Length;
-        // string[] clipName = new string[w];
-        // string clipNames = "";
-        // for (int i = 0; i < w; i += 1)
-        // {
-        //     clipName[i] = animator.GetCurrentAnimatorClipInfo(0)[i].clip.name;
-        //     if(clipName[i] == "LeftShoot") {            
-        //         aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
-        //     } else if(clipName[i] == "RightShoot") {            
-        //         aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
-        //     } else if(clipName[i] == "DownShoot") {            
-        //         aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
-        //     } else if(clipName[i] == "IdleUp") {            
-        //         aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
-        //     }
-        //     clipNames += clipName[i];
-        // }
-        // Debug.Log(clipNames);
     }
 
     void FixedUpdate() {
-        string spriteName = sp.sprite.name;
-
-        // shoot right
-        if(spriteName == "duck_sprite_sheet_24") {
-            aimPivot.transform.position = transform.position + new Vector3(.6f,0.036f,0);
-            sp.flipX = false;
-        // shoot left
-        } else if(spriteName == "duck_sprite_sheet_23") {
-            aimPivot.transform.position = transform.position + new Vector3(-.6f,0.036f,0);
-            sp.flipX = true;
-        } else {
-            sp.flipX = false;
-            aimPivot.transform.position = transform.position + new Vector3(-0.042f,0.007f,0);
-        }
-
         var step =  moveSpeed * Time.deltaTime; 
         var distBtwPlayerAndDuck = Vector3.Distance(transform.position, player.transform.position);
+        var distBtwStandAndDuck = Vector3.Distance(transform.position, stand.transform.position);
 
         if(distBtwPlayerAndDuck < shootRange) {
             playerInRange = true;
-            // animator.SetBool("gunning", true);
+            animator.SetBool("gunning", true);
+        } else if(distBtwStandAndDuck < shootRange) {
+            standInRange = true;
+            animator.SetBool("gunning", true);
         } else {
             playerInRange = false;
-            // animator.SetBool("gunning", false);
+            standInRange = false;
+            animator.SetBool("gunning", false);
         }
         
         // move towards player
-        if(distBtwPlayerAndDuck < moveToPlayerDistance && distBtwPlayerAndDuck > shootRange * (1/2))
+        if(distBtwPlayerAndDuck < moveToPlayerDistance && distBtwPlayerAndDuck > shootRange * (1/3) && canAttack)
         {
             Vector2 directionToTarget = player.transform.position - transform.position;
             _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
         }
-
         // move towards stand unless near player
-        else if (Vector3.Distance(transform.position, stand.transform.position) > 1f)
+        else if (distBtwStandAndDuck > shootRange * (1/3) && (distBtwPlayerAndDuck >= moveToPlayerDistance))
         {
             Vector2 directionToTarget = stand.transform.position - transform.position;
             _rb.AddForce(Vector3.Normalize(directionToTarget) * step, ForceMode2D.Impulse);
@@ -248,11 +187,11 @@ public class DuckController : MonoBehaviour
         //     animator.SetBool("gunning", true);
         // }
 
-        if (other.gameObject.CompareTag("Stand"))
-        {
-            standInRange = true;
-            animator.SetBool("gunning", true);
-        }
+        // if (other.gameObject.CompareTag("Stand"))
+        // {
+        //     standInRange = true;
+        //     animator.SetBool("gunning", true);
+        // }
     }
 
     private void OnCollisionExit2D(Collision2D other) {
@@ -262,11 +201,11 @@ public class DuckController : MonoBehaviour
         //     animator.SetBool("gunning", false);
         // }
 
-        if (other.gameObject.CompareTag("Stand"))
-        {
-            standInRange = false;
-            animator.SetBool("gunning", false);
-        }
+        // if (other.gameObject.CompareTag("Stand"))
+        // {
+        //     standInRange = false;
+        //     animator.SetBool("gunning", false);
+        // }
     }
 
     IEnumerator AttackCooldown()
