@@ -21,6 +21,10 @@ public class WeaponsManager : MonoBehaviour
     public GameObject LemonGrenadePrefab;
     public GameObject SeedSpitterPrefab;
     public GameObject LemonadeSplashPrefab;
+    public Text untilSS;
+    public Text untilLS;
+    public int tilSS;
+    public int tilLS;
 
    
     // Start is called before the first frame update
@@ -34,12 +38,18 @@ public class WeaponsManager : MonoBehaviour
         DuckKillMonitor = GameObject.Find("DuckKillMonitor");
         dks = DuckKillMonitor.GetComponent<DuckKillScript>();
         currentKills = dks.duckKills;
+        tilSS = SScap - currentKills;
+        tilLS = LScap - currentKills;
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        tilSS = SScap - currentKills;
+        tilLS = LScap - currentKills;
+        untilSS.text = "Kills Until Unlock: " + tilSS;
+        untilLS.text = "Kills Until Unlock: " + tilLS;
         if (currentKills >= SScap)
         {
             unlockSS = true;
@@ -51,11 +61,13 @@ public class WeaponsManager : MonoBehaviour
         if (unlockSS)
         {
             SS.interactable = true;
+            untilSS.gameObject.SetActive(false);
         }
 
         if (unlockLS)
         {
             LS.interactable = true;
+            untilLS.gameObject.SetActive(false);
         }
         
     }
@@ -76,21 +88,26 @@ public class WeaponsManager : MonoBehaviour
 
     public void SeedSpitter()
     {
-        player.GetComponent<playerMovement>().projectilePrefab = SeedSpitterPrefab;
-        SS.interactable = false;
-        LG.interactable = true;
-        if (unlockLS)
+        if (unlockSS)
         {
-            LS.interactable = true;
+            player.GetComponent<playerMovement>().projectilePrefab = SeedSpitterPrefab;
+            SS.interactable = false;
+            LG.interactable = true;
+            if (unlockLS)
+            {
+                LS.interactable = true;
+            }
         }
     }
 
     public void LemonadeSplash()
     {
-        player.GetComponent<playerMovement>().projectilePrefab = LemonadeSplashPrefab;
-        LS.interactable = false;
-        LG.interactable = true;
-        SS.interactable = true;
-
+        if (unlockLS)
+        {
+            player.GetComponent<playerMovement>().projectilePrefab = LemonadeSplashPrefab;
+            LS.interactable = false;
+            LG.interactable = true;
+            SS.interactable = true;
+        }
     }
 }
