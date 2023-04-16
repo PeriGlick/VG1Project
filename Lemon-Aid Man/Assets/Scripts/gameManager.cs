@@ -79,7 +79,9 @@ public class gameManager : MonoBehaviour
     {
         bank += cost;
         currentBank.text = "$" + bank.ToString();  //took out F2 in quotes there
-        
+        if (cost != 0) {
+            SoundFxManager.instance.PlayEarnMoneySound();
+        }
     }
 
     // when game is lost
@@ -93,6 +95,7 @@ public class gameManager : MonoBehaviour
             FinalKillsGO2.text = "Final Kills: " + duckKills.ToString();
             Time.timeScale = 0;
             playerObject.GetComponent<playerMovement>().enabled = false;
+            // SoundFxManager.instance.PlayGameOverSound(); // Plays repeatedly...?
         }
     }
 

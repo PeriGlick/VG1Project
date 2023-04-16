@@ -57,13 +57,16 @@ public class MeleeDuckController : MonoBehaviour
         // attack player
         if(playerInRange && canAttack)
         {
+            // prevent negative damage
             if(player.GetComponent<playerHealth>().currentHealth < damage) {
                 player.GetComponent<playerHealth>().currentHealth = 0;
             } else {
                 player.GetComponent<playerHealth>().currentHealth -= damage;
             }
+            SoundFxManager.instance.PlayLAMOuch();
             StartCoroutine(AttackCooldown());
         }
+        
         //attack stand
         else if (standInRange && canAttack)
         {
@@ -120,8 +123,12 @@ public class MeleeDuckController : MonoBehaviour
             duckHealth = duckHealth - 6;
             if (duckHealth <= 0)
             {
+                SoundFxManager.instance.PlayDuckQuackHigh();
                 Destroy(gameObject);
                 dks.addKill();
+            }
+            else {
+                SoundFxManager.instance.PlayDuckQuackNormal();
             }
         }
 
@@ -131,8 +138,12 @@ public class MeleeDuckController : MonoBehaviour
             duckHealth = duckHealth - 4;
             if (duckHealth <= 0)
             {
+                SoundFxManager.instance.PlayDuckQuackHigh();
                 Destroy(gameObject);
                 dks.addKill();
+            }
+            else {
+                SoundFxManager.instance.PlayDuckQuackNormal();
             }
         }
 
