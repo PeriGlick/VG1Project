@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6371646211615329137}
   - component: {fileID: 6371646211615329142}
   - component: {fileID: 6371646211615329138}
+  - component: {fileID: 1157227190672208996}
   m_Layer: 12
   m_Name: grapeBullet
   m_TagString: Untagged
@@ -164,3 +165,18 @@ MonoBehaviour:
   speed: 4
   liveTime: 0.5
   weaponCoolDown: 1
+--- !u!114 &1157227190672208996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371646211615329143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8151f51d2c7461abe11daa2c4ef546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  liveTime: 0.5
+  damage: 5

@@ -40,7 +40,12 @@ public class StandController : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        standHealth -= damageAmount;
+        // prevent negative health
+        if(standHealth < damageAmount) {
+            standHealth = 0;
+        } else{
+            standHealth -= damageAmount;
+        }
         float sh = standHealth;
         float msh = maxStandHealth;
         // lemonSliceHealth.fillAmount = sh / msh;
@@ -48,6 +53,5 @@ public class StandController : MonoBehaviour
         {
             endGame();
         }
-
     }
 }

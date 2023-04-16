@@ -57,7 +57,11 @@ public class MeleeDuckController : MonoBehaviour
         // attack player
         if(playerInRange && canAttack)
         {
-            player.GetComponent<playerHealth>().currentHealth -= damage;
+            if(player.GetComponent<playerHealth>().currentHealth < damage) {
+                player.GetComponent<playerHealth>().currentHealth = 0;
+            } else {
+                player.GetComponent<playerHealth>().currentHealth -= damage;
+            }
             StartCoroutine(AttackCooldown());
         }
         //attack stand

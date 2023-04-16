@@ -12,7 +12,6 @@ public class DuckRangerController : MonoBehaviour
 
     private bool playerInRange = false;
     public float coolDown = 1;
-    public int damage = 1;
     private bool canAttack = true;
 
     private Vector3 vectorBtwPlayerOrStand;
@@ -90,9 +89,6 @@ public class DuckRangerController : MonoBehaviour
             newProjectile.transform.position = aimPivot.transform.position;
             newProjectile.transform.rotation = aimPivot.rotation;
 
-            player.GetComponent<playerHealth>().currentHealth -= damage;
-            SoundFxManager.instance.PlayLAMOuch();
-            
             StartCoroutine(AttackCooldown());
         }
         //attack stand
@@ -112,7 +108,6 @@ public class DuckRangerController : MonoBehaviour
             newProjectile.transform.position = aimPivot.transform.position;
             newProjectile.transform.rotation = aimPivot.rotation;
 
-            stand.GetComponent<StandController>().TakeDamage(damage);
             StartCoroutine(AttackCooldown());
         }
     }
