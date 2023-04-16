@@ -95,6 +95,7 @@ public class DuckRangerController : MonoBehaviour
             
             StartCoroutine(AttackCooldown());
         }
+        
         //attack stand
         else if (standInRange && canAttack)
         {
@@ -165,8 +166,12 @@ public class DuckRangerController : MonoBehaviour
             duckHealth = duckHealth - 6;
             if (duckHealth <= 0)
             {
+                SoundFxManager.instance.PlayDuckQuackHigh();
                 Destroy(gameObject);
                 dks.addKill();
+            }
+            else {
+                SoundFxManager.instance.PlayDuckQuackNormal();
             }
         }
 
@@ -176,13 +181,18 @@ public class DuckRangerController : MonoBehaviour
             duckHealth = duckHealth - 4;
             if (duckHealth <= 0)
             {
+                SoundFxManager.instance.PlayDuckQuackHigh();
                 Destroy(gameObject);
                 dks.addKill();
+            }
+            else {
+                SoundFxManager.instance.PlayDuckQuackNormal();
             }
         }
 
         if (other.gameObject.GetComponent<LemonadeSplash>())
         {
+            SoundFxManager.instance.PlayDuckQuackHigh();
             Destroy(gameObject);
             dks.addKill();
         }
