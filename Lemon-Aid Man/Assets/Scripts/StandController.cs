@@ -31,6 +31,12 @@ public class StandController : MonoBehaviour
         if (standHealth <= 0f) {
             endGame();
         }
+
+        if (standHealth > maxStandHealth)
+        {
+            standHealth = maxStandHealth;
+        }
+        
     }
 
     void endGame()

@@ -14,7 +14,7 @@ public class gameManager : MonoBehaviour
     public GameObject playerObject;
     bool gameOver = false;
     public Text currentBank;
-    public float winningProfits;
+    //public float winningProfits;
     bool win = false;
     public float bank;
     public int duckKills;

@@ -1936,6 +1936,7 @@ GameObject:
   - component: {fileID: 301972311}
   - component: {fileID: 301972310}
   - component: {fileID: 301972309}
+  - component: {fileID: 301972312}
   m_Layer: 5
   m_Name: LGButton
   m_TagString: Untagged
@@ -2071,6 +2072,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301972307}
   m_CullTransparentMesh: 1
+--- !u!114 &301972312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301972307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &332876558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,7 +3091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -70}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 1000, y: 250}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &522382624
@@ -3089,7 +3107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31764707, g: 0.18039216, b: 0.08627451, a: 1}
+  m_Color: {r: 0.6627451, g: 0.16078432, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3098,7 +3116,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 31b4fcb5bc8144595836b7327c8cc760, type: 3}
-    m_FontSize: 80
+    m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -8534,6 +8552,7 @@ MonoBehaviour:
   player: {fileID: 1328690636}
   glassCost: {fileID: 1214279566}
   pitcherCost: {fileID: 1373397752}
+  stand: {fileID: 918976151}
 --- !u!1 &1598159917
 GameObject:
   m_ObjectHideFlags: 0
@@ -8706,7 +8725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -70}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 1000, y: 250}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1624483449
@@ -8722,7 +8741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31764707, g: 0.18039216, b: 0.08627451, a: 1}
+  m_Color: {r: 0.6603774, g: 0.1578844, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8731,7 +8750,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 31b4fcb5bc8144595836b7327c8cc760, type: 3}
-    m_FontSize: 80
+    m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -13047,7 +13066,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Stand II
+  m_Text: Stand Health II
 --- !u!222 &2011208193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13583,7 +13602,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Stand I
+  m_Text: Stand Health I
 --- !u!222 &2072277739
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13740,7 +13759,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: COST I
+  m_Text: cost I
 --- !u!222 &2121776294
 CanvasRenderer:
   m_ObjectHideFlags: 0

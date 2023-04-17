@@ -66,7 +66,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            gameManager.instance.lemonadeCost = gameManager.instance.lemonadeCost * 2;
+            gameManager.instance.lemonadeCost = 0.10f;
             moneyOne.interactable = false;
             moneyTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
@@ -79,7 +79,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth* 2;
+            player.GetComponent<playerHealth>().maxHealth = 200;
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
@@ -93,7 +93,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            stand.GetComponent<StandController>().maxStandHealth = stand.GetComponent<StandController>().maxStandHealth* 2;
+            stand.GetComponent<StandController>().maxStandHealth = 200;
             stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
             standOne.interactable = false;
             standTwo.interactable = true;
@@ -107,7 +107,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.25f;
+            gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.2f;
             customerMoveOne.interactable = false;
             customerMoveTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
@@ -125,6 +125,7 @@ public class Upgrades : MonoBehaviour
             speedTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
             Debug.Log("Speed Upgrade Working");
+            speedTwo.interactable = false;
         }
 
     }
@@ -135,10 +136,11 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            gameManager.instance.lemonadeCost = gameManager.instance.lemonadeCost * 2;
+            gameManager.instance.lemonadeCost = 0.20f;
             moneyOne.interactable = false;
             moneyTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
+            moneyTwo.interactable = false;
         }
     }
 
@@ -148,11 +150,12 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth * 2;
+            player.GetComponent<playerHealth>().maxHealth = 400;
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
+            healthTwo.interactable = false;
         }
     }
 
@@ -162,11 +165,12 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            stand.GetComponent<StandController>().maxStandHealth = stand.GetComponent<StandController>().maxStandHealth * 2;
+            stand.GetComponent<StandController>().maxStandHealth = 400;
             stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
             standOne.interactable = false;
             standTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
+            standTwo.interactable = false;
         }
     }
 
@@ -176,10 +180,11 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.25f;
+            gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.2f;
             customerMoveOne.interactable = false;
             customerMoveTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
+            customerMoveTwo.interactable = false;
         }
     }
 

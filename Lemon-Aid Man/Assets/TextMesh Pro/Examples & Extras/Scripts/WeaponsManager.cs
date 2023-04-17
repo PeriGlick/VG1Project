@@ -25,6 +25,10 @@ public class WeaponsManager : MonoBehaviour
     public Text untilLS;
     public int tilSS;
     public int tilLS;
+    public bool doneS;
+    public bool doneL;
+    public bool test1;
+    public bool test2;
 
    
     // Start is called before the first frame update
@@ -40,34 +44,45 @@ public class WeaponsManager : MonoBehaviour
         currentKills = dks.duckKills;
         tilSS = SScap - currentKills;
         tilLS = LScap - currentKills;
+        doneS = true;
+        doneL = true;
+        test1 = true;
+        test2 = true;
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentKills = dks.duckKills;
         tilSS = SScap - currentKills;
         tilLS = LScap - currentKills;
         untilSS.text = "Kills Until Unlock: " + tilSS;
         untilLS.text = "Kills Until Unlock: " + tilLS;
-        if (currentKills >= SScap)
+        if (currentKills >= SScap && test1)
         {
             unlockSS = true;
+            doneS = false;
+            test1 = false;
         }
-        if (currentKills >= LScap)
+        if (currentKills >= LScap && test2)
         {
             unlockLS = true;
+            doneL = false;
+            test2 = false;
         }
-        if (unlockSS)
+        if (!doneS)
         {
             SS.interactable = true;
             untilSS.gameObject.SetActive(false);
+            doneS = true;
         }
 
-        if (unlockLS)
+        if (!doneL)
         {
             LS.interactable = true;
             untilLS.gameObject.SetActive(false);
+            doneL = true;
         }
         
     }
@@ -97,6 +112,7 @@ public class WeaponsManager : MonoBehaviour
             {
                 LS.interactable = true;
             }
+            
         }
     }
 

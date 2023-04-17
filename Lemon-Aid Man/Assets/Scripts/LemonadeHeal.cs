@@ -11,6 +11,7 @@ public class LemonadeHeal : MonoBehaviour
     public GameObject player;
     public Text glassCost;
     public Text pitcherCost;
+    public GameObject stand;
     
     void Start()
     {
@@ -22,11 +23,27 @@ public class LemonadeHeal : MonoBehaviour
     {
         glassCost.text = "$"+gameManager.instance.lemonadeCost.ToString();
         pitcherCost.text = "$"+(gameManager.instance.lemonadeCost*5).ToString();
+        if (player.GetComponent<playerHealth>().currentHealth == player.GetComponent<playerHealth>().maxHealth)
+        {
+            glass.interactable = false;
+        }
+        else
+        {
+            glass.interactable = true;
+        }
+        if (stand.GetComponent<StandController>().standHealth == stand.GetComponent<StandController>().maxStandHealth)
+        {
+            pitcher.interactable = false;
+        }
+        else
+        {
+            pitcher.interactable= true;
+        }
     }
 
     public void glassHeal()
     {
-        float cost = gameManager.instance.lemonadeCost;
+        float cost = gameManager.instance.lemonadeCost/2;
         if (gameManager.instance.bank >= cost)
         {
             gameManager.instance.bank -= cost;
@@ -37,11 +54,11 @@ public class LemonadeHeal : MonoBehaviour
 
     public void pitcherHeal()
     {
-        float cost = (gameManager.instance.lemonadeCost * 5);
+        float cost = ((gameManager.instance.lemonadeCost * 5)/2);
         if (gameManager.instance.bank >= cost)
         {
             gameManager.instance.bank -= cost;
-            player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
+            stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().standHealth + (stand.GetComponent<StandController>().maxStandHealth/ 5);
             SoundFxManager.instance.PlayHealSound();
         }
     }
