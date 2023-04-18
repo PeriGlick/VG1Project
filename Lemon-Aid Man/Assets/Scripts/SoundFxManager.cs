@@ -18,6 +18,8 @@ public class SoundFxManager : MonoBehaviour
     public AudioClip gameOverManVoice;
     public AudioClip duckQuackNormal;
     public AudioClip duckQuackHigh;
+    public AudioClip duckScream;
+    public AudioClip meleeSwoosh;
 
     void Awake() {
         instance = this;
@@ -53,7 +55,7 @@ public class SoundFxManager : MonoBehaviour
     
     public void PlayEarnMoneySound() {
         if (_audioSource) {
-            _audioSource.PlayOneShot(earnMoneySound, 0.3f);
+            _audioSource.PlayOneShot(earnMoneySound, 0.25f);
         }
     }
     
@@ -74,6 +76,18 @@ public class SoundFxManager : MonoBehaviour
     public void PlayDuckQuackHigh() {
         if (_audioSource) {
             _audioSource.PlayOneShot(duckQuackHigh, 0.3f);
+        }
+    }
+    
+    public void PlayMeleeSwoosh() {
+        if (_audioSource) {
+            _audioSource.PlayOneShot(meleeSwoosh, 0.3f);
+        }
+    }
+    
+    public void PlayDuckScream() {
+        if (_audioSource) {
+            _audioSource.PlayOneShot(duckScream, 0.3f);
         }
     }
 }

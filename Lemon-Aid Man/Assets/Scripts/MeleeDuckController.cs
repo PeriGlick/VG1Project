@@ -63,6 +63,7 @@ public class MeleeDuckController : MonoBehaviour
             } else {
                 player.GetComponent<playerHealth>().currentHealth -= damage;
             }
+            SoundFxManager.instance.PlayMeleeSwoosh();
             SoundFxManager.instance.PlayLAMOuch();
             StartCoroutine(AttackCooldown());
         }
@@ -70,6 +71,7 @@ public class MeleeDuckController : MonoBehaviour
         //attack stand
         else if (standInRange && canAttack)
         {
+            SoundFxManager.instance.PlayMeleeSwoosh();
             stand.GetComponent<StandController>().TakeDamage(damage);
             StartCoroutine(AttackCooldown());
         }
@@ -123,7 +125,7 @@ public class MeleeDuckController : MonoBehaviour
             duckHealth = duckHealth - 6;
             if (duckHealth <= 0)
             {
-                SoundFxManager.instance.PlayDuckQuackHigh();
+                SoundFxManager.instance.PlayDuckScream();
                 Destroy(gameObject);
                 dks.addKill();
             }
@@ -138,7 +140,7 @@ public class MeleeDuckController : MonoBehaviour
             duckHealth = duckHealth - 4;
             if (duckHealth <= 0)
             {
-                SoundFxManager.instance.PlayDuckQuackHigh();
+                SoundFxManager.instance.PlayDuckScream();
                 Destroy(gameObject);
                 dks.addKill();
             }
@@ -149,6 +151,7 @@ public class MeleeDuckController : MonoBehaviour
 
         if (other.gameObject.GetComponent<LemonadeSplash>())
         {
+            SoundFxManager.instance.PlayDuckScream();
             Destroy(gameObject);
             dks.addKill();
         }

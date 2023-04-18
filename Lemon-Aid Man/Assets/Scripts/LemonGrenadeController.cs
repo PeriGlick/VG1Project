@@ -11,8 +11,6 @@ public class LemonGrenadeController : MonoBehaviour
     public float speed = 8f;
     public float liveTime = 0.5f;
     public float weaponCoolDown = 1f;
-   
-
 
     void Start() {
         _rb = GetComponent<Rigidbody2D>();
