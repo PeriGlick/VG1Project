@@ -14,7 +14,7 @@ public class playerHealth : MonoBehaviour
     
     void Start()
     {
-        maxHealth = 100;
+        maxHealth = 1000;
         currentHealth = maxHealth;
         lemonSliceHealth.fillAmount = 1;
         // healthBar.SetHealth(currentHealth, maxHealth);

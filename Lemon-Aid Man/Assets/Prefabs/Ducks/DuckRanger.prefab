@@ -133,7 +133,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 5
+  m_LinearDrag: 50
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -197,12 +197,10 @@ MonoBehaviour:
   aimPivot: {fileID: 1298187294583577609}
   projectilePrefab: {fileID: 6371646211615329143, guid: e4ee744bf0b31417b91e73222767c5dc, type: 3}
   coolDown: 1
-  damage: 5
-  moveSpeed: 3
+  moveSpeed: 25
   moveToPlayerDistance: 3
   shootRange: 2
   dkm: {fileID: 0}
-  dks: {fileID: 0}
   duckHealth: 10
   sp: {fileID: 8487165730310774990}
 --- !u!95 &-5538720940861239621

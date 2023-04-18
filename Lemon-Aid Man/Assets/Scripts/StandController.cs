@@ -18,7 +18,7 @@ public class StandController : MonoBehaviour
 
     void Start()
     {
-        maxStandHealth = 100;
+        maxStandHealth = 1000;
         standHealth = maxStandHealth;
     }
 
