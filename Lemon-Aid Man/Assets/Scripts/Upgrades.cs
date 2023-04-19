@@ -48,7 +48,7 @@ public class Upgrades : MonoBehaviour
     
     public void speedOneUpgrade()
     {
-        float upgradeCost = 0.25f;
+        float upgradeCost = 0.125f;
         if(gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -62,7 +62,7 @@ public class Upgrades : MonoBehaviour
 
     public void moneyOneUpgrade()
     {
-        float upgradeCost = 0.50f;
+        float upgradeCost = 0.25f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -75,11 +75,11 @@ public class Upgrades : MonoBehaviour
 
     public void healthOneUpgrade()
     {
-        float upgradeCost = 0.50f;
+        float upgradeCost = 0.25f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerHealth>().maxHealth = 200;
+            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth + (player.GetComponent<playerHealth>().maxHealth*0.50f);
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
@@ -89,11 +89,11 @@ public class Upgrades : MonoBehaviour
 
     public void standOneUpgrade()
     {
-        float upgradeCost = 1.00f;
+        float upgradeCost = 0.5f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            stand.GetComponent<StandController>().maxStandHealth = 200;
+            stand.GetComponent<StandController>().maxStandHealth += (stand.GetComponent<StandController>().maxStandHealth/2);
             stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
             standOne.interactable = false;
             standTwo.interactable = true;
@@ -103,7 +103,7 @@ public class Upgrades : MonoBehaviour
 
     public void customerMoveOneUpgrade()
     {
-        float upgradeCost = 0.25f;
+        float upgradeCost = 0.125f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -132,7 +132,7 @@ public class Upgrades : MonoBehaviour
 
     public void moneyTwoUpgrade()
     {
-        float upgradeCost = 2.50f;
+        float upgradeCost = 2.5f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -146,11 +146,11 @@ public class Upgrades : MonoBehaviour
 
     public void healthTwoUpgrade()
     {
-        float upgradeCost = 2.50f;
+        float upgradeCost = 2.5f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerHealth>().maxHealth = 400;
+            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth + (player.GetComponent<playerHealth>().maxHealth * 0.50f);
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
@@ -165,7 +165,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            stand.GetComponent<StandController>().maxStandHealth = 400;
+            stand.GetComponent<StandController>().maxStandHealth += (stand.GetComponent<StandController>().maxStandHealth / 2);
             stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
             standOne.interactable = false;
             standTwo.interactable = true;

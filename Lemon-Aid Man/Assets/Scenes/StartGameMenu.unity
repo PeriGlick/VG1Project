@@ -266,6 +266,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyboardPress: {fileID: 8300000, guid: 98e5cfadfe71344ce9d36c29be6bcfaf, type: 3}
   powerupSound: {fileID: 0}
+  healSound: {fileID: 0}
+  LAMOuchSound: {fileID: 0}
+  earnMoneySound: {fileID: 0}
+  gameOverArcadeSFX: {fileID: 0}
+  gameOverManVoice: {fileID: 0}
+  duckQuackNormal: {fileID: 0}
+  duckQuackHigh: {fileID: 0}
+  duckScream: {fileID: 0}
+  meleeSwoosh: {fileID: 0}
 --- !u!1 &350132853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,10 +1122,10 @@ MonoBehaviour:
 
 
     You
-    win if you collect $3 from the lemonade stand.
+    win if you survive for 5 minutes!
 
-    You lose if you die or if
-    the lemonade stand is destroyed.
+    You lose if you die or if the lemonade
+    stand is destroyed.
 
 
     Controls:
