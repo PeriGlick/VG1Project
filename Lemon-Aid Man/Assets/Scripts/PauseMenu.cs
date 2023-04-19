@@ -36,12 +36,12 @@ public class PauseMenu : MonoBehaviour
                 player.GetComponent<playerMovement>().enabled = false;
 
             }
-            /*else if (Time.timeScale == 0)
+            else if (Time.timeScale == 0)
             {
                 HidePause();
                 Time.timeScale = 1;
                 player.GetComponent<playerMovement>().enabled = true;
-            }*/
+            }
         }
     }
 
