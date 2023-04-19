@@ -79,7 +79,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth * 1.5f;
+            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth + 75f;
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
@@ -93,7 +93,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            stand.GetComponent<StandController>().maxStandHealth += (stand.GetComponent<StandController>().maxStandHealth/2);
+            stand.GetComponent<StandController>().maxStandHealth += 50;
             stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
             standOne.interactable = false;
             standTwo.interactable = true;
@@ -150,7 +150,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth + 75f;
+            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth + 150f;
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
@@ -165,7 +165,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            stand.GetComponent<StandController>().maxStandHealth += (stand.GetComponent<StandController>().maxStandHealth / 2);
+            stand.GetComponent<StandController>().maxStandHealth += 100;
             stand.GetComponent<StandController>().standHealth = stand.GetComponent<StandController>().maxStandHealth;
             standOne.interactable = false;
             standTwo.interactable = true;
