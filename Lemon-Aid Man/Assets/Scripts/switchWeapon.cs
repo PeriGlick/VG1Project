@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class switchWeapon : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public Button seedSpitterButton;
     public GameObject player;
     public GameObject seedSpitterPrefab;

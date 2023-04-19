@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class CustomerController : MonoBehaviour
 {
-    public float moveSpeed;
     public float coolDown;
     public float lemonadePrice;
 
@@ -24,9 +23,7 @@ public class CustomerController : MonoBehaviour
     private Vector3 finalDestLeftPos;
 
     private Animator animator;
-    
 
-    // Start is called before the first frame update
     void Start() {
         _rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -81,7 +78,7 @@ public class CustomerController : MonoBehaviour
     }
 
     void FixedUpdate() {
-        var step =  moveSpeed * Time.deltaTime; 
+        var step =  gameManager.instance.customerMoveSpeed * Time.deltaTime; 
         
         // leave game
         if (visitedStand) {
@@ -111,7 +108,7 @@ public class CustomerController : MonoBehaviour
     }
 
     private void CustomerLeave() {
-        var step = moveSpeed * Time.fixedDeltaTime;
+        var step = gameManager.instance.customerMoveSpeed * Time.fixedDeltaTime;
         // Randomly exits to the left or right of the screen
         if (randExitDirection == 0) {
             var standPosition = stand.transform.position + new Vector3(0, -1f, 0);

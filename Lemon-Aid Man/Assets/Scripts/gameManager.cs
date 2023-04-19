@@ -35,10 +35,11 @@ public class gameManager : MonoBehaviour
     {
         instance = this; 
     }
+    
     void Start()
     {
         lemonadeCost = 0.05f;
-        customerMoveSpeed = 1f;
+        // customerMoveSpeed = 1f;
         // initialize bank display
         increaseBank(0);
         DuckKillMonitor = GameObject.Find("DuckKillMonitor");
