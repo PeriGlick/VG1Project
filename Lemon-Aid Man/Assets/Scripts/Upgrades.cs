@@ -48,7 +48,7 @@ public class Upgrades : MonoBehaviour
     
     public void speedOneUpgrade()
     {
-        float upgradeCost = 0.125f;
+        float upgradeCost = 0.25f;
         if(gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -79,7 +79,7 @@ public class Upgrades : MonoBehaviour
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth + (player.GetComponent<playerHealth>().maxHealth*0.50f);
+            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth * 1.5f;
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
@@ -103,11 +103,11 @@ public class Upgrades : MonoBehaviour
 
     public void customerMoveOneUpgrade()
     {
-        float upgradeCost = 0.125f;
+        float upgradeCost = 0.25f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            gameManager.instance.customerMoveSpeed = gameManager.instance.customerMoveSpeed * 1.2f;
+            CustomerSpawner.instance.spawnRate = CustomerSpawner.instance.spawnRate * .75f;
             customerMoveOne.interactable = false;
             customerMoveTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
@@ -116,11 +116,11 @@ public class Upgrades : MonoBehaviour
 
     public void speedTwoUpgrade()
     {
-        float upgradeCost = 1.25f;
+        float upgradeCost = 1f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerMovement>().moveSpeed = player.GetComponent<playerMovement>().moveSpeed * 1.2f;
+            CustomerSpawner.instance.spawnRate = CustomerSpawner.instance.spawnRate * .75f;
             speedOne.interactable = false;
             speedTwo.interactable = true;
             SoundFxManager.instance.PlayPowerupSound();
@@ -132,7 +132,7 @@ public class Upgrades : MonoBehaviour
 
     public void moneyTwoUpgrade()
     {
-        float upgradeCost = 2.5f;
+        float upgradeCost = 1.25f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -146,11 +146,11 @@ public class Upgrades : MonoBehaviour
 
     public void healthTwoUpgrade()
     {
-        float upgradeCost = 2.5f;
+        float upgradeCost = 1.5f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
-            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth + (player.GetComponent<playerHealth>().maxHealth * 0.50f);
+            player.GetComponent<playerHealth>().maxHealth = player.GetComponent<playerHealth>().maxHealth + 75f;
             player.GetComponent<playerHealth>().currentHealth = player.GetComponent<playerHealth>().maxHealth;
             healthOne.interactable = false;
             healthTwo.interactable = true;
@@ -161,7 +161,7 @@ public class Upgrades : MonoBehaviour
 
     public void standTwoUpgrade()
     {
-        float upgradeCost = 5f;
+        float upgradeCost = 2f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -176,7 +176,7 @@ public class Upgrades : MonoBehaviour
 
     public void customerMoveTwoUpgrade()
     {
-        float upgradeCost = 1.25f;
+        float upgradeCost = 1.5f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;

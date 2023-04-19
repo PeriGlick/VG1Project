@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  liveTime: 0.75
+  liveTime: 0.35
   weaponCoolDown: 1.5
 --- !u!60 &8819397354082277718
 PolygonCollider2D:

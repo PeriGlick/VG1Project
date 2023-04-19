@@ -18,6 +18,7 @@ public class MeleeDuckController : MonoBehaviour
     private Vector3 vectorBtwPlayerOrStand;
 
     private Rigidbody2D _rb;
+    private Collider2D _coll;
     
     public float moveSpeed;
     public float moveToPlayerDistance;
@@ -37,6 +38,7 @@ public class MeleeDuckController : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _coll = GetComponent<Collider2D>();
         stand = GameObject.Find("Lemonade Stand");
         player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
@@ -79,8 +81,8 @@ public class MeleeDuckController : MonoBehaviour
 
     void FixedUpdate() {
         var step =  moveSpeed * Time.deltaTime; 
-        var distBtwPlayerAndDuck = Vector3.Distance(transform.position, player.transform.position);
-        var distBtwStandAndDuck = Vector3.Distance(transform.position, stand.transform.position);
+        var distBtwPlayerAndDuck = _coll.Distance(player.GetComponent<Collider2D>()).distance;
+        var distBtwStandAndDuck = _coll.Distance(stand.GetComponent<BoxCollider2D>()).distance;
 
         // check if player is within range to attack stand or player
         if(distBtwPlayerAndDuck < shootRange) {

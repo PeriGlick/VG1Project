@@ -92,12 +92,16 @@ public class CustomerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        var hitByLemonBeforeVisitingStand = other.gameObject.GetComponent<LemonGrenadeController>() && !visitedStand;
-        var hitBySeedBeforeVisitingStand = other.gameObject.GetComponent<seedSpitter>() && !visitedStand;
-        var hitBySplashBeforeVisitingStand = other.gameObject.GetComponent<LemonadeSplash>() && !visitedStand;
+        // var hitByLemonBeforeVisitingStand = other.gameObject.GetComponent<LemonGrenadeController>() && !visitedStand;
+        // var hitBySeedBeforeVisitingStand = other.gameObject.GetComponent<seedSpitter>() && !visitedStand;
+        // var hitBySplashBeforeVisitingStand = other.gameObject.GetComponent<LemonadeSplash>() && !visitedStand;
+        var hitByLemon = other.gameObject.GetComponent<LemonGrenadeController>();
+        var hitBySeed = other.gameObject.GetComponent<seedSpitter>();
+        var hitBySplash = other.gameObject.GetComponent<LemonadeSplash>();
         var visitedStandAndReachesBoundary = other.collider.CompareTag("Game Boundary") && visitedStand;
-        
-        if (hitByLemonBeforeVisitingStand || visitedStandAndReachesBoundary || hitBySeedBeforeVisitingStand || hitBySplashBeforeVisitingStand) {
+
+        if (hitByLemon || visitedStandAndReachesBoundary || hitBySeed || hitBySplash) {        
+        // if (hitByLemonBeforeVisitingStand || visitedStandAndReachesBoundary || hitBySeedBeforeVisitingStand || hitBySplashBeforeVisitingStand) {
             Destroy(gameObject);
         }
 

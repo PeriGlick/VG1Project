@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CustomerSpawner : MonoBehaviour
 {
+    public static CustomerSpawner instance;
+
     public float spawnRate;
     public float spawnCounter;
     public GameObject[] customerPrefabsList;
     
+    void Awake() {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start() {
         

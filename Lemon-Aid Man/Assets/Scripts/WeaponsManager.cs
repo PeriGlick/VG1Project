@@ -5,6 +5,7 @@ using System.Numerics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class WeaponsManager : MonoBehaviour
 {
     public Button LG;

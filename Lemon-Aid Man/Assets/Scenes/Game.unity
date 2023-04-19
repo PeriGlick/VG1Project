@@ -1555,8 +1555,8 @@ MonoBehaviour:
   LS: {fileID: 1195080207}
   DuckKillMonitor: {fileID: 0}
   currentKills: 0
-  SScap: 15
-  LScap: 30
+  SScap: 30
+  LScap: 70
   player: {fileID: 1328690636}
   LemonGrenadePrefab: {fileID: 6371646211615329143, guid: c548591e83f2a4fb1842ac46ff584e34, type: 3}
   SeedSpitterPrefab: {fileID: 6345295109140557326, guid: b549c52cb7a44ef428683dc8496b61e9, type: 3}
@@ -1926,7 +1926,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &301972307
 GameObject:
@@ -2452,7 +2452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $2.50
+  m_Text: $1.25
 --- !u!222 &388854925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2580,13 +2580,15 @@ MonoBehaviour:
   - 3
   - 2.7
   - 2
-  - 1.5
+  - 2
+  - 1.75
+  - 1.2
   - 1.2
   - 1
-  - 0.5
-  meleesInAWave: 0000000001000000030000000a0000000f0000001400000014000000
-  rangersInAWave: 0400000006000000070000000a000000050000000500000000000000
-  timeBetweenWave: 7
+  - 0.75
+  meleesInAWave: 000000000100000005000000080000000a0000000a00000007000000070000000a000000
+  rangersInAWave: 04000000060000000a00000007000000050000000a00000005000000030000000a000000
+  timeBetweenWave: 8
   spawnCurve:
     serializedVersion: 2
     m_Curve:
@@ -3231,7 +3233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503782906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.02, y: -4.58, z: 0.09513193}
+  m_LocalPosition: {x: -8.02, y: -4.58, z: 0.09513193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3440,7 +3442,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Kills Until \nUnlock: X"
@@ -3603,7 +3605,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $1.25
+  m_Text: $1.50
 --- !u!222 &535736061
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3641,7 +3643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d8b1df33e674fd985e95dcb7ea4b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 10
+  spawnRate: 9
   spawnCounter: 5
   customerPrefabsList:
   - {fileID: 4780666400875592656, guid: 75f411627b3e94d55b4d74945cef89da, type: 3}
@@ -3663,7 +3665,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &567341196
 GameObject:
@@ -3816,7 +3818,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 100
 --- !u!222 &604408218
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3879,7 +3881,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &613473324
 AudioSource:
@@ -4762,7 +4764,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $0.50
+  m_Text: $0.25
 --- !u!222 &725229411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4897,7 +4899,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781849994
 GameObject:
@@ -5168,64 +5170,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851369710}
   m_CullTransparentMesh: 1
---- !u!1 &878999120
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 878999122}
-  - component: {fileID: 878999121}
-  m_Layer: 0
-  m_Name: Enemy Spawner (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &878999121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878999120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c8c04987c4581408d512764baf94db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ducks: []
-  leftCorner: {fileID: 0}
-  rightCorner: {fileID: 0}
-  maxSpawnRate: 0
-  minSpawnRates: []
-  meleesInAWave: 
-  rangersInAWave: 
-  timeBetweenWave: 0
-  spawnCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &878999122
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878999120}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.76, y: -4.58, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &890108294
 GameObject:
   m_ObjectHideFlags: 0
@@ -5377,7 +5321,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Customer Speed II
+  m_Text: Customer Spawn II
 --- !u!222 &914578667
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5538,7 +5482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062c4f3d5851f3346881e17f215ee3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standHealth: 1000
+  standHealth: 100
   healthText: {fileID: 1790382411}
   maxStandHealth: 1000
 --- !u!50 &918976156
@@ -5696,7 +5640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Customer Speed I
+  m_Text: Customer Spawn I
 --- !u!222 &920015971
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6007,7 +5951,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $1.25
+  m_Text: $1.00
 --- !u!222 &1000902491
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6358,7 +6302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121624968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.02, y: -4.58, z: 0.09513193}
+  m_LocalPosition: {x: 8.02, y: -4.58, z: 0.09513193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7445,10 +7389,10 @@ RectTransform:
   - {fileID: 1139425765}
   - {fileID: 60462586}
   - {fileID: 135276476}
+  - {fileID: 633794708}
   - {fileID: 2061050375}
   - {fileID: 1025463903}
   - {fileID: 2043358645}
-  - {fileID: 633794708}
   - {fileID: 652018422}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -7458,64 +7402,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1283320352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1283320354}
-  - component: {fileID: 1283320353}
-  m_Layer: 0
-  m_Name: Enemy Spawner (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1283320353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283320352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c8c04987c4581408d512764baf94db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ducks: []
-  leftCorner: {fileID: 0}
-  rightCorner: {fileID: 0}
-  maxSpawnRate: 0
-  minSpawnRates: []
-  meleesInAWave: 
-  rangersInAWave: 
-  timeBetweenWave: 0
-  spawnCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1283320354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283320352}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.04, y: -4.58, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306942637
 GameObject:
   m_ObjectHideFlags: 0
@@ -7587,7 +7473,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $2.5o
+  m_Text: $1.50
 --- !u!222 &1306942640
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8087,8 +7973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a02f4aa9adef84a892ea7b8b002ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 150
+  currentHealth: 150
   lemonSliceHealth: {fileID: 135276477}
   playerHealthText: {fileID: 604408217}
 --- !u!60 &1328690643
@@ -8264,7 +8150,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370049313
 GameObject:
@@ -9508,7 +9394,7 @@ MonoBehaviour:
   DuckKillMonitor: {fileID: 1812888677}
   player: {fileID: 1328690636}
   lemonadeCost: 0
-  customerMoveSpeed: 0
+  customerMoveSpeed: 20
   timeUp: 0
 --- !u!4 &1598159919
 Transform:
@@ -9523,7 +9409,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1616412269
 GameObject:
@@ -9670,7 +9556,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Kills Until \nUnlock: X"
@@ -9874,7 +9760,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $0.50
+  m_Text: $0.25
 --- !u!222 &1662601895
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10272,7 +10158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $1.00
+  m_Text: $0.50
 --- !u!222 &1789783693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10352,7 +10238,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 100
 --- !u!222 &1790382412
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10664,7 +10550,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1862473453
 GameObject:
@@ -11016,7 +10902,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $5.00
+  m_Text: $2.00
 --- !u!222 &1925242730
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11054,8 +10940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d8b1df33e674fd985e95dcb7ea4b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 11
-  spawnCounter: 4
+  spawnRate: 8
+  spawnCounter: 1
   customerPrefabsList:
   - {fileID: 4780666400875592656, guid: 75f411627b3e94d55b4d74945cef89da, type: 3}
   - {fileID: 3107748574792329682, guid: 9c27c4610e5b14448919a878e7328817, type: 3}
@@ -11076,7 +10962,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934841008
 GameObject:
@@ -13921,7 +13807,7 @@ Transform:
   - {fileID: 719744141}
   - {fileID: 1312713392}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1988239466
 GameObject:
@@ -14722,7 +14608,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072277736
 GameObject:

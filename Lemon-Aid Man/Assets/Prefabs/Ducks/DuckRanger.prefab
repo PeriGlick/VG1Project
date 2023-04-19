@@ -198,8 +198,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6371646211615329143, guid: e4ee744bf0b31417b91e73222767c5dc, type: 3}
   coolDown: 1
   moveSpeed: 25
-  moveToPlayerDistance: 3
-  shootRange: 2
+  moveToPlayerDistance: 2.4
+  shootRange: 1.6
   dkm: {fileID: 0}
   duckHealth: 10
   sp: {fileID: 8487165730310774990}

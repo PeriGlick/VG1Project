@@ -21,8 +21,8 @@ public class LemonadeHeal : MonoBehaviour
 
     void Update()
     {
-        glassCost.text = "$"+gameManager.instance.lemonadeCost.ToString();
-        pitcherCost.text = "$"+(gameManager.instance.lemonadeCost*5).ToString();
+        glassCost.text = "$"+gameManager.instance.lemonadeCost.ToString("F2");
+        pitcherCost.text = "$"+(gameManager.instance.lemonadeCost*5).ToString("F2");
         if (player.GetComponent<playerHealth>().currentHealth == player.GetComponent<playerHealth>().maxHealth)
         {
             glass.interactable = false;
