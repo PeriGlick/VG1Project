@@ -13,6 +13,7 @@ public class MenuController : MonoBehaviour
     public GameObject playerObject;
     bool InRange = false;
     SpriteRenderer sprite;
+    public bool isOn;
     
     //Color highlight = Color.yellow;
     
@@ -21,7 +22,7 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         Time.timeScale= 1;
-
+        isOn = false;
         
         hidePaused();
         sprite = GetComponent<SpriteRenderer>();
@@ -44,6 +45,7 @@ public class MenuController : MonoBehaviour
                     Time.timeScale = 0;
 
                     showPaused();
+                    isOn = true;
                     
                         playerObject.GetComponent<playerMovement>().enabled = false;
                 }
@@ -52,6 +54,7 @@ public class MenuController : MonoBehaviour
                     Time.timeScale = 1;
                     
                     hidePaused();
+                    isOn = false;
 
                     playerObject.GetComponent<playerMovement>().enabled = true;
                 }
