@@ -48,7 +48,7 @@ public class Upgrades : MonoBehaviour
     
     public void speedOneUpgrade()
     {
-        float upgradeCost = 0.25f;
+        float upgradeCost = 0.125f;
         if(gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -75,7 +75,7 @@ public class Upgrades : MonoBehaviour
 
     public void healthOneUpgrade()
     {
-        float upgradeCost = 0.25f;
+        float upgradeCost = 0.125f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -89,7 +89,7 @@ public class Upgrades : MonoBehaviour
 
     public void standOneUpgrade()
     {
-        float upgradeCost = 0.5f;
+        float upgradeCost = 0.25f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -103,7 +103,7 @@ public class Upgrades : MonoBehaviour
 
     public void customerMoveOneUpgrade()
     {
-        float upgradeCost = 0.25f;
+        float upgradeCost = 0.125f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
@@ -132,7 +132,7 @@ public class Upgrades : MonoBehaviour
 
     public void moneyTwoUpgrade()
     {
-        float upgradeCost = 1.25f;
+        float upgradeCost = 1.50f;
         if (gameManager.instance.bank >= upgradeCost)
         {
             gameManager.instance.bank -= upgradeCost;
